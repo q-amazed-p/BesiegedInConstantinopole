@@ -28,6 +28,8 @@ public class VariableSingleton : MonoBehaviour
     public float ChangeWallHealth(float brick)
     {
         wallHealth += brick;
+        if (wallHealth > 1) { wallHealth = 1; } else { 
+        if (wallHealth < 0) { wallHealth = 0; }}
         return wallHealth;
     }
 }

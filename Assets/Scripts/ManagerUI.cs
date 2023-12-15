@@ -31,11 +31,12 @@ public class ManagerUI : UIWindowFam
     public void OrderRepairs()
     {
         repairAction.SetActive(true);
+        ControlSingleton.Instance.LogToEsc(siegeUI, repairAction);
     }
 
     public void ApproveRepairs()
     {
-        repairAction.SetActive(false);
+        ControlSingleton.Instance.GoBack();
         ControlSingleton.Instance.GoBack();
         ContinueToRest();
     }

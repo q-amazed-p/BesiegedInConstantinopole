@@ -5,10 +5,6 @@ using UnityEngine;
 
 public class ControlSingleton : MonoBehaviour
 {
-    bool escActive;
-
-    GameObject returnFrom;
-    GameObject returnTo;
 
     private static ControlSingleton _instance;
     public static ControlSingleton Instance
@@ -17,21 +13,24 @@ public class ControlSingleton : MonoBehaviour
         private set => _instance = value;
     }
 
-    private void Awake()
-    {
-        _instance = this;
-    }
+    // GO BACK functionality
 
-    private void Update()
-    {
-        if(escActive && Input.GetKeyDown(KeyCode.Escape))
-        {
-            GoBack();
-        }
-    }
+    bool escActive;
+
+    public GameObject returnFrom;
+    public GameObject returnTo;
+
+    List<(GameObject from, GameObject to)> backHistory;
+
 
     public void LogToEsc(GameObject goingFrom, GameObject goingTo)
     {
+        if(returnFrom != null && returnTo != null)
+        {
+            (GameObject, GameObject) historyLog = (returnFrom, returnTo);
+            backHistory.Add(historyLog);
+        }
+
         returnFrom = goingTo;
         returnTo = goingFrom;
         escActive = true;
@@ -41,7 +40,36 @@ public class ControlSingleton : MonoBehaviour
     {
         returnTo.SetActive(true);
         returnFrom.SetActive(false);
-        escActive = false;
+
+        if(backHistory.Count == 0)
+        {
+            returnFrom = null;
+            returnTo = null;
+            escActive = false;
+        }
+        else
+        {
+            returnFrom = backHistory[backHistory.Count - 1].from;
+            returnTo = backHistory[backHistory.Count - 1].to;
+            backHistory.RemoveAt(backHistory.Count - 1);
+        }
+    }
+
+
+    // Live Controls
+
+    private void Awake()
+    {
+        _instance = this;
+        backHistory = new List<(GameObject, GameObject)>();
+    }
+
+    private void Update()
+    {
+        if (escActive && Input.GetKeyDown(KeyCode.Escape))
+        {
+            GoBack();
+        }
     }
 
 }
