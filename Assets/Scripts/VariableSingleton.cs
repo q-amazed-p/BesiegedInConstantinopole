@@ -15,7 +15,7 @@ public class VariableSingleton : MonoBehaviour
     private void Start()
     {
         _instance = this;
-        wallHealth = 80;
+        wallHealth = 0.8f;
     }
 
 
@@ -25,8 +25,9 @@ public class VariableSingleton : MonoBehaviour
     {
         return wallHealth;
     }
-    public void ChangeWallHealth(float brick)
+    public float ChangeWallHealth(float brick)
     {
         wallHealth += brick;
+        return wallHealth;
     }
 }
