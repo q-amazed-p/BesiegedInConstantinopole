@@ -685,7 +685,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2035267480}
         m_TargetAssemblyTypeName: ManagerUI, Assembly-CSharp
-        m_MethodName: ContinueToRest
+        m_MethodName: ApproveRepairs
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2220,8 +2220,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1654222970}
-        m_TargetAssemblyTypeName: SiegeUI, Assembly-CSharp
+      - m_Target: {fileID: 2035267480}
+        m_TargetAssemblyTypeName: ManagerUI, Assembly-CSharp
         m_MethodName: OrderRepairs
         m_Mode: 1
         m_Arguments:
@@ -2949,7 +2949,7 @@ GameObject:
   - component: {fileID: 589365236}
   - component: {fileID: 589365235}
   m_Layer: 5
-  m_Name: Action Screen
+  m_Name: Repair Action
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8051,9 +8051,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 666fa1e6ebecfef4fbbd415eacd4a875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 0}
   wallHealthDisplay: {fileID: 1561574120}
-  repairAction: {fileID: 589365233}
 --- !u!1 &1674654461
 GameObject:
   m_ObjectHideFlags: 0
@@ -9276,6 +9274,7 @@ MonoBehaviour:
   spiesUI: {fileID: 1311826760}
   peopleUI: {fileID: 27364554}
   restPhaseUI: {fileID: 1691145125}
+  repairAction: {fileID: 589365233}
 --- !u!114 &2035267481
 MonoBehaviour:
   m_ObjectHideFlags: 0

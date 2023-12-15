@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ManagerUI : UIWindowFam
@@ -18,12 +19,29 @@ public class ManagerUI : UIWindowFam
         ControlSingleton.Instance.LogToEsc(this.gameObject, diplomacyUI);
     }
 
+    //*****************************
+
     public void BringUpSiegeUI()
     {
-
         SwitchPhase(siegeUI);
         ControlSingleton.Instance.LogToEsc(this.gameObject, siegeUI);
     }
+
+    [SerializeField] GameObject repairAction;
+    public void OrderRepairs()
+    {
+        repairAction.SetActive(true);
+    }
+
+    public void ApproveRepairs()
+    {
+        repairAction.SetActive(false);
+        ControlSingleton.Instance.GoBack();
+        ContinueToRest();
+    }
+
+
+    //*****************************
 
     public void BringUpTroopsUI()
     {
