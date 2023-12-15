@@ -21,7 +21,7 @@ public class VariableSingleton : MonoBehaviour
 
     // Date
 
-    static DateTime siegeStart = new (1453, 4, 1);
+    static DateTime siegeStart = new (1453, 4, 6);
     int turn = 1;
 
     public int IncrementTurn()
