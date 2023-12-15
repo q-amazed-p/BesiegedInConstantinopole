@@ -13,6 +13,8 @@ public class ManagerUI : UIWindowFam
 
     [SerializeField] GameObject restPhaseUI;
 
+    [SerializeField] TMP_Text date;
+
     public void BringUpDiplomacy()
     {
         SwitchPhase(diplomacyUI);
@@ -65,5 +67,14 @@ public class ManagerUI : UIWindowFam
     public void ContinueToRest()
     {
         SwitchPhase(restPhaseUI);
+    }
+
+
+    //*****************************
+    // Refresh
+
+    private void OnEnable()
+    {
+        date.text = VariableSingleton.Instance.GetDate().ToShortDateString();
     }
 }

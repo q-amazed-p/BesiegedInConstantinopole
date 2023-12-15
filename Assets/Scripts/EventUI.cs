@@ -6,8 +6,9 @@ public class EventUI : UIWindowFam
 {
     [SerializeField] GameObject managerUI;
 
-    public void ContinueToEvent()
+    public void ContinueToEmperorAction()
     {
+        VariableSingleton.Instance.IncrementTurn();
         SwitchPhase(managerUI);
     }
 }
