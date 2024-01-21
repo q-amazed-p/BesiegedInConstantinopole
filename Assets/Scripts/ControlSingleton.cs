@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ControlSingleton : MonoBehaviour
 {
@@ -66,9 +67,18 @@ public class ControlSingleton : MonoBehaviour
 
     private void Update()
     {
-        if (escActive && Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            GoBack();
+            if (escActive)
+            {
+                GoBack();
+            }
+
+            else
+            {
+                VariableSingleton.Instance.Save();
+                SceneManager.LoadScene(0);
+            }
         }
     }
 

@@ -14,7 +14,7 @@ public class MainMenuUI : UIWindowFam
 
     public void Load()
     {
-        SwitchPhase(optionsDialogue);
+        SceneManager.LoadScene(2);
     }
 
     public void Options()
