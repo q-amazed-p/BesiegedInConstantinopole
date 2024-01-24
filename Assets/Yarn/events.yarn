@@ -1,0 +1,24 @@
+title: Event1
+---
+People desire to see the Emperor
+
+Emperor, the people of the City have not seen you for some days. Some foul tongues have started a rumour that you are either sick or possibly even dead! While for now these rumours are being dismissed, this will not last for long and panic could spread.
+
+How would you wish to deal with this?
+
+    -> Ignore this. 
+     You ignored the situation. Bad things will happen.
+    -> Rumours of the common rabble are nothing to me. Ignore them.
+     The rumours continue and while only some believe them, many people are worried that they might be true.
+    -> The people deserve to see their Emperor. I shall appear on my balcony to give a short speech.
+     You appear on the balcony to talk to a gathered crowd before midday. People are glad to see you.
+    ->  The time has come to walk among my people and inspire them with my presence. I believe that this is the correct course of action and people will appreciate it!
+     You walk down the main market street ensuring that everyone sees you. All rumours are dispelled immediately, but you notice suspicious shadows in the crowd...
+       <<jump Assassination_attempt>>
+
+===
+title: Assassination_attempt
+---
+People desire to see the Emperor
+You are assassinated! (some chance)
+===
