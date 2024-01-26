@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using System.IO;
+using Yarn.Unity;
 
 public class VariableSingleton : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class VariableSingleton : MonoBehaviour
 
 
     static DateTime siegeStart = new (1453, 4, 6);
-    int turn = 1;
+    int turn = 0;
 
     public int IncrementTurn()
     {
@@ -46,18 +47,103 @@ public class VariableSingleton : MonoBehaviour
     // Wall Condition
 
     float wallHealth;
-    public float GetWallHealth()
+
+        public float GetWallHealth()
+        {
+            return wallHealth;
+        }
+        
+        [YarnCommand("ChangeWall")]
+        public float ChangeWallHealth(float brick)
+        {
+            wallHealth += brick;
+            if (wallHealth > 1) { wallHealth = 1; } else { 
+            if (wallHealth < 0) { wallHealth = 0; }}
+            return wallHealth;
+        }
+
+        [YarnCommand("ReportWall")]
+        public int ReportWall(int layer)
+        {
+            switch (layer)
+            {
+                case 0:
+                    return Mathf.RoundToInt(100 * wallHealth);
+            }
+
+            return -1;
+        }
+
+
+
+    //TROOPS
+
+    int infantry;
+    int archers;
+    int cavalary;
+
+    [YarnCommand("ReportTroops")]
+    public int ReportTroops(int type)
     {
-        return wallHealth;
-    }
-    public float ChangeWallHealth(float brick)
-    {
-        wallHealth += brick;
-        if (wallHealth > 1) { wallHealth = 1; } else { 
-        if (wallHealth < 0) { wallHealth = 0; }}
-        return wallHealth;
+        switch (type)
+        {
+            case 0:
+                return infantry;
+
+            case 1:
+                return archers;
+
+            case 2:
+                return cavalary;
+        }
+
+        return -1;
     }
 
+    [YarnCommand("ChangeTroops")]
+    public int ChangeTroops(int type, int delta)
+    {
+        switch (type)
+        {
+            case 0:
+                if(infantry + delta < 0)
+                {
+                    infantry = 0;
+                }
+                else
+                {
+                    infantry += delta;
+                }
+                return infantry;
+
+            case 1:
+                if (archers + delta < 0)
+                {
+                    archers = 0;
+                }
+                else
+                {
+                    archers += delta;
+                }
+                return archers;
+
+            case 2:
+                if (cavalary + delta < 0)
+                {
+                    cavalary = 0;
+                }
+                else
+                {
+                    cavalary += delta;
+                }
+                return cavalary;
+        }
+
+        return -1;
+    }
+
+
+    //Save Service
     public string Save()
     {
         string saveCode;
