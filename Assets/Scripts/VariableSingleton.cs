@@ -17,14 +17,20 @@ public class VariableSingleton : MonoBehaviour
     private void Start()
     {
         _instance = this;
-        wallHealth = 0.8f;
+        outerWallH = 0.8f;
         transform.GetComponentInChildren<LoaderScript>().RunLoader();
     }
 
 
 
-    static DateTime siegeStart = new (1453, 4, 6);
+    static DateTime siegeStart = new(1453, 4, 6);
+
     int turn = 0;
+    public int Turn
+    {
+        get => turn;
+        private set => turn = value;
+    }
 
     public int IncrementTurn()
     {
@@ -46,33 +52,72 @@ public class VariableSingleton : MonoBehaviour
 
     // Wall Condition
 
-    float wallHealth;
+    float outerWallH;
+    float midWallH;
+    float innerWallH;
 
-        public float GetWallHealth()
+    public float GetWallHealth()
+    {
+        return outerWallH;
+    }
+
+    [YarnCommand("ChangeWall")]
+    public float ChangeWallHealth(int layer, float percBrick)
+    {
+        float brick = 0.01f * percBrick;
+
+        switch (layer)
         {
-            return wallHealth;
+            case 0:
+                {
+                    outerWallH += brick;
+                    if (outerWallH > 1) { outerWallH = 1; }
+
+                    else { if (outerWallH < 0) { outerWallH = 0; } }
+
+                    return outerWallH;
+                }
+
+            case 1:
+                {
+                    midWallH += brick;
+                    if (midWallH > 1) { midWallH = 1; }
+
+                    else { if (midWallH < 0) { midWallH = 0; } }
+
+                    return midWallH;
+                }
+
+            case 2:
+                {
+                    innerWallH += brick;
+                    if (innerWallH > 1) { innerWallH = 1; }
+
+                    else { if (innerWallH < 0) { innerWallH = 0; } }
+
+                    return innerWallH;
+                }
         }
-        
-        [YarnCommand("ChangeWall")]
-        public float ChangeWallHealth(float brick)
+        return -1;
+    }
+
+    [YarnCommand("ReportWall")]
+    public int ReportWall(int layer)
+    {
+        switch (layer)
         {
-            wallHealth += brick;
-            if (wallHealth > 1) { wallHealth = 1; } else { 
-            if (wallHealth < 0) { wallHealth = 0; }}
-            return wallHealth;
+            case 0:
+                return Mathf.RoundToInt(100 * outerWallH);
+
+            case 1:
+                return Mathf.RoundToInt(100 * midWallH);
+
+            case 2:
+                return Mathf.RoundToInt(100 * innerWallH);
         }
 
-        [YarnCommand("ReportWall")]
-        public int ReportWall(int layer)
-        {
-            switch (layer)
-            {
-                case 0:
-                    return Mathf.RoundToInt(100 * wallHealth);
-            }
-
-            return -1;
-        }
+        return -1;
+    }
 
 
 
@@ -80,7 +125,7 @@ public class VariableSingleton : MonoBehaviour
 
     int infantry;
     int archers;
-    int cavalary;
+    int cavalry;
 
     [YarnCommand("ReportTroops")]
     public int ReportTroops(int type)
@@ -94,7 +139,7 @@ public class VariableSingleton : MonoBehaviour
                 return archers;
 
             case 2:
-                return cavalary;
+                return cavalry;
         }
 
         return -1;
@@ -106,7 +151,7 @@ public class VariableSingleton : MonoBehaviour
         switch (type)
         {
             case 0:
-                if(infantry + delta < 0)
+                if (infantry + delta < 0)
                 {
                     infantry = 0;
                 }
@@ -128,29 +173,43 @@ public class VariableSingleton : MonoBehaviour
                 return archers;
 
             case 2:
-                if (cavalary + delta < 0)
+                if (cavalry + delta < 0)
                 {
-                    cavalary = 0;
+                    cavalry = 0;
                 }
                 else
                 {
-                    cavalary += delta;
+                    cavalry += delta;
                 }
-                return cavalary;
+                return cavalry;
         }
 
         return -1;
     }
 
+    //STORY POINT LISTS
 
-    //Save Service
+    List<int> possibleStory = new List<int>() {0, 1, 2, 3};
+    List<int> possibleRandom = new List<int>();
+
+    public bool StoryScheduled()
+    {
+        return possibleStory.Contains(turn);
+    }
+
+    public int RandomEventID()
+    {
+        return possibleRandom[UnityEngine.Random.Range(0, possibleRandom.Count)];
+    }
+
+    //SAVE SERVICE
     public string Save()
     {
         string saveCode;
 
         saveCode = turn.ToString();
         saveCode += " ";
-        saveCode += wallHealth.ToString();
+        saveCode += outerWallH.ToString();
 
         File.WriteAllText("Save", saveCode);
         return saveCode;
@@ -180,7 +239,7 @@ public class VariableSingleton : MonoBehaviour
 
         turn = int.Parse(saveBreakdown[0]);
         Debug.Log(turn.ToString());
-        wallHealth = float.Parse(saveBreakdown[1]);
-        Debug.Log(wallHealth.ToString());
+        outerWallH = float.Parse(saveBreakdown[1]);
+        Debug.Log(outerWallH.ToString());
     }
 }
