@@ -3,6 +3,7 @@ using UnityEngine;
 using System;
 using System.IO;
 using Yarn.Unity;
+using Unity.Collections.LowLevel.Unsafe;
 
 public class VariableSingleton : MonoBehaviour
 {
@@ -14,12 +15,12 @@ public class VariableSingleton : MonoBehaviour
         private set => _instance = value;
     }
 
-    private void Start()
-    {
-        _instance = this;
-        outerWallH = 0.8f;
-        transform.GetComponentInChildren<LoaderScript>().RunLoader();
-    }
+    Dictionary<string, bool> bDict = new Dictionary<string, bool>();
+    Dictionary<string, int> iDict = new Dictionary<string, int>();
+    Dictionary<string, float> fDict = new Dictionary<string, float>();
+
+
+
 
 
 
@@ -50,6 +51,73 @@ public class VariableSingleton : MonoBehaviour
         }
     }
 
+
+    [YarnCommand("GetBool")]
+    public bool GetBoolVariable(string varName)
+    {
+        return bDict[varName];
+    }
+
+
+    [YarnCommand("GetInt")]
+    public int GetIntVariable(string varName)
+    {
+        return iDict[varName];
+    }
+
+
+    [YarnCommand("GetFloat")]
+    public float GetFloatVariable(string varName)
+    {
+        return fDict[varName];
+    }
+
+
+    [YarnCommand("ChangeBool")]
+    public void ChangeBool(string varName, bool newValue )
+    {
+        bDict[varName] = newValue;
+    }
+
+    [YarnCommand("ChangeInt")]
+    public void ChangeInt(string varName, int delta)
+    {
+        if(iDict[varName]+delta < 0)
+        {
+            iDict[varName] = 0;
+        }
+        else
+        {
+            iDict[varName] += delta;
+        }
+    }
+
+    [YarnCommand("ChangeInt")]
+    public void ChangeInt(string varName, int min, int max)
+    {
+        ChangeInt(varName, UnityEngine.Random.Range(min, max+1));
+    }
+
+    [YarnCommand("ChangeFloat")]
+    public void ChangeFloat(string varName, float delta)
+    {
+        if (fDict[varName] + delta < 0)
+        {
+            fDict[varName] = 0;
+        }
+        else
+        {
+            fDict[varName] += delta;
+        }
+    }
+
+    [YarnCommand("ChangeFloat")]
+    public void ChangeFloat(string varName, float min, float max)
+    {
+        ChangeFloat(varName, UnityEngine.Random.Range(min, max));
+    }
+
+
     // Wall Condition
 
     float outerWallH;
@@ -59,6 +127,11 @@ public class VariableSingleton : MonoBehaviour
     public float GetWallHealth()
     {
         return outerWallH;
+    }
+
+    public void ChangeValue<T>(string variableName, T value)
+    {
+
     }
 
     [YarnCommand("ChangeWall")]
@@ -202,6 +275,48 @@ public class VariableSingleton : MonoBehaviour
         return possibleRandom[UnityEngine.Random.Range(0, possibleRandom.Count)];
     }
 
+    [YarnCommand("AddEvent")]
+    public void AddPossibleEvent(string eventList, int eventId)
+    {
+        switch (eventList) 
+        {
+            case "story":
+                if (!possibleStory.Contains(eventId))
+                {
+                    possibleStory.Add(eventId);
+                }
+                break;
+
+            case "random":
+                if (!possibleRandom.Contains(eventId))
+                {
+                    possibleRandom.Add(eventId);
+                }
+                break;
+        }
+    }
+
+    [YarnCommand("RemoveEvent")]
+    public void RemovePossibleEvent(string eventList, int eventId)
+    {
+        switch (eventList)
+        {
+            case "story":
+                if (!possibleStory.Contains(eventId))
+                {
+                    possibleStory.Remove(eventId);
+                }
+                break;
+
+            case "random":
+                if (!possibleRandom.Contains(eventId))
+                {
+                    possibleRandom.Remove(eventId);
+                }
+                break;
+        }
+    }
+
     //SAVE SERVICE
     public string Save()
     {
@@ -241,5 +356,16 @@ public class VariableSingleton : MonoBehaviour
         Debug.Log(turn.ToString());
         outerWallH = float.Parse(saveBreakdown[1]);
         Debug.Log(outerWallH.ToString());
+    }
+
+    private void Awake()
+    {
+        _instance = this;
+    }
+
+    private void Start()
+    {
+        outerWallH = 0.8f;
+        transform.GetComponentInChildren<LoaderScript>().RunLoader();
     }
 }

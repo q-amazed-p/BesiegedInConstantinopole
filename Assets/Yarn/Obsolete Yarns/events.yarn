@@ -1,0 +1,158 @@
+title: story0
+---
+<<declare $Focus = "0">>
+
+<b>Messenger arrives</b>: A dusty messenger stumbles into your court room, clearly after riding many miles. Protasekretis, your chief secretary, takes the scroll out of messenger's shaking hand and unfolds it. You can see how blood leaves the face of your trusted advisor. He reads it and you realise that peace has come to an end. Sultan Mehmed the Second, Lord of the Turks, Master of the Ottoman Empire, is gathering armies in the city of Adrianople. His criers are spreading the call of Jihad across the Anatolia and the Balkans, his engineers are improving roads and bridges leading to Constantinople and there are rumours of massive cannons being forged. A massive army is being gathered and there can be only a single target for it - the last piece of the Eastern Roman Empire, the Holy City of Constantinople, your home. Although you have suspected that this attack will come, you hoped for more time. But now, you realise that you have mere months to prepare. Protasekretis asks: Imperator, what shall be your orders? How do we prepare for this? 
+  -> Theodosian Walls defended the City for over a thousand years. Our focus will be fortifications!
+   We will do all we can, but fortifications will be our main focus during the preparation for the siege.
+   <<set $Focus to "0">>
+  -> No walls can defend the City if there are no men to guard them. Our focus will be mobilisation!
+   We will do all we can, but mobilisation will be our main focus during the preparation for the siege.
+   <<set $Focus to "1">>
+  -> Gold is the sinews of war. We need money and resources to arm ourselves. Our focus will be war economy!
+   We will do all we can, but war economy will be our main focus during the preparation for the siege.
+   <<set $Focus to "2">>
+  -> God, not gold, will save us, as he did so many times before. Our focus will be faith!
+   We will do all we can, but faith will be our main focus during the preparation for the siege.
+   <<set $Focus to "3">>
+  -> We will fall if we remain alone. We need to call allies. Our focus will be diplomacy!
+   We will do all we can, but diplomacy will be our main focus during the preparation for the siege.
+   <<set $Focus to "4">> 
+
+===
+
+title: story1
+---
+<<declare $Religion = "0">>
+
+<b>Mending the Schism</b>: For years there have been attempts to mend the Great Schism between the Rome and Constantinople. Both churches proclaim themselves to be the rightful inheritors of the temple of Jesus on Earth. We need to consider the political and religious implications, should we stick with our tradition or consider converting to the Catholic faith, hoping to secure additional assistance?
+-> We shall support Orthodox Church unto death. Damned be those heretics.
+  Your decision will maintain stability, but reduce the likelihood that Catholic nations will aid us.
+  <<set $Religion to "0">>
+-> The time has come to swallow our pride and admit our fault. I shall convert to Catholicism.
+  Your decision will cause anger among our priesthood and the nobles, but Catholics will surely aid us more.
+   <<set $Religion to "1">>
+-> We need the Catholic aid, but also we need to maintain order. Let us adopt Catholic faith symbolically, but without enforcing it.
+  Your decision will annoy the priesthood, but the nobility won't care and Catholics will grudingly aid us.
+   <<set $Religion to "2">>
+
+===
+
+title: story2
+---
+<<declare $Outer_wall = 80>>
+<<declare $Middle_wall = 25>>
+<<declare $Inner_wall = 50>>
+<<declare $materials = 1000>>
+
+<b>Siege Preparation - Walls</b> : The main defense of your city are the walls separating the enemy scimitars from your throat. As everyone knows, the outer walls of the city, built by the Emperor Theodosius in the 5th century, are the greatest, most impressive piece of siege architecture in Europe. The only time these walls have been breached, was during the sack of the city in 1204 by the Frankish crusaders. If these walls would fall, the second line of defence are Constantinian walls, which are currently nearly ruined. Finally, the core of the city is defended by the final line of Severan walls, which are also crumbling and haven't been properly maintained for centuries. In order to prepare for the siege, we need to restore our once glorious fortifications.How shall we focus on their reconstruction?
+[Enemy army will attempt to tear down your walls. When the walls are low enough, they will assault the city. If they successfully breach all the walls, after final assault you will lose the game.]
+-> Theodosian Wall needs to be repaired - it is the highest priority. [Cost: 60 materials]
+    Construction takes some time, but Theodosian Wall is restored to 100% condition.
+    <<set $Outer_wall to 100>>
+    <<set $materials = $materials- 60>>
+-> Constantinian Wall is in a really bad shape, but it will be vital if the outer wall is breached. It must be rebuilt. [Cost: 160 materials]
+    Constantinian Wall is barely more than a ruin and hasn't seen action for a thousand years. However, with our efforts, it is now restored to 100% condition.
+    <<set $Middle_wall to 100>>
+    <<set $materials = $materials-160>>
+-> Wihout Severan Wall is the weakest of the three, but it protects the Great Palace and heart of the city. [Cost: 80 materials]
+    The core of the city is now once more protected and Severan wall is restored to 100% condition.
+    <<set $Inner_wall to 100>>
+    <<set $materials = $materials-80>> 
+-> It will be a massive undertaking, but all the three Walls must be restored before the siege begins. However, our Focus on Fortification will help us save on the costs. [Cost: 250 materials] <<if $Focus is "0">>
+    You initiate the greatest reconstruction effort in Constantinople since the times of Justinian. Soon, all three Walls are restored to 100%. 
+    <<set $Outer_wall to 100>>
+    <<set $Middle_wall to 100>>
+    <<set $Inner_wall to 100>> 
+    <<set $materials = $materials-250>>
+
+===
+
+title: story3
+---
+<<declare $noble_rep = 50>>
+<<declare $troop_rep = 50>>
+<<declare $infantry = 50>>
+<<declare $archers = 50>>
+<<declare $cavalry = 50>>
+<<declare $turk_troops = 50>>
+<<declare $turk_cannons = 50>>
+<<declare $money = 100000>>
+<<declare $infantry_quality = 2>>
+<<declare $archers_quality = 2>>
+<<declare $cavalry_quality = 2>>
+
+<b>Peloponnesus</b>: While the territories under the control of the Eastern Roman Empire have waxed and waned over the centuries, never have they been smaller than today. But while Constantinople is the only major city left under the control of our Empire, we still have holdings in Peloponnesus and islands in the Marmara sea. As the siege approaches, we need to issue orders for our troops there. We could summon them to help us, but it will anger our nobles, whose estates will remain unprotected. Alternatively, we could tell them to launch a diversion against the Turks. What shall be your orders?
+
+-> They should remain where they are, support of the nobility will be important to me.
+    The nobles are pleased with your decision.
+    <<set $money = $money+5000>>
+-> Summon all of the trained troops to Constantinople.
+  Soon, a few ships from Morea arrive, bringing 1000 soldiers, 400 archers and 100 cavalry.   
+    <<set $infantry = $infantry+1000>>
+    <<set $archers = $archers+400>>
+    <<set $cavalry = $cavalry+100>>
+    <<set $noble_rep = $noble_rep-10>>
+-> Order the lords of Peloponnesus to distract Mehmed's forces.
+    While the distraction is too small to truly distract Ottoman army, Mehmed sends 7500 troops to hunt down your troops. This means that they won't participate in the siege.
+    <<set $turk_troops = $turk_troops -7500>>
+    <<set $noble_rep = $noble_rep-10>>
+-> As our Focus is mobilisation, we should order every able bodied man from our holdings to come to defend Constantinople immediately. <<if $Focus is "1">>
+    While majority of the recruits are Morean farmers without much fighting experience, their numbers will significantly bolster our fighting strength. Soon, a few ships arrive, bringing 3000 soldiers, 500 archers and 100 cavalry.   
+    <<set $infantry = $infantry+3000>>
+    <<set $archers = $archers+500>>
+    <<set $cavalry = $cavalry+100>>
+    <<set $noble_rep = $noble_rep-20>>
+-> As our Focus is war economy, we should instead demand our holdings to provide all the resources and money they can. <<if $Focus is "2">>
+    The troops, instead of travelling to Constantinople, are used to shake everyone dry, collecting every penny for your treasury.
+    <<set $money = $money +20000>>
+    <<set $noble_rep = $noble_rep-20>>
+-> As our Focus is faith, we should instead order all of our holdings to pray for us. This will raise morale of all the defenders. <<if $Focus is "3">>
+    Every church in Peloponnesus is ringing bells day and night, every soldier and peasant spends their days praying for their Imperator and Constantinople.
+    <<set $noble_rep = $noble_rep +15>>
+    <<set $troop_rep = $troop_rep +15>>  
+
+===
+
+title: story4
+---
+<b>Raising an Army</b> 
+  Currently our army is too weak to withstand Ottoman might, we need more men. There are many ways to recruit more soldiers, but which is the best?
+-> Infantry is the backbone of our army. Raise 3000 infantry. [Cost: 30,000 money] <<if $money >= 30000>>
+  We quickly recruit more spearmen from the citizens of Constantinople. 
+  <<set $infantry = $infantry+3000>>
+  <<set $money = $money -30000>>
+-> Walls will need more archers to defend it. Raise 1500 archers. [Cost: 30,000 money] <<if $money >= 30000>>
+  You order Hippodrome to be converted into three archery ranges, where hundreds of archers train daily. By the time siege comes, they will be ready.
+    <<set $archers = $archers+1500>>
+    <<set $money = $money -30000>>
+-> Cavalry will provide us with the flexibility to sally out and strike at our enemy. Raise 300 cavalry. [Cost: 30,000 money] <<if $money >= 30000>>
+  One does not become a knight overnight, but you hurry to ennoble promising candidates. This new force will train day and night to prepare for the war.
+   <<set $cavalry = $cavalry+300>>
+   <<set $money = $money -30000>>
+-> As our Focus is mobilisation, we can return to tradition and raise a Legion of 5000 infantry and 1000 archers, in the honour of our ancestors. [Cost: 50,000] <<if $Focus is "1" and $money >= 50000 >>
+  On your orders, the whole city is turned into a massive training encampment. As per ancient tradition, a legionary Aquila is forged from gold, perched atop a Cross. Freshly minted legionaries are motivated, but only time will tell if they deserve the name of their forebears.
+    <<set $infantry = $infantry+5000>>
+   <<set $archers = $archers+1000>>
+    <<set $troop_rep = $troop_rep  +10>>
+    <<set $money = $money  -50000>> 
+-> As our Focus is faith, we should call upon the religious fanatics, forming their mobs into military units. [Cost: 3000 money] <<if $Focus is "3">>
+    While nobles don't like our decision, these new fanatical troops are very motivated and numerous, numbering some 3000. But the best thing about them is that they are cheap. However, they are not trained and the overall quality of your infantry suffers.
+    <<set $infantry = $infantry+3000>>
+    <<set $noble_rep = $noble_rep -5>>
+    <<set $troop_rep = $troop_rep +30>>  
+    <<set $infantry_quality = $infantry_quality -1>>
+    <<set $money = $money  -3000>> 
+-> As our Focus is diplomacy, we should summon foreign mercenaries, promising them land and titles if we are victorious. [Cost: loss of support] <<if $Focus is "4">>
+    Soon brigands and mercenaries of all kinds flock to our banner. Primarily they are Italians from various states, but also come Cumans, Bulgars and even some Turks. They are not very numerous, but they are hardened killers, veterans of many wars, so their presence raises the quality of your troops across the board. However, their presence and unknown tongues and weird customs unnerve your people, priests, nobles and even other troops. In total, 750 infantry, 750 archers and 100 cavalry join your ranks.
+    <<set $infantry = $infantry+750>>
+    <<set $archers = $archers+750>>
+    <<set $cavalry = $cavalry+100>>
+    <<set $noble_rep = $noble_rep -5>>
+    <<set $troop_rep = $troop_rep -5>>  
+    <<set $infantry_quality = $infantry_quality +1>>
+    <<set $archers_quality = $archers_quality  +1>>
+    <<set $cavalry_quality = $cavalry_quality +1>>
+    
+===
+
