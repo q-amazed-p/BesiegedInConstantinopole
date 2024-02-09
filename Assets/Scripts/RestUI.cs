@@ -13,7 +13,7 @@ public class RestUI : UIWindowFam
     {
         if (VariableSingleton.Instance.StoryScheduled())
         {
-            eventPhaseUI.GetComponentInChildren<DialogueRunner>().startNode = "story" + VariableSingleton.Instance.Turn;
+            eventPhaseUI.GetComponentInChildren<DialogueRunner>().startNode = "story" + VariableSingleton.Turn;
         }
         else
         {

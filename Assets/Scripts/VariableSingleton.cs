@@ -15,31 +15,27 @@ public class VariableSingleton : MonoBehaviour
         private set => _instance = value;
     }
 
-    Dictionary<string, bool> bDict = new Dictionary<string, bool>();
-    Dictionary<string, int> iDict = new Dictionary<string, int>();
-    Dictionary<string, float> fDict = new Dictionary<string, float>();
-
-
-
-
+    static Dictionary<string, bool> bDict = new Dictionary<string, bool>();
+    static Dictionary<string, int> iDict = new Dictionary<string, int>();
+    static Dictionary<string, float> fDict = new Dictionary<string, float>();
 
 
     static DateTime siegeStart = new(1453, 4, 6);
 
-    int turn = 0;
-    public int Turn
+    static int turn = 0;
+    static public int Turn
     {
         get => turn;
         private set => turn = value;
     }
 
-    public int IncrementTurn()
+    static public int IncrementTurn()
     {
         turn++;
         return turn;
     }
 
-    public DateTime GetDate()
+    static public DateTime GetDate()
     {
         if (turn < 15)
         {
@@ -51,38 +47,46 @@ public class VariableSingleton : MonoBehaviour
         }
     }
 
+    //VARIABLE ACCESS
 
-    [YarnCommand("GetBool")]
-    public bool GetBoolVariable(string varName)
+    [YarnFunction("GetBool")]
+    static public bool GetBoolVariable(string varName)
     {
         return bDict[varName];
     }
 
 
-    [YarnCommand("GetInt")]
-    public int GetIntVariable(string varName)
+    [YarnFunction("GetInt")]
+    static public int GetIntVariable(string varName)
     {
         return iDict[varName];
     }
 
 
-    [YarnCommand("GetFloat")]
-    public float GetFloatVariable(string varName)
+    [YarnFunction("GetFloat")]
+    static public float GetFloatVariable(string varName)
     {
         return fDict[varName];
     }
 
+    [YarnFunction("GetPercent")]
+    static public string GetPercentFLoat(string varName)
+    {
+        return Mathf.RoundToInt(100 * fDict[varName]).ToString() + "%";
+    }
+
+    //VARIABLE MODIFICATION
 
     [YarnCommand("ChangeBool")]
-    public void ChangeBool(string varName, bool newValue )
+    static public void ChangeBool(string varName, bool newValue)
     {
         bDict[varName] = newValue;
     }
 
     [YarnCommand("ChangeInt")]
-    public void ChangeInt(string varName, int delta)
+    static public void ChangeInt(string varName, int delta)
     {
-        if(iDict[varName]+delta < 0)
+        if (iDict[varName] + delta < 0)
         {
             iDict[varName] = 0;
         }
@@ -92,14 +96,14 @@ public class VariableSingleton : MonoBehaviour
         }
     }
 
-    [YarnCommand("ChangeInt")]
-    public void ChangeInt(string varName, int min, int max)
+    [YarnCommand("RndChangeInt")]
+    static public void ChangeInt(string varName, int min, int max)
     {
-        ChangeInt(varName, UnityEngine.Random.Range(min, max+1));
+        ChangeInt(varName, UnityEngine.Random.Range(min, max + 1));
     }
 
     [YarnCommand("ChangeFloat")]
-    public void ChangeFloat(string varName, float delta)
+    static public void ChangeFloat(string varName, float delta)
     {
         if (fDict[varName] + delta < 0)
         {
@@ -111,11 +115,12 @@ public class VariableSingleton : MonoBehaviour
         }
     }
 
-    [YarnCommand("ChangeFloat")]
-    public void ChangeFloat(string varName, float min, float max)
+    [YarnCommand("RndChangeFloat")]
+    static public void ChangeFloat(string varName, float min, float max)
     {
         ChangeFloat(varName, UnityEngine.Random.Range(min, max));
     }
+
 
 
     // Wall Condition
@@ -262,8 +267,8 @@ public class VariableSingleton : MonoBehaviour
 
     //STORY POINT LISTS
 
-    List<int> possibleStory = new List<int>() {0, 1, 2, 3};
-    List<int> possibleRandom = new List<int>();
+    [SerializeField] List<int> possibleStory = new List<int>() {0, 1, 2, 3};
+    [SerializeField] List<int> possibleRandom = new List<int>();
 
     public bool StoryScheduled()
     {
@@ -361,11 +366,36 @@ public class VariableSingleton : MonoBehaviour
     private void Awake()
     {
         _instance = this;
+        iDict.Add("cavalry", 2);
+        iDict.Add("money", 100);
+        fDict.Add("people_rep", 2);
+        fDict.Add("noble_rep", 2);
     }
 
     private void Start()
     {
         outerWallH = 0.8f;
         transform.GetComponentInChildren<LoaderScript>().RunLoader();
+    }
+
+    //DEBUG
+
+    [ContextMenu("PrintVariables")]
+    public void PrintVariables()
+    {
+        foreach (KeyValuePair<string, bool> b in bDict)
+        {
+            Debug.Log(b.Key + " : " + b.Value);
+        }
+
+        foreach (KeyValuePair<string, int> b in iDict)
+        {
+            Debug.Log(b.Key + " : " + b.Value);
+        }
+
+        foreach (KeyValuePair<string, float> b in fDict)
+        {
+            Debug.Log(b.Key + " : " + b.Value);
+        }
     }
 }

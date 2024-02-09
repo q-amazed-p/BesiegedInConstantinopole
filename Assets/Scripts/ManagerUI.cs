@@ -75,6 +75,6 @@ public class ManagerUI : UIWindowFam
 
     private void OnEnable()
     {
-        date.text = VariableSingleton.Instance.GetDate().ToShortDateString();
+        date.text = VariableSingleton.GetDate().ToShortDateString();
     }
 }

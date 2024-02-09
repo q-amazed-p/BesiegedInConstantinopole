@@ -1,4 +1,4 @@
-title: story0
+﻿title: story0
 ---
 <<declare $Outer_wall = 80>>
 <<declare $Middle_wall = 25>>
@@ -44,21 +44,21 @@ title: story0
 <<declare $golden_horn_chain = "exists">>
 <<declare $chance = 100>>
 
-<b>Messenger arrives</b>: A dusty messenger stumbles into your court room, clearly after riding many miles. Loukas Notaras, your megas doux and chief minister, takes the scroll out of messenger's shaking hand and unfolds it. You can see how blood leaves the face of your trusted advisor. He reads it and you realise that peace has come to an end. Sultan Mehmed the Second, Lord of the Turks, Master of the Ottoman Empire, is gathering armies in the city of Adrianople. His criers are spreading the call of Jihad across the Anatolia and the Balkans, his engineers are improving roads and bridges leading to Constantinople and there are rumours of massive cannons being forged. A massive army is being gathered and there can be only a single target for it - the last piece of the Eastern Roman Empire, the Holy City of Constantinople, your home. Although you have suspected that this attack will come, you hoped for more time. But now, you realise that you have mere months to prepare. Notaras asks: Imperator, what shall be your orders? How do we prepare for this? 
-  -> Theodosian Walls defended the City for over a thousand years. Our focus will be fortifications!
-   We will do all we can, but fortifications will be our main focus during the preparation for the siege.
+<b>Messenger arrives</b>: A dusty messenger stumbles into your court room, clearly after riding many miles. Loukas Notaras, your megas doux and chief minister, takes the scroll out of messenger's shaking hand and unfolds it. You can see how blood leaves the face of your trusted advisor. He reads it and you realise that peace has come to an end. Sultan Mehmed the Second, Lord of the Turks, Master of the Ottoman Empire, is gathering armies in the city of Adrianople. His criers are spreading the call of Jihad across the Anatolia and the Balkans, his engineers are improving roads and bridges leading to Constantinople and there are rumours of massive cannons being forged. A massive army is being gathered and there can be only a single target for it - the last piece of the Eastern Roman Empire, the Holy City of Constantinople, your home. Although you have suspected that this attack will come, you hoped for more time. But now, you realise that you have mere months to prepare. Notaras asks: Imperator, what shall be your orders? How do we prepare for this?  #line:00b0667 
+  -> Theodosian Walls defended the City for over a thousand years. Our focus will be fortifications! #line:0067902 
+   We will do all we can, but fortifications will be our main focus during the preparation for the siege. #line:0483a41 
    <<set $Focus to "0">>
-  -> No walls can defend the City if there are no men to guard them. Our focus will be mobilisation!
-   We will do all we can, but mobilisation will be our main focus during the preparation for the siege.
+  -> No walls can defend the City if there are no men to guard them. Our focus will be mobilisation! #line:092793d 
+   We will do all we can, but mobilisation will be our main focus during the preparation for the siege. #line:019a17b 
    <<set $Focus to "1">>
-  -> Gold is the sinews of war. We need money and resources to arm ourselves. Our focus will be war economy!
-   We will do all we can, but war economy will be our main focus during the preparation for the siege.
+  -> Gold is the sinews of war. We need money and resources to arm ourselves. Our focus will be war economy! #line:09615a6 
+   We will do all we can, but war economy will be our main focus during the preparation for the siege. #line:0e40699 
    <<set $Focus to "2">>
-  -> God, not gold, will save us, as he did so many times before. Our focus will be faith and unity!
-   We will do all we can, but faith will be our main focus during the preparation for the siege.
+  -> God, not gold, will save us, as he did so many times before. Our focus will be faith and unity! #line:0afa29c 
+   We will do all we can, but faith will be our main focus during the preparation for the siege. #line:07b13a2 
    <<set $Focus to "3">>
-  -> Our strongest weapon is our mind and our reputation. We need strategise, scheme and to call allies. Our focus will be diplomacy and spycraft!
-   We will do all we can, but diplomacy will be our main focus during the preparation for the siege.
+  -> Our strongest weapon is our mind and our reputation. We need strategise, scheme and to call allies. Our focus will be diplomacy and spycraft! #line:07e2612 
+   We will do all we can, but diplomacy will be our main focus during the preparation for the siege. #line:0e0b8c6 
    <<set $Focus to "4">> 
 
    <<jump story1>>
@@ -67,19 +67,19 @@ title: story0
 title: story1
 ---
 
-<b>Mending the Schism</b>: For years there have been attempts to mend the Great Schism between the Rome and Constantinople. Both churches proclaim themselves to be the rightful inheritors of the temple of Jesus on Earth. Cardinal Isidore of Kiev, one of the most prominent priests of our Empire, has worked for many years to secure so called "Union of Florence" between Constantinople and Rome and he strongly advocates that we accept it in order so that we can secure aid from the Pope and other Catholic nations. Meanwhile Loukas Notaras, our chief minister, stresses that the people and most clergy are opposed to this, as accursed Latins have once already been the reason of our downfall, when they took the City and almost destroyed the Empire in 1204. We need to consider the political and religious implications, should we stick with our tradition or consider converting to the Catholic faith, hoping to secure additional assistance?
--> We shall support Orthodox Church unto death. Damned be those heretics.
-  Your decision causes a brief celebration among your elites, but will reduce the likelihood that Catholic nations will aid us.
+<b>Mending the Schism</b>: For years there have been attempts to mend the Great Schism between the Rome and Constantinople. Both churches proclaim themselves to be the rightful inheritors of the temple of Jesus on Earth. Cardinal Isidore of Kiev, one of the most prominent priests of our Empire, has worked for many years to secure so called "Union of Florence" between Constantinople and Rome and he strongly advocates that we accept it in order so that we can secure aid from the Pope and other Catholic nations. Meanwhile Loukas Notaras, our chief minister, stresses that the people and most clergy are opposed to this, as accursed Latins have once already been the reason of our downfall, when they took the City and almost destroyed the Empire in 1204. We need to consider the political and religious implications, should we stick with our tradition or consider converting to the Catholic faith, hoping to secure additional assistance? #line:035e4cd 
+-> We shall support Orthodox Church unto death. Damned be those heretics. #line:0ecc9b6 
+  Your decision causes a brief celebration among your elites, but will reduce the likelihood that Catholic nations will aid us. #line:006a4f8 
   <<set $Religion to "0">>
   <<set $noble_rep = $noble_rep +10>>
   <<set $priest_rep = $priest_rep +15>>
--> The time has come to swallow our pride and admit our fault. I shall convert to Catholicism and require everyone in my palace to do the same. We will fully embrace Union of Florence. Roma suprema est.
-  Your decision will cause anger among our priesthood and the nobles, but the Catholic nations will rejoice and Pope shall call for a new crusade to save Constantinople.
+-> The time has come to swallow our pride and admit our fault. I shall convert to Catholicism and require everyone in my palace to do the same. We will fully embrace Union of Florence. Roma suprema est. #line:05a4d46 
+  Your decision will cause anger among our priesthood and the nobles, but the Catholic nations will rejoice and Pope shall call for a new crusade to save Constantinople. #line:0823e22 
   <<set $Religion to "1">>
   <<set $noble_rep = $noble_rep -20>>
   <<set $priest_rep = $priest_rep -30>>
--> We need the Catholic aid, but also we need to maintain our priests happy. Let us adopt Catholic faith by symbolically accepting Union of Florence, but without enforcing it.
-  Your decision will still somewhat annoy the priesthood and the nobility will grumble, but the Catholics will aid us.
+-> We need the Catholic aid, but also we need to maintain our priests happy. Let us adopt Catholic faith by symbolically accepting Union of Florence, but without enforcing it. #line:01c20e6 
+  Your decision will still somewhat annoy the priesthood and the nobility will grumble, but the Catholics will aid us. #line:00b0506 
   <<set $Religion to "2">>
   <<set $noble_rep = $noble_rep -5>>
   <<set $priest_rep = $priest_rep -10>>
@@ -90,22 +90,22 @@ title: story1
 title: story2
 ---
 
-<b>Siege Preparation - Walls</b>: The main defense of your city are the walls separating the enemy scimitars from your throat. As everyone knows, the outer walls of the city, built by the Emperor Theodosius in the 5th century, are the greatest, most impressive piece of siege architecture in the whole of Europe. The only time these walls have been breached, was during the sack of the city in 1204 by the Frankish crusaders. If these walls would fall, the second line of defence would be the Constantinian walls, which have been abandoned for a long time and in their current condition could not stop a determined beggar. Finally, the core of the city is defended by the final line of Severan walls, which are also crumbling and haven't been properly maintained for centuries. In order to prepare for the siege, we need to restore our once glorious fortifications. How shall we focus on their reconstruction?
-\[Enemy army will attempt to tear down your walls. When the walls are low enough, they will assault the city. If they successfully breach all the walls, after the final assault you will lose the game.\]
--> Theodosian Wall needs to be repaired - it is the highest priority. \[Cost; 60 materials\]
-    Construction takes some time, but Theodosian Wall is restored to 100% condition.
+<b>Siege Preparation - Walls</b>: The main defense of your city are the walls separating the enemy scimitars from your throat. As everyone knows, the outer walls of the city, built by the Emperor Theodosius in the 5th century, are the greatest, most impressive piece of siege architecture in the whole of Europe. The only time these walls have been breached, was during the sack of the city in 1204 by the Frankish crusaders. If these walls would fall, the second line of defence would be the Constantinian walls, which have been abandoned for a long time and in their current condition could not stop a determined beggar. Finally, the core of the city is defended by the final line of Severan walls, which are also crumbling and haven't been properly maintained for centuries. In order to prepare for the siege, we need to restore our once glorious fortifications. How shall we focus on their reconstruction? #line:0b4e34e 
+\[Enemy army will attempt to tear down your walls. When the walls are low enough, they will assault the city. If they successfully breach all the walls, after the final assault you will lose the game.\] #line:0a82148 
+-> Theodosian Wall needs to be repaired - it is the highest priority. \[Cost; 60 materials\] #line:0b68d78 
+    Construction takes some time, but Theodosian Wall is restored to 100% condition. #line:0d567ad 
     <<set $Outer_wall to 100>>
     <<set $materials = $materials- 60>>
--> Constantinian Wall is in a really bad shape, but it will be vital if the outer wall is breached. It must be rebuilt. \[Cost; 160 materials\]
-    Constantinian Wall is barely more than a ruin and hasn't seen action for a thousand years. However, with our efforts, it is now restored to 100% condition.
+-> Constantinian Wall is in a really bad shape, but it will be vital if the outer wall is breached. It must be rebuilt. \[Cost; 160 materials\] #line:00c151c 
+    Constantinian Wall is barely more than a ruin and hasn't seen action for a thousand years. However, with our efforts, it is now restored to 100% condition. #line:0262267 
     <<set $Middle_wall to 100>>
     <<set $materials = $materials-160>>
--> While Severan Wall is the weakest of the three, but it protects the Great Palace and the heart of the city. It must be rebuilt, especially to protect myself. \[Cost; 80 materials\]
-    The core of the city is now once more protected and Severan wall is restored to 100% condition. While this wall will not stop a determined Turkish assault, it will definitely protect you from your own angry population or any infiltrators lurking in the city.
+-> While Severan Wall is the weakest of the three, but it protects the Great Palace and the heart of the city. It must be rebuilt, especially to protect myself. \[Cost; 80 materials\] #line:067c258 
+    The core of the city is now once more protected and Severan wall is restored to 100% condition. While this wall will not stop a determined Turkish assault, it will definitely protect you from your own angry population or any infiltrators lurking in the city. #line:0d94012 
     <<set $Inner_wall to 100>>
     <<set $materials = $materials-80>> 
--> It will be a massive undertaking, but all the three Walls must be restored before the siege begins. However, our Focus on Fortification will help us efficiently use materials and save some of the costs. \[Cost; 250 materials\] <<if $Focus is "0">>
-    You initiate the greatest reconstruction effort in Constantinople since the times of Justinian. Soon, all three Walls are restored to 100%. 
+-> It will be a massive undertaking, but all the three Walls must be restored before the siege begins. However, our Focus on Fortification will help us efficiently use materials and save some of the costs. \[Cost; 250 materials\] <<if $Focus is "0">> #line:05237e8 
+    You initiate the greatest reconstruction effort in Constantinople since the times of Justinian. Soon, all three Walls are restored to 100%.  #line:0fefceb 
     <<set $Outer_wall to 100>>
     <<set $Middle_wall to 100>>
     <<set $Inner_wall to 100>> 
@@ -117,33 +117,33 @@ title: story2
 title: story3
 ---
 
-<b>Peloponnesus</b>: While the territories under the control of the Eastern Roman Empire have waxed and waned over the centuries, never have they been smaller than today. Constantinople is the only major city left under the control of our Empire, we still have holdings in the Peloponnesus and islands of the Marmara sea. As the siege approaches, we need to issue orders for our troops serving there. We could summon them to help us, but it could anger our nobles, whose estates would remain unprotected. Alternatively, we could tell them to launch a diversion against the Turks. What shall be your orders?
+<b>Peloponnesus</b>: While the territories under the control of the Eastern Roman Empire have waxed and waned over the centuries, never have they been smaller than today. Constantinople is the only major city left under the control of our Empire, we still have holdings in the Peloponnesus and islands of the Marmara sea. As the siege approaches, we need to issue orders for our troops serving there. We could summon them to help us, but it could anger our nobles, whose estates would remain unprotected. Alternatively, we could tell them to launch a diversion against the Turks. What shall be your orders? #line:0c3099c 
 
--> They should remain where they are, support of the nobility will be important to me.
-    The nobles are pleased with your decision.
+-> They should remain where they are, support of the nobility will be important to me. #line:01004ef 
+    The nobles are pleased with your decision. #line:0c18506 
     <<set $money = $money+5000>>
--> Summon all of the trained troops to Constantinople.
-  Soon, a few ships from Morea arrive, bringing 1000 soldiers, 400 archers and 100 cavalry.   
+-> Summon all of the trained troops to Constantinople. #line:0730bfc 
+  Soon, a few ships from Morea arrive, bringing 1000 soldiers, 400 archers and 100 cavalry.    #line:0da6440 
     <<set $infantry = $infantry+1000>>
     <<set $archers = $archers+400>>
     <<set $cavalry = $cavalry+100>>
     <<set $noble_rep = $noble_rep-10>>
--> Order the lords of Peloponnesus to distract Mehmed's forces.
-    While the distraction is too small to truly distract Ottoman army, Mehmed sends 7500 troops to hunt down your troops. This means that they won't participate in the siege.
+-> Order the lords of Peloponnesus to distract Mehmed's forces. #line:0123578 
+    While the distraction is too small to truly distract Ottoman army, Mehmed sends 7500 troops to hunt down your troops. This means that they won't participate in the siege. #line:0649f60 
     <<set $turk_troops = $turk_troops -7500>>
     <<set $noble_rep = $noble_rep-10>>
--> As our Focus is mobilisation, we should order every able bodied man from our holdings to come to defend Constantinople immediately. <<if $Focus is "1">>
-    While majority of the recruits are Morean farmers without much fighting experience, their numbers will significantly bolster our fighting strength. Soon, a few ships arrive, bringing 3000 soldiers, 500 archers and 100 cavalry.   
+-> As our Focus is mobilisation, we should order every able bodied man from our holdings to come to defend Constantinople immediately. <<if $Focus is "1">> #line:066940c 
+    While majority of the recruits are Morean farmers without much fighting experience, their numbers will significantly bolster our fighting strength. Soon, a few ships arrive, bringing 3000 soldiers, 500 archers and 100 cavalry.    #line:0a05087 
     <<set $infantry = $infantry+3000>>
     <<set $archers = $archers+500>>
     <<set $cavalry = $cavalry+100>>
     <<set $noble_rep = $noble_rep-20>>
--> As our Focus is war economy, we should instead demand our holdings to provide all the resources and money they can. <<if $Focus is "2">>
-    The troops, instead of travelling to Constantinople, are used to shake everyone dry, collecting every penny for your treasury.
+-> As our Focus is war economy, we should instead demand our holdings to provide all the resources and money they can. <<if $Focus is "2">> #line:0263d02 
+    The troops, instead of travelling to Constantinople, are used to shake everyone dry, collecting every penny for your treasury. #line:0610d04 
     <<set $money = $money +20000>>
     <<set $noble_rep = $noble_rep-20>>
--> As our Focus is faith, we should instead order all of our holdings to pray for us. This will raise morale of all the defenders. <<if $Focus is "3">>
-    Every church in Peloponnesus is ringing bells day and night, every soldier and peasant spends their days praying for their Imperator and Constantinople.
+-> As our Focus is faith, we should instead order all of our holdings to pray for us. This will raise morale of all the defenders. <<if $Focus is "3">> #line:00b99ca 
+    Every church in Peloponnesus is ringing bells day and night, every soldier and peasant spends their days praying for their Imperator and Constantinople. #line:064167d 
     <<set $noble_rep = $noble_rep +15>>
     <<set $priest_rep = $priest_rep +15>>
     <<set $people_rep = $people_rep +15>>
@@ -154,34 +154,34 @@ title: story3
 
 title: story4
 ---
-<b>Raising an Army</b>: The people of Constantinople have gotten used to peace and our army has for a long time been underfunded and the troops we have are too weak to withstand Ottoman might, we need more men. There are many ways to recruit more soldiers, but which one is the best?
--> Infantry is the backbone of our army, they will hold the walls during the enemy assaults. Raise 3000 infantry. \[Cost; 30,000 money\] <<if $money >= 30000>>
-  We quickly recruit more spearmen from the citizens of Constantinople. Some have never held a weapon in their lives. They will learn quick or they will die.
+<b>Raising an Army</b>: The people of Constantinople have gotten used to peace and our army has for a long time been underfunded and the troops we have are too weak to withstand Ottoman might, we need more men. There are many ways to recruit more soldiers, but which one is the best? #line:086beb1 
+-> Infantry is the backbone of our army, they will hold the walls during the enemy assaults. Raise 3000 infantry. \[Cost; 30,000 money\] <<if $money >= 30000>> #line:0f6555f 
+  We quickly recruit more spearmen from the citizens of Constantinople. Some have never held a weapon in their lives. They will learn quick or they will die. #line:009ed68 
   <<set $infantry = $infantry+3000>>
   <<set $money = $money -30000>>
--> Nothing is more dangerous when approaching the walls than a well-aimed arrow. Ranged troops are most effective at killing attackers. Raise 1500 archers. \[Cost; 30,000 money\] <<if $money >= 30000>>
-  You order the ancient Hippodrome to be converted into three archery ranges, where hundreds of archers train daily. By the time siege comes, they should be ready.
+-> Nothing is more dangerous when approaching the walls than a well-aimed arrow. Ranged troops are most effective at killing attackers. Raise 1500 archers. \[Cost; 30,000 money\] <<if $money >= 30000>> #line:02134f6 
+  You order the ancient Hippodrome to be converted into three archery ranges, where hundreds of archers train daily. By the time siege comes, they should be ready. #line:0419909 
     <<set $archers = $archers+1500>>
     <<set $money = $money -30000>>
--> Cavalry will provide us with the flexibility to sally out and strike at our enemy and in the worst case scenario they will dismount and fight on the walls as knights. Raise 300 cavalry. \[Cost; 30,000 money\] <<if $money >= 30000>>
-  One does not become a knight overnight, but you hurry to ennoble promising candidates. This new force will train day and night to prepare for the war.
+-> Cavalry will provide us with the flexibility to sally out and strike at our enemy and in the worst case scenario they will dismount and fight on the walls as knights. Raise 300 cavalry. \[Cost; 30,000 money\] <<if $money >= 30000>> #line:088bece 
+  One does not become a knight overnight, but you hurry to ennoble promising candidates. This new force will train day and night to prepare for the war. #line:0d97a2f 
    <<set $cavalry = $cavalry+300>>
    <<set $money = $money -30000>>
--> As our Focus is mobilisation, we can return to tradition and raise a Legion of 5000 infantry and 1000 archers, in the honour of our ancestors. \[Cost; 50,000\] <<if $Focus is "1" and $money >= 50000 >>
-  On your orders, the whole city is turned into a massive training encampment. As per ancient tradition, a legionary Aquila is forged from gold, perched atop a Cross. Freshly minted legionaries are motivated, but only time will tell if they deserve the name of their forebears.
+-> As our Focus is mobilisation, we can return to tradition and raise a Legion of 5000 infantry and 1000 archers, in the honour of our ancestors. \[Cost; 50,000\] <<if $Focus is "1" and $money >= 50000 >> #line:017ee0b 
+  On your orders, the whole city is turned into a massive training encampment. As per ancient tradition, a legionary Aquila is forged from gold, perched atop a Cross. Freshly minted legionaries are motivated, but only time will tell if they deserve the name of their forebears. #line:0d230c2 
     <<set $infantry = $infantry+5000>>
    <<set $archers = $archers+1000>>
     <<set $troop_rep = $troop_rep  +10>>
     <<set $money = $money  -50000>> 
--> As our Focus is faith, we should call upon the religious fanatics, forming their mobs into military units. \[Cost; 3000 money\] <<if $Focus is "3">>
-    While nobles don't like our decision, these new fanatical troops are very motivated and numerous, numbering some 3000. But the best thing about them is that they are cheap. However, they are not trained and the overall quality of your infantry suffers.
+-> As our Focus is faith, we should call upon the religious fanatics, forming their mobs into military units. \[Cost; 3000 money\] <<if $Focus is "3">> #line:0118865 
+    While nobles don't like our decision, these new fanatical troops are very motivated and numerous, numbering some 3000. But the best thing about them is that they are cheap. However, they are not trained and the overall quality of your infantry suffers. #line:00338f1 
     <<set $infantry = $infantry+3000>>
     <<set $noble_rep = $noble_rep -5>>
     <<set $troop_rep = $troop_rep +30>>  
     <<set $infantry_quality = $infantry_quality -1>>
     <<set $money = $money  -3000>> 
--> As our Focus is diplomacy, we should summon foreign mercenaries, promising them land and titles if we are victorious. \[Cost; loss of support\] <<if $Focus is "4">>
-    Soon brigands and mercenaries of all kinds flock to our banner. Primarily they are Italians from various states, but also come Cumans, Bulgars and even some Turks. They are not very numerous, but they are hardened killers, veterans of many wars, so their presence raises the quality of your troops across the board. However, their presence and unknown tongues and weird customs unnerve your people, priests, nobles and even other troops. In total, 750 infantry, 750 archers and 100 cavalry join your ranks.
+-> As our Focus is diplomacy, we should summon foreign mercenaries, promising them land and titles if we are victorious. \[Cost; loss of support\] <<if $Focus is "4">> #line:04fbbc2 
+    Soon brigands and mercenaries of all kinds flock to our banner. Primarily they are Italians from various states, but also come Cumans, Bulgars and even some Turks. They are not very numerous, but they are hardened killers, veterans of many wars, so their presence raises the quality of your troops across the board. However, their presence and unknown tongues and weird customs unnerve your people, priests, nobles and even other troops. In total, 750 infantry, 750 archers and 100 cavalry join your ranks. #line:05f4834 
     <<set $infantry = $infantry+750>>
     <<set $archers = $archers+750>>
     <<set $cavalry = $cavalry+100>>
@@ -198,39 +198,39 @@ title: story4
 
 title: story5
 ---
-<b>Hungry Mouths</b>: As the rumours about the coming siege spread, people from the countryside start trickling in to the City. At first they come in small numbers, family here or merchant there, but soon whole villages start flocking towards the mirage of safety in the Capital. Loukas Notaras, your Mesazon, chief minister, comes to you with concern in his eyes, arguing that a decision needs to be taken as to what course of action should be taken regarding these refugees. As the Emperor, you have to consider a few factors. These are your subjects and as many of them as possible should be saved. However, currently Constantinople already houses around 100 thousand people and all of them need to eat. Once the siege begins, our stores have enough food to hold out for about 30 days. Additional people will mean higher food consumption, but greater population will also provide more taxes, recruits and manpower for labour. This is one of the most important decisions to take before the siege.
-\[City's supplies, or provisions, are consumed by the population daily. One thousand people consumes 1 unit of provisions per day. 7 thousand will consume 7 units, 100 thousand people will consume 100 units, etc. When you run out of provisions, people will starve and unrest will begin. Soon after that, you will lose your head.\]
--> The City is the final bastion of the Roman civilisation and everyone is welcome, open the gates. \[Accept 20 to 50 thousand refugees, gain popularity\] 
-  Thousands upon thousands of people flock through the Gate of St.Romanus. You come to inspect the crowds yourself and thousands of cheering, happy faces greet you. Everyone, even the nobles, feel that this is the right thing to do. For the time being you feel that you are doing your duty as the saviour of your people. What effect it will have, only time will tell.
+<b>Hungry Mouths</b>: As the rumours about the coming siege spread, people from the countryside start trickling in to the City. At first they come in small numbers, family here or merchant there, but soon whole villages start flocking towards the mirage of safety in the Capital. Loukas Notaras, your Mesazon, chief minister, comes to you with concern in his eyes, arguing that a decision needs to be taken as to what course of action should be taken regarding these refugees. As the Emperor, you have to consider a few factors. These are your subjects and as many of them as possible should be saved. However, currently Constantinople already houses around 100 thousand people and all of them need to eat. Once the siege begins, our stores have enough food to hold out for about 30 days. Additional people will mean higher food consumption, but greater population will also provide more taxes, recruits and manpower for labour. This is one of the most important decisions to take before the siege. #line:074d108 
+\[City's supplies, or provisions, are consumed by the population daily. One thousand people consumes 1 unit of provisions per day. 7 thousand will consume 7 units, 100 thousand people will consume 100 units, etc. When you run out of provisions, people will starve and unrest will begin. Soon after that, you will lose your head.\] #line:0359eba 
+-> The City is the final bastion of the Roman civilisation and everyone is welcome, open the gates. \[Accept 20 to 50 thousand refugees, gain popularity\]  #line:0fa63e6 
+  Thousands upon thousands of people flock through the Gate of St.Romanus. You come to inspect the crowds yourself and thousands of cheering, happy faces greet you. Everyone, even the nobles, feel that this is the right thing to do. For the time being you feel that you are doing your duty as the saviour of your people. What effect it will have, only time will tell. #line:02217d9 
   <<set $population = $population+round(random_range(20, 50))>>
   <<set $people_rep = $people_rep +30>>
   <<set $noble_rep = $noble_rep +5>>
   <<set $priest_rep = $priest_rep +10>>
   <<set $troop_rep = $troop_rep +10>>  
--> We need to save the flower of the nation, but leave the peasants beyond the gate. Open the gates to the nobles and their servants, priests, merchants, craftsmen and tax all of them on the entry to help pay for the siege costs. \[Accept 5 to 10 thousand refugees, gain 10 to 30 thousand gold\]
- Your decision is rational, but depressing. No one seriously objects, but there is a feeling of gloom around the city. Everyone is thinking - what if I would have ended up on the other side of the gate?
+-> We need to save the flower of the nation, but leave the peasants beyond the gate. Open the gates to the nobles and their servants, priests, merchants, craftsmen and tax all of them on the entry to help pay for the siege costs. \[Accept 5 to 10 thousand refugees, gain 10 to 30 thousand gold\] #line:02ab6e4 
+ Your decision is rational, but depressing. No one seriously objects, but there is a feeling of gloom around the city. Everyone is thinking - what if I would have ended up on the other side of the gate? #line:0406169 
   <<set $population = $population+round(random_range(5, 10))>>
   <<set $people_rep = $people_rep -10>>
   <<set $noble_rep = $noble_rep -10>>
   <<set $priest_rep = $priest_rep -10>>
   <<set $troop_rep = $troop_rep -10>>  
   <<set $money = $money +round(random_range(10000, 30000))>>
--> Close the gate, we are full. No one is to be admitted inside. \[Loss of popularity\]
- Wailing of the refugees beyond the gate doesn't let you sleep for a few days, but soon, they realise that nothing will change and start departing. You may have turned the hungry mouths away, but most of the City sees you as a cruel ruler who betrayed his own people. Only time will tell if you were right to do this.
+-> Close the gate, we are full. No one is to be admitted inside. \[Loss of popularity\] #line:043ddbe 
+ Wailing of the refugees beyond the gate doesn't let you sleep for a few days, but soon, they realise that nothing will change and start departing. You may have turned the hungry mouths away, but most of the City sees you as a cruel ruler who betrayed his own people. Only time will tell if you were right to do this. #line:0e509ad 
   <<set $people_rep = $people_rep -30>>
   <<set $noble_rep = $noble_rep -5>>
   <<set $priest_rep = $priest_rep -15>>
   <<set $troop_rep = $troop_rep -15>>  
--> As our Focus is mobilisation, we could press all the able bodied refugees to serve in our armed forces. Send peasants to train with the spears and hunters shall become archers. \[Accept 30 thousand refugees, recruit 2000 infantry, 500 archers\] <<if $Focus is "1">>
-  Their quality is poor, but these men know that they owe their lives to you, they shall fight like beasts when the Turks come, so the morale of your army improves. You gain 2000 infantry and 500 archers.
+-> As our Focus is mobilisation, we could press all the able bodied refugees to serve in our armed forces. Send peasants to train with the spears and hunters shall become archers. \[Accept 30 thousand refugees, recruit 2000 infantry, 500 archers\] <<if $Focus is "1">> #line:0ec98ff 
+  Their quality is poor, but these men know that they owe their lives to you, they shall fight like beasts when the Turks come, so the morale of your army improves. You gain 2000 infantry and 500 archers. #line:06b0eb3 
   <<set $population = $population +30>>
   <<set $infantry = $infantry +2000>>
   <<set $archers = $archers +500>>
   <<set $troop_rep = $troop_rep  +10>>
   <<set $infantry_quality = $infantry_quality -1>>
   <<set $archers_quality = $archers_quality  -1>>
--> As our Focus is diplomacy, could order our agents to spread rumours among refugees about the awful conditions in the City, while mentioning that Pelopponesus is very nice this time of year and not as far as it seems, so they should consider going there instead. \[Cost; 2500, accept a few thousand refugees\] <<if $Focus is "4" and $money >= 2500>>
-    The plan works, our agents manage to successfuly divert majority of the refugees away from Constantinople. 
+-> As our Focus is diplomacy, could order our agents to spread rumours among refugees about the awful conditions in the City, while mentioning that Pelopponesus is very nice this time of year and not as far as it seems, so they should consider going there instead. \[Cost; 2500, accept a few thousand refugees\] <<if $Focus is "4" and $money >= 2500>> #line:0bca10c 
+    The plan works, our agents manage to successfuly divert majority of the refugees away from Constantinople.  #line:06dacca 
     <<set $population = $population +round(random_range(3,7))>>
     <<set $money = $money  -2500>> 
 
@@ -239,69 +239,69 @@ title: story5
 
 title: story6
 ---
-<b>Preparing Provisions</b>: One of the most important things to survive the siege will be to have adequate provisions to feed the population of the City. We need to take urgent measures to hoard enough food for everyone.  However, food costs money and merchants are likely to start raising price the more we buy, as it would become more scarce. How much food should we procure and how?
--> We have enough food, this siege won't take longer than a month. 
-  Our confidence inspires the people.
+<b>Preparing Provisions</b>: One of the most important things to survive the siege will be to have adequate provisions to feed the population of the City. We need to take urgent measures to hoard enough food for everyone.  However, food costs money and merchants are likely to start raising price the more we buy, as it would become more scarce. How much food should we procure and how? #line:05b808c 
+-> We have enough food, this siege won't take longer than a month.  #line:0da943d 
+  Our confidence inspires the people. #line:0a20598 
   <<set $people_rep = $people_rep +10>>
--> Buy all the food in the city. \[Cost; 6000. Buy 3000 provisions\]<<if $money >= 6000>>
+-> Buy all the food in the city. \[Cost; 6000. Buy 3000 provisions\]<<if $money >= 6000>> #line:0f3b93a 
  <<set $provisions = $provisions +3000>>
  <<set $money = $money  -6000>>
-  Head of the palace stores went around all of the merchants in the city and bought everything. We now have {$provisions} provisions and {$money} gold.
--> Buy all the food in the province. \[Cost; 15000. Buy 6000 provisions\] <<if $money >= 15000>>
+  Head of the palace stores went around all of the merchants in the city and bought everything. We now have {$provisions} provisions and {$money} gold. #line:0e1ed9a 
+-> Buy all the food in the province. \[Cost; 15000. Buy 6000 provisions\] <<if $money >= 15000>> #line:0f5e3e3 
  <<set $provisions = $provisions +6000>>
  <<set $money = $money  -15000>>
- Merchants are quick to notice that there's a chance to make a killing and they raise the prices, but we still manage to secure a significant supply of food. We now have {$provisions} provisions and {$money} gold.
--> Buy the food from everyone, even the Turkish smugglers from across the Straits. It will cost an arm and a leg, but it is necessary. \[Cost; 35000. Buy 10000 provisions\]<<if $money >= 35000>>
+ Merchants are quick to notice that there's a chance to make a killing and they raise the prices, but we still manage to secure a significant supply of food. We now have {$provisions} provisions and {$money} gold. #line:0a9f802 
+-> Buy the food from everyone, even the Turkish smugglers from across the Straits. It will cost an arm and a leg, but it is necessary. \[Cost; 35000. Buy 10000 provisions\]<<if $money >= 35000>> #line:0a94983 
  <<set $provisions = $provisions +10000>>
  <<set $money = $money  -35000>>
- Desperate times call for desperate measures. We now have {$provisions} provisions and {$money} gold.
--> As our Focus is war economy, we could implement absolute food control in all of our domains. Our troops will confiscate all the food and then ration it. This will be highly unpopular and implementing this will still cost money, but we will secure a massive supply of food. \[Cost; 10000. Requisition 20 000 provisions\] <<if $Focus is "2" and $money >= 35000>>
+ Desperate times call for desperate measures. We now have {$provisions} provisions and {$money} gold. #line:0440aca 
+-> As our Focus is war economy, we could implement absolute food control in all of our domains. Our troops will confiscate all the food and then ration it. This will be highly unpopular and implementing this will still cost money, but we will secure a massive supply of food. \[Cost; 10000. Requisition 20 000 provisions\] <<if $Focus is "2" and $money >= 35000>> #line:02fcec7 
   <<set $provisions = $provisions +20000>>
   <<set $money = $money  -10000>>
   <<set $people_rep = $people_rep -10>>
   <<set $noble_rep = $noble_rep -10>>
   <<set $priest_rep = $priest_rep -10>>
   <<set $troop_rep = $troop_rep -10>>  
-  With an iron fist Imperator has declared that food in your mouth now belongs to the Empire and you will eat only when you are ordered and only how much you ordered. Imperial stores now contain {$provisions} provisions and we have {$money} gold.
+  With an iron fist Imperator has declared that food in your mouth now belongs to the Empire and you will eat only when you are ordered and only how much you ordered. Imperial stores now contain {$provisions} provisions and we have {$money} gold. #line:0df124d 
 
 <<jump story7>>
 ===
 
 title: story7
 ---
-<b>Call of Christendom: Major Powers</b>: Alone we shall fall, that is certain to everyone from megas doux himself down to the blind Cuman beggar by the Hippodrome. But not all is lost. The time has come to call upon Christendom and ask for their help. Recent battle of Varna in 1444 has been a major defeat for the Christian nations, who suffered heavy casualties. The memories are still fresh, but maybe we could offer them a chance to even the score? Whom shall we reach out to in the first place?
--> Send our envoy to the Pope. As the leader of the Christendom, he is guaranteed to provide aid, even if it will be small. \[Chance: 40% medium aid, 60% minor aid\] <<if $Religion is "2" or $Religion is "1">> 
+<b>Call of Christendom: Major Powers</b>: Alone we shall fall, that is certain to everyone from megas doux himself down to the blind Cuman beggar by the Hippodrome. But not all is lost. The time has come to call upon Christendom and ask for their help. Recent battle of Varna in 1444 has been a major defeat for the Christian nations, who suffered heavy casualties. The memories are still fresh, but maybe we could offer them a chance to even the score? Whom shall we reach out to in the first place? #line:00227b4 
+-> Send our envoy to the Pope. As the leader of the Christendom, he is guaranteed to provide aid, even if it will be small. \[Chance: 40% medium aid, 60% minor aid\] <<if $Religion is "2" or $Religion is "1">> #line:004ed71  
  <<set $chance = dice(100)>>
  <<if $chance <= 40>> 
- Pope sends 6 ships packed with food, carrying money and 600 archers, along with his letter in which he offers his prayers for the soul of Constantinople and promise of further aid.
+ Pope sends 6 ships packed with food, carrying money and 600 archers, along with his letter in which he offers his prayers for the soul of Constantinople and promise of further aid. #line:026294f 
  <<else>>
- Pope sends 2 ships packed with food, carrying money and 200 archers, along with his letter in which he offers his prayers for the soul of Constantinople.
+ Pope sends 2 ships packed with food, carrying money and 200 archers, along with his letter in which he offers his prayers for the soul of Constantinople. #line:0508143 
  <<endif>>
--> As we have accepted Catholicism fully and our focus is diplomacy, send our envoy to the Pope and request him to launch a new crusade to help us! \[Chance: 30% major aid, 50% minor aid, 20% no aid\] <<if $Religion is "1" and $Focus is "4">> 
+-> As we have accepted Catholicism fully and our focus is diplomacy, send our envoy to the Pope and request him to launch a new crusade to help us! \[Chance: 30% major aid, 50% minor aid, 20% no aid\] <<if $Religion is "1" and $Focus is "4">> #line:078bdb8  
  <<set $chance = dice(100)>>
  <<if $chance <= 30>> 
- Tireless work of your diplomats and the wise decision to mend the Schism create conditions which allow the Pope to call the Xth crusade, this time to protect Constantinople and repay the sins of the IVth crusade! Soon, pilgrim warriors flock to your cause, Italians, French, English, Scotish, Spanish, Portuguese, Hungarians, Polish and even a few Lithuanians. Over the coming months some 3000 infantry, 4000 archers and 800 cavalry arrive, along with maybe 15 000 pilgrims and camp followers who join your general population.
+ Tireless work of your diplomats and the wise decision to mend the Schism create conditions which allow the Pope to call the Xth crusade, this time to protect Constantinople and repay the sins of the IVth crusade! Soon, pilgrim warriors flock to your cause, Italians, French, English, Scotish, Spanish, Portuguese, Hungarians, Polish and even a few Lithuanians. Over the coming months some 3000 infantry, 4000 archers and 800 cavalry arrive, along with maybe 15 000 pilgrims and camp followers who join your general population. #line:0e70ee0 
  <<elseif $chance <= 80>> 
- While the Christian kingdoms are not yet ready to commit to a full crusade, many send their volunteers to help you. Venetian and Genoese mercenaries soon arrive, bringing 600 infantry and 600 archers to support the defence of your city.
+ While the Christian kingdoms are not yet ready to commit to a full crusade, many send their volunteers to help you. Venetian and Genoese mercenaries soon arrive, bringing 600 infantry and 600 archers to support the defence of your city. #line:0f0d8d9 
  <<else>>
- Memories of the defeat at Varna are too fresh... Your call for crusade falls on deaf ears.
+ Memories of the defeat at Varna are too fresh... Your call for crusade falls on deaf ears. #line:0fe7c8a 
  <<endif>>
--> As we have embraced truth of the Orthodoxy and our focus is faith, we send our envoys to Trebizond and the Georgian kingdom, stressing that if Constantinople falls, it will be the end of the Orthodox world and that they will be next. Announce the first Orthodox Crusade to save Constantinople and call all righteous Stavrophoroi (Orthodox crusaders) to our banner! \[Chance: 20% major aid, 60% minor aid, 20% no aid\] <<if $Religion is "0" and $Focus is "3">> 
+-> As we have embraced truth of the Orthodoxy and our focus is faith, we send our envoys to Trebizond and the Georgian kingdom, stressing that if Constantinople falls, it will be the end of the Orthodox world and that they will be next. Announce the first Orthodox Crusade to save Constantinople and call all righteous Stavrophoroi (Orthodox crusaders) to our banner! \[Chance: 20% major aid, 60% minor aid, 20% no aid\] <<if $Religion is "0" and $Focus is "3">> #line:0be4c14  
  <<set $chance = dice(100)>>
  <<if $chance <= 20>> 
- In our days, Orthodox realms are few and weak, but your call raises their hearts and triggers an unexpected movement of support for your cause. Orthodox monks from villages of Ruthenia to the mountains of Armenia ring bells and preach the need to defend Constantinople. Soon, pilgrim warriors flock to your cause, Bulgarians, Georgians, Armenians, Serbs, Ruthenians and even a few Cossacks. Over the coming months some 8000 infantry, 2500 archers and 1200 cavalry arrive, along with maybe 15 000 pilgrims and camp followers who join your general population.
+ In our days, Orthodox realms are few and weak, but your call raises their hearts and triggers an unexpected movement of support for your cause. Orthodox monks from villages of Ruthenia to the mountains of Armenia ring bells and preach the need to defend Constantinople. Soon, pilgrim warriors flock to your cause, Bulgarians, Georgians, Armenians, Serbs, Ruthenians and even a few Cossacks. Over the coming months some 8000 infantry, 2500 archers and 1200 cavalry arrive, along with maybe 15 000 pilgrims and camp followers who join your general population. #line:023503a 
  <<elseif $chance <= 80>> 
- In our days, Orthodox realms are few and weak, but they answer the call. Georgian nobility sends 100 young knights and soon a ship of volunteers from Ruthenia arrives, adding another 400 infantry. Also 200 Armenian archers join your cause as well.
+ In our days, Orthodox realms are few and weak, but they answer the call. Georgian nobility sends 100 young knights and soon a ship of volunteers from Ruthenia arrives, adding another 400 infantry. Also 200 Armenian archers join your cause as well. #line:07b1c0b 
  <<else>>
- In our days, Orthodox realms are few and weak. They close their eyes and ears to your pleas.
+ In our days, Orthodox realms are few and weak. They close their eyes and ears to your pleas. #line:09d6470 
  <<endif>>
--> Make a general call for help to the Catholic realms. You know that your success here will depend greatly on how you managed to mend the Schism...
+-> Make a general call for help to the Catholic realms. You know that your success here will depend greatly on how you managed to mend the Schism... #line:02f00a5 
  <<if $Religion is "0">>
- In our days, Orthodox realms are few and weak, but they answer the call. Georgian nobility sends 50 young knights and soon a ship of volunteers from Ruthenia arrives, adding another 200 infantry.
+ In our days, Orthodox realms are few and weak, but they answer the call. Georgian nobility sends 50 young knights and soon a ship of volunteers from Ruthenia arrives, adding another 200 infantry. #line:06c3026 
   <<elseif $Religion is "1">>
- Your recent conversion to Catholicism has moved the hearts of believers. Knights Hospitaller have sent their fleet from Rhodes to support you, bringing 100 knights, 200 archers, 200 infantry and 5 ships.
+ Your recent conversion to Catholicism has moved the hearts of believers. Knights Hospitaller have sent their fleet from Rhodes to support you, bringing 100 knights, 200 archers, 200 infantry and 5 ships. #line:07e38ae 
  <<elseif $Religion is "2">>
-  While you are not enforcing Union of Florence, pragmatically minded Italians nonetheless see the opportunity to find a place for themselves in your new Empire. Venetian and Genoese mercenaries soon arrive, bringing 400 infantry and 400 archers to support the defence of your city.
+  While you are not enforcing Union of Florence, pragmatically minded Italians nonetheless see the opportunity to find a place for themselves in your new Empire. Venetian and Genoese mercenaries soon arrive, bringing 400 infantry and 400 archers to support the defence of your city. #line:0fb861e 
  <<endif>>
 
 <<jump story8>>
@@ -309,25 +309,25 @@ title: story7
 
 title: story8
 ---
-<b>Orders for the Fleet</b>: It is clear that the Empire is too weak to meet Mehmed in the open field, however our small, but professional fleet is one of the few tools we have which we could still use offensively against our enemy. What shall be the purpose of our fleet during this siege?
--> The fleet should be used to raid Ottoman food shipping and disrupt their logistics, so that their food supplies would run out as soon as possible.
+<b>Orders for the Fleet</b>: It is clear that the Empire is too weak to meet Mehmed in the open field, however our small, but professional fleet is one of the few tools we have which we could still use offensively against our enemy. What shall be the purpose of our fleet during this siege? #line:020ab9a 
+-> The fleet should be used to raid Ottoman food shipping and disrupt their logistics, so that their food supplies would run out as soon as possible. #line:0c7bc0c 
   <<set $Fleet = "0">>
--> The fleet should be ordered to raid Ottoman coastal villages and target valuable merchant ships, we could use their plunder to fund the siege.
+-> The fleet should be ordered to raid Ottoman coastal villages and target valuable merchant ships, we could use their plunder to fund the siege. #line:07f0ccf 
  <<set $Fleet = "1">>
--> The fleet should travel to Genoan colonies in Crimea, we know that their markets are full of cheap grain - they should run the blockade and keep bringing supplies to the city whenever possible.
+-> The fleet should travel to Genoan colonies in Crimea, we know that their markets are full of cheap grain - they should run the blockade and keep bringing supplies to the city whenever possible. #line:09a25b1 
  <<set $Fleet = "2">>
--> Order the fleet to remain in the Golden Horn, protecting the city and shooting their cannons at the attackers.
+-> Order the fleet to remain in the Golden Horn, protecting the city and shooting their cannons at the attackers. #line:08b46ac 
  <<set $Fleet = "3">>
--> Order the fleet to visit various ports around the Meditteranean Sea and bring volunteers, supplies and donations to help the siege.
+-> Order the fleet to visit various ports around the Meditteranean Sea and bring volunteers, supplies and donations to help the siege. #line:04d4c5c 
  <<set $Fleet = "4">>
--> Order the fleet to engage the Ottoman fleet in direct battle and destroy them. \[Chance: 10% + number of ships\]
+-> Order the fleet to engage the Ottoman fleet in direct battle and destroy them. \[Chance: 10% + number of ships\] #line:0b3882b 
  <<set $chance = dice(100)>>
  <<if $chance <= (10+$ships)>> 
- On your orders, the fleet departed and soon located the core of the Ottoman navy off the isle of Lesbos. In a dramatic turn of fortune, your fleet engaged the Ottoman navy in a battle that defied all expectations. Skillfully navigating the treacherous waters, your admirals outmaneuvered the opposing forces, unleashing a barrage of cannon fire and decisive naval tactics. As the smoke cleared, it became evident that your fleet had emerged triumphant, dealing a significant blow to the Ottoman naval power. The resounding victory not only bolstered the morale of your city's defenders but also disrupted the blockade, providing a glimmer of hope in the looming shadow of the approaching siege. The waves of Marmara now bow to your power alone.
+ On your orders, the fleet departed and soon located the core of the Ottoman navy off the isle of Lesbos. In a dramatic turn of fortune, your fleet engaged the Ottoman navy in a battle that defied all expectations. Skillfully navigating the treacherous waters, your admirals outmaneuvered the opposing forces, unleashing a barrage of cannon fire and decisive naval tactics. As the smoke cleared, it became evident that your fleet had emerged triumphant, dealing a significant blow to the Ottoman naval power. The resounding victory not only bolstered the morale of your city's defenders but also disrupted the blockade, providing a glimmer of hope in the looming shadow of the approaching siege. The waves of Marmara now bow to your power alone. #line:0e6187c 
  <<set $turk_fleet = "destroyed" >>
  <<jump story10>>
  <<else>>
- On your orders, the fleet departed and soon located the core of the Ottoman navy off the isle of Lesbos. The clash was fierce, with cannons thundering, galleys being boarded and cries of anguish ringing as the warships locked in a desperate struggle for control of the Marmara Sea. Despite the unwavering resolve of your naval forces, the battle ended in devastation as the Turks emerged victorious, leaving your ships shattered and scattered across the waves. Now, as the sun sets on the beleaguered waters surrounding Constantinople, the reality of the lost naval engagement casts a shadow over the city, intensifying the challenges that lie ahead in the face of the impending siege. Your fleet is gone.
+ On your orders, the fleet departed and soon located the core of the Ottoman navy off the isle of Lesbos. The clash was fierce, with cannons thundering, galleys being boarded and cries of anguish ringing as the warships locked in a desperate struggle for control of the Marmara Sea. Despite the unwavering resolve of your naval forces, the battle ended in devastation as the Turks emerged victorious, leaving your ships shattered and scattered across the waves. Now, as the sun sets on the beleaguered waters surrounding Constantinople, the reality of the lost naval engagement casts a shadow over the city, intensifying the challenges that lie ahead in the face of the impending siege. Your fleet is gone. #line:0ae2a90 
  <<set $Fleet = "5">>
  <<endif>>
 
@@ -337,34 +337,34 @@ title: story8
 
 title: story9
 ---
-<b>Easter Speech</b>: As you gaze out over the majestic City below you, you contemplate the dire situation facing your beloved empire. With the mighty Ottoman forces encircling the city, you realise that siege will begin in mere hours, a couple of days at most. Heavy responsibility lies on your shoulders. While everyone knows about the impending siege, you are on your way to Hagia Sophia to rally the spirits of your people for the impending battle. Everyone will be there, from the lowest whores to the most esteemed nobles. What will you focus on in your speech?
--> Citizens of the Roman Empire! We are the defenders of a legacy that spans millenia. Let every heart beat as one, for it is our resilience and unwavering spirit...
- Your speech leaves a generally good impression on everyone gathered at the Hagia Sophia, but the nobles and the general population love it more than the rest.
+<b>Easter Speech</b>: As you gaze out over the majestic City below you, you contemplate the dire situation facing your beloved empire. With the mighty Ottoman forces encircling the city, you realise that siege will begin in mere hours, a couple of days at most. Heavy responsibility lies on your shoulders. While everyone knows about the impending siege, you are on your way to Hagia Sophia to rally the spirits of your people for the impending battle. Everyone will be there, from the lowest whores to the most esteemed nobles. What will you focus on in your speech? #line:0377497 
+-> Citizens of the Roman Empire! We are the defenders of a legacy that spans millenia. Let every heart beat as one, for it is our resilience and unwavering spirit... #line:02434d0 
+ Your speech leaves a generally good impression on everyone gathered at the Hagia Sophia, but the nobles and the general population love it more than the rest. #line:0f04328 
  <<set $people_rep = $people_rep +15>>
   <<set $noble_rep = $noble_rep +15>>
   <<set $priest_rep = $priest_rep +5>>
   <<set $troop_rep = $troop_rep +5>>  
--> Soldiers of Christ! We have gathered here under the majestic dome of our blessed temple, to worship our God and to steel ourselves to defend our creed...
- Your speech leaves a generally good impression on everyone gathered at the Hagia Sophia, but the troops and the priests love it more than the rest.
+-> Soldiers of Christ! We have gathered here under the majestic dome of our blessed temple, to worship our God and to steel ourselves to defend our creed... #line:01ba481 
+ Your speech leaves a generally good impression on everyone gathered at the Hagia Sophia, but the troops and the priests love it more than the rest. #line:05940ef 
  <<set $people_rep = $people_rep +5>>
   <<set $noble_rep = $noble_rep +5>>
   <<set $priest_rep = $priest_rep +15>>
   <<set $troop_rep = $troop_rep +15>>    
--> My faithful subjects, all who live and breathe to serve our great cause - it is time for us to prepare to meet our enemies...
- Your speech leaves a generally good impression on everyone gathered at the Hagia Sophia.
+-> My faithful subjects, all who live and breathe to serve our great cause - it is time for us to prepare to meet our enemies... #line:0a6723e 
+ Your speech leaves a generally good impression on everyone gathered at the Hagia Sophia. #line:01b3d69 
    <<set $people_rep = $people_rep +10>>
   <<set $noble_rep = $noble_rep +10>>
   <<set $priest_rep = $priest_rep +10>>
   <<set $troop_rep = $troop_rep +10>>  
--> As your focus is war economy, you have a different plan. Order the Varangian Guard to close the doors and make them all donate to the war fund before they leave. Make exception for the priests if they help you convince the people.
- People feel somewhat betrayed, but there's little they can do and the priests are happy to preach to them about the joys of donating for the common cause. Some nobles have to leave their jewelry, while the poor end up leaving their last pennies. But you know that you need this money more than they do.
+-> As your focus is war economy, you have a different plan. Order the Varangian Guard to close the doors and make them all donate to the war fund before they leave. Make exception for the priests if they help you convince the people. #line:0450241 
+ People feel somewhat betrayed, but there's little they can do and the priests are happy to preach to them about the joys of donating for the common cause. Some nobles have to leave their jewelry, while the poor end up leaving their last pennies. But you know that you need this money more than they do. #line:0568c6d 
    <<set $money = $money  +15000>>
    <<set $people_rep = $people_rep -10>>
   <<set $noble_rep = $noble_rep -10>>
   <<set $priest_rep = $priest_rep +0>>
   <<set $troop_rep = $troop_rep -10>>  
--> It is not for speeches that we gathered here! Let everyone feast and enjoy themselves for one last time before the siege begins! Let us celebrate, for tomorrow we may die! \[Cost; 2000 gold and 3 days worth of provisions\]
- On your orders Guards roll in wine barrels and start hand out bread, while musicians strike up uplifting tunes. The priests are unhappy about their temple becoming a feast hall, but they cannot do anything. People who moments ago were sullen and concerned, soon relax, drink and laugh.
+-> It is not for speeches that we gathered here! Let everyone feast and enjoy themselves for one last time before the siege begins! Let us celebrate, for tomorrow we may die! \[Cost; 2000 gold and 3 days worth of provisions\] #line:0f83c32 
+ On your orders Guards roll in wine barrels and start hand out bread, while musicians strike up uplifting tunes. The priests are unhappy about their temple becoming a feast hall, but they cannot do anything. People who moments ago were sullen and concerned, soon relax, drink and laugh. #line:01d2a67 
    <<set $provisions = $provisions - ($population *3) >>
    <<set $money = $money  -2000>>
   <<set $people_rep = $people_rep +20>>
@@ -377,16 +377,16 @@ title: story9
 
 title: story10
 ---
-<b>Victorious Fleet</b>: Now that our fleet has claimed an amazing victory over the Turks at Lesbos, it has much more freedom to operate and requires new orders. Now that the Ottoman fleet sleeps with the fish, we can expect that our ships will be twice more efficient at their tasks. What will be its main purpose during the siege? 
--> The fleet should be used to raid Ottoman food shipping and disrupt their logistics, so that their food supplies would run out as soon as possible.
+<b>Victorious Fleet</b>: Now that our fleet has claimed an amazing victory over the Turks at Lesbos, it has much more freedom to operate and requires new orders. Now that the Ottoman fleet sleeps with the fish, we can expect that our ships will be twice more efficient at their tasks. What will be its main purpose during the siege?  #line:0048d94 
+-> The fleet should be used to raid Ottoman food shipping and disrupt their logistics, so that their food supplies would run out as soon as possible. #line:0efe026 
   <<set $Fleet = "0">>
--> The fleet should be ordered to raid Ottoman coastal villages and target valuable merchant ships, we could use their plunder to fund the siege.
+-> The fleet should be ordered to raid Ottoman coastal villages and target valuable merchant ships, we could use their plunder to fund the siege. #line:0cb2005 
  <<set $Fleet = "1">>
--> The fleet should travel to Genoan colonies in Crimea, we know that their markets are full of cheap grain, let us take advantage of that.
+-> The fleet should travel to Genoan colonies in Crimea, we know that their markets are full of cheap grain, let us take advantage of that. #line:0fdfacd 
  <<set $Fleet = "2">>
--> Order the fleet to remain in the Golden Horn, protecting the city and shooting their cannons at the attackers.
+-> Order the fleet to remain in the Golden Horn, protecting the city and shooting their cannons at the attackers. #line:0fbc026 
  <<set $Fleet = "3">>
--> Order the fleet to visit various ports around the Meditteranean Sea and bring volunteers, supplies and donations to help the siege.
+-> Order the fleet to visit various ports around the Meditteranean Sea and bring volunteers, supplies and donations to help the siege. #line:06c9228 
  <<set $Fleet = "4">>
 
 <<jump story11>>
@@ -395,39 +395,39 @@ title: story10
  
 title: story11
 ---
-<b>Siege Begins</b>: So the time has come. You can see Mehmeds army marching in the distance, sky in their direction is marked by plumes of black smoke from the villages they set on fire while coming here. The siege of Constantinople has begun.
-\[You have now entered siege phase. Please note that while in the early game turns marked passing weeks, currently each turn takes a day. Furthermore, as food will now stop coming into the city, your provisions will start decreasing at a rate based on your population size. Enemy will be attacking your walls daily and when they will be reduced enough, they will launch an assault, trying to take your head. Good luck.\]
--> Greet our guests - send the cavalry to harrass their forward formations, but avoid serious engagements.
+<b>Siege Begins</b>: So the time has come. You can see Mehmeds army marching in the distance, sky in their direction is marked by plumes of black smoke from the villages they set on fire while coming here. The siege of Constantinople has begun. #line:0fe54f7 
+\[You have now entered siege phase. Please note that while in the early game turns marked passing weeks, currently each turn takes a day. Furthermore, as food will now stop coming into the city, your provisions will start decreasing at a rate based on your population size. Enemy will be attacking your walls daily and when they will be reduced enough, they will launch an assault, trying to take your head. Good luck.\] #line:04a5c90 
+-> Greet our guests - send the cavalry to harrass their forward formations, but avoid serious engagements. #line:0e06480 
  <<set $chance = dice(100)>>
  <<if $chance <= ($cavalry/10+10)>> 
- Your cavalry, adept at hit-and-run tactics, successfully disrupts the Ottoman vanguard, overrunning surprised column of slaves, engineers and cooks and inflicting notable damage without being drawn into a decisive battle. One of your knights even manages to set a gunpowder wagon on fire, exploding it and destroying a few enemy cannons.The maneuver not only sets the stage for a more fortified defense but also instills a renewed sense of confidence among your ranks.
+ Your cavalry, adept at hit-and-run tactics, successfully disrupts the Ottoman vanguard, overrunning surprised column of slaves, engineers and cooks and inflicting notable damage without being drawn into a decisive battle. One of your knights even manages to set a gunpowder wagon on fire, exploding it and destroying a few enemy cannons.The maneuver not only sets the stage for a more fortified defense but also instills a renewed sense of confidence among your ranks. #line:03d2fcd 
   <<set $turk_troops = $turk_troops -round(random_range(500,1500))>>
   <<set $turk_cannons = $turk_cannons - 5>>  
   <<set $cavalry = $cavalry -round(random_range(5,25))>> 
  <<else>>
- Your decision to send the cavalry to harass Ottoman forward formations takes a disastrous turn. The seemingly straightforward plan unravels as the Turks send their light steppe horsemen to intercept your force. They are formidable than expected and repel your cavalry. What was intended as a show of strength turns into a minor defeat.
+ Your decision to send the cavalry to harass Ottoman forward formations takes a disastrous turn. The seemingly straightforward plan unravels as the Turks send their light steppe horsemen to intercept your force. They are formidable than expected and repel your cavalry. What was intended as a show of strength turns into a minor defeat. #line:07304f2 
   <<set $turk_troops = $turk_troops -round(random_range(300,900))>> 
   <<set $cavalry = $cavalry --round(random_range(25,50))>> 
  <<endif>>
--> It is time for the Imperator to stretch his legs. I am going to lead a cavalry charge. Our goal is to kill as many of them as possible and retreat.
+-> It is time for the Imperator to stretch his legs. I am going to lead a cavalry charge. Our goal is to kill as many of them as possible and retreat. #line:0878914 
  <<set $chance = dice(100)>>
  <<if $chance <= (($cavalry/10)+20)>> 
-  Accompanied by a formidable contingent of heavily armored cataphracts, you charge headlong into the heart of Mehmed II's advancing army, hoping to surprise them. The thunderous clash of steel reverberates across the battlefield as the elite Byzantine cavalry fiercely engages the enemy, determined to disrupt the impending siege and strike a resounding blow against the encroaching threat to Constantinople. You lead your force bravely, and Theotoke protects you. Disciplined charge and tactical brilliance of your Byzantine forces shatter the cohesion of the Ottoman troops arriving after a long march, forcing them into a retreat. The intoxicating thrill of victory surges through your veins, offering a fleeting respite from the encroaching siege and instilling renewed hope among your city's defenders. You lost a few knights, but hundreds of enemies lay dead on the field.
+  Accompanied by a formidable contingent of heavily armored cataphracts, you charge headlong into the heart of Mehmed II's advancing army, hoping to surprise them. The thunderous clash of steel reverberates across the battlefield as the elite Byzantine cavalry fiercely engages the enemy, determined to disrupt the impending siege and strike a resounding blow against the encroaching threat to Constantinople. You lead your force bravely, and Theotoke protects you. Disciplined charge and tactical brilliance of your Byzantine forces shatter the cohesion of the Ottoman troops arriving after a long march, forcing them into a retreat. The intoxicating thrill of victory surges through your veins, offering a fleeting respite from the encroaching siege and instilling renewed hope among your city's defenders. You lost a few knights, but hundreds of enemies lay dead on the field. #line:063b4ec 
   <<set $turk_troops = $turk_troops -round(random_range(750,2500))>> 
   <<set $cavalry = $cavalry --round(random_range(5,25))>> 
  <<elseif $chance <= (($cavalry/10)+45)>> 
-  Accompanied by a formidable contingent of heavily armored cataphracts, you charge headlong into the heart of Mehmed II's advancing army, hoping to surprise them. The thunderous clash of steel reverberates across the battlefield as the elite Byzantine cavalry fiercely engages the enemy, determined to disrupt the impending siege and strike a resounding blow against the encroaching threat to Constantinople. The brutal clash is unforgiving, the relentless tide of Ottoman soldiers proving insurmountable. Despite the gallant effort, your cataphracts are slowly swallowed by the vast enemy numbers. Even though you kill more enemies than you lose knights, the battle ends in defeat and the somber reality sets in as you retreat within the city walls, leaving the dead and facing the grim prospect of an imminent siege.
+  Accompanied by a formidable contingent of heavily armored cataphracts, you charge headlong into the heart of Mehmed II's advancing army, hoping to surprise them. The thunderous clash of steel reverberates across the battlefield as the elite Byzantine cavalry fiercely engages the enemy, determined to disrupt the impending siege and strike a resounding blow against the encroaching threat to Constantinople. The brutal clash is unforgiving, the relentless tide of Ottoman soldiers proving insurmountable. Despite the gallant effort, your cataphracts are slowly swallowed by the vast enemy numbers. Even though you kill more enemies than you lose knights, the battle ends in defeat and the somber reality sets in as you retreat within the city walls, leaving the dead and facing the grim prospect of an imminent siege. #line:0fa5dc5 
   <<set $turk_troops = $turk_troops -round(random_range(250,750))>> 
   <<set $cavalry = $cavalry -round(random_range(50,100))>> 
  <<else>>
-  Accompanied by a formidable contingent of heavily armored cataphracts, you charge headlong into the heart of Mehmed II's advancing army. The thunderous clash of steel reverberates across the battlefield as the elite Byzantine cavalry fiercely engages the enemy, determined to disrupt the impending siege and strike a resounding blow against the encroaching threat to Constantinople. You charge fearlessly with your cataphracts, but the brutal chaos of the battlefield claims your life. Such is fate.
-  \[GAME OVER\]
+  Accompanied by a formidable contingent of heavily armored cataphracts, you charge headlong into the heart of Mehmed II's advancing army. The thunderous clash of steel reverberates across the battlefield as the elite Byzantine cavalry fiercely engages the enemy, determined to disrupt the impending siege and strike a resounding blow against the encroaching threat to Constantinople. You charge fearlessly with your cataphracts, but the brutal chaos of the battlefield claims your life. Such is fate. #line:0894c67 
+  \[GAME OVER\] #line:0e18d76 
   <<endif>>
--> Conserve our forces. Set the fields and houses in front of the city on fire.
- Ashes and dust will be all that will greet our invaders. Let them feast on that! We must hope that they will not be able to procure enough food to sustain this siege for long...
+-> Conserve our forces. Set the fields and houses in front of the city on fire. #line:0c4fdfb 
+ Ashes and dust will be all that will greet our invaders. Let them feast on that! We must hope that they will not be able to procure enough food to sustain this siege for long... #line:095a915 
  <<set $turk_food = $turk_food -20>> 
--> Send spies to infiltrate enemy camp while they are still setting up and try to recruit agents for your cause. \[Cost; 5000 gold\]
- The mission is a success, you have managed to recruit 5 spies.
+-> Send spies to infiltrate enemy camp while they are still setting up and try to recruit agents for your cause. \[Cost; 5000 gold\] #line:053cba0 
+ The mission is a success, you have managed to recruit 5 spies. #line:0b4db57 
 <<set $spies = $spies +5>> 
 
 ===

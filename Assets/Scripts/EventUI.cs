@@ -8,7 +8,7 @@ public class EventUI : UIWindowFam
 
     public void ContinueToEmperorAction()
     {
-        VariableSingleton.Instance.IncrementTurn();
+        VariableSingleton.IncrementTurn();
         SwitchPhase(managerUI);
     }
 }
