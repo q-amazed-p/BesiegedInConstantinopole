@@ -19,7 +19,6 @@ public class VariableSingleton : MonoBehaviour
     static Dictionary<string, int> iDict = new Dictionary<string, int>();
     static Dictionary<string, float> fDict = new Dictionary<string, float>();
 
-
     static DateTime siegeStart = new(1453, 4, 6);
 
     static int turn = 0;
@@ -70,7 +69,7 @@ public class VariableSingleton : MonoBehaviour
     }
 
     [YarnFunction("GetPercent")]
-    static public string GetPercentFLoat(string varName)
+    static public string GetPercentFloat(string varName)
     {
         return Mathf.RoundToInt(100 * fDict[varName]).ToString() + "%";
     }
@@ -121,149 +120,6 @@ public class VariableSingleton : MonoBehaviour
         ChangeFloat(varName, UnityEngine.Random.Range(min, max));
     }
 
-
-
-    // Wall Condition
-
-    float outerWallH;
-    float midWallH;
-    float innerWallH;
-
-    public float GetWallHealth()
-    {
-        return outerWallH;
-    }
-
-    public void ChangeValue<T>(string variableName, T value)
-    {
-
-    }
-
-    [YarnCommand("ChangeWall")]
-    public float ChangeWallHealth(int layer, float percBrick)
-    {
-        float brick = 0.01f * percBrick;
-
-        switch (layer)
-        {
-            case 0:
-                {
-                    outerWallH += brick;
-                    if (outerWallH > 1) { outerWallH = 1; }
-
-                    else { if (outerWallH < 0) { outerWallH = 0; } }
-
-                    return outerWallH;
-                }
-
-            case 1:
-                {
-                    midWallH += brick;
-                    if (midWallH > 1) { midWallH = 1; }
-
-                    else { if (midWallH < 0) { midWallH = 0; } }
-
-                    return midWallH;
-                }
-
-            case 2:
-                {
-                    innerWallH += brick;
-                    if (innerWallH > 1) { innerWallH = 1; }
-
-                    else { if (innerWallH < 0) { innerWallH = 0; } }
-
-                    return innerWallH;
-                }
-        }
-        return -1;
-    }
-
-    [YarnCommand("ReportWall")]
-    public int ReportWall(int layer)
-    {
-        switch (layer)
-        {
-            case 0:
-                return Mathf.RoundToInt(100 * outerWallH);
-
-            case 1:
-                return Mathf.RoundToInt(100 * midWallH);
-
-            case 2:
-                return Mathf.RoundToInt(100 * innerWallH);
-        }
-
-        return -1;
-    }
-
-
-
-    //TROOPS
-
-    int infantry;
-    int archers;
-    int cavalry;
-
-    [YarnCommand("ReportTroops")]
-    public int ReportTroops(int type)
-    {
-        switch (type)
-        {
-            case 0:
-                return infantry;
-
-            case 1:
-                return archers;
-
-            case 2:
-                return cavalry;
-        }
-
-        return -1;
-    }
-
-    [YarnCommand("ChangeTroops")]
-    public int ChangeTroops(int type, int delta)
-    {
-        switch (type)
-        {
-            case 0:
-                if (infantry + delta < 0)
-                {
-                    infantry = 0;
-                }
-                else
-                {
-                    infantry += delta;
-                }
-                return infantry;
-
-            case 1:
-                if (archers + delta < 0)
-                {
-                    archers = 0;
-                }
-                else
-                {
-                    archers += delta;
-                }
-                return archers;
-
-            case 2:
-                if (cavalry + delta < 0)
-                {
-                    cavalry = 0;
-                }
-                else
-                {
-                    cavalry += delta;
-                }
-                return cavalry;
-        }
-
-        return -1;
-    }
 
     //STORY POINT LISTS
 
@@ -322,6 +178,7 @@ public class VariableSingleton : MonoBehaviour
         }
     }
 
+
     //SAVE SERVICE
     public string Save()
     {
@@ -329,13 +186,17 @@ public class VariableSingleton : MonoBehaviour
 
         saveCode = turn.ToString();
         saveCode += " ";
-        saveCode += outerWallH.ToString();
+        /*foreach(bool b in bDict)
+        {
+            saveCode += b;
+            saveCode += " ";
+        }*/
+
 
         File.WriteAllText("Save", saveCode);
         return saveCode;
     }
 
-    
 
     public void Load()
     {
@@ -358,9 +219,7 @@ public class VariableSingleton : MonoBehaviour
         }
 
         turn = int.Parse(saveBreakdown[0]);
-        Debug.Log(turn.ToString());
-        outerWallH = float.Parse(saveBreakdown[1]);
-        Debug.Log(outerWallH.ToString());
+        //outerWallH = float.Parse(saveBreakdown[1]);
     }
 
     private void Awake()
@@ -368,13 +227,13 @@ public class VariableSingleton : MonoBehaviour
         _instance = this;
         iDict.Add("cavalry", 2);
         iDict.Add("money", 100);
+        fDict.Add("wall_outer", 0.8f);
         fDict.Add("people_rep", 2);
         fDict.Add("noble_rep", 2);
     }
 
     private void Start()
     {
-        outerWallH = 0.8f;
         transform.GetComponentInChildren<LoaderScript>().RunLoader();
     }
 

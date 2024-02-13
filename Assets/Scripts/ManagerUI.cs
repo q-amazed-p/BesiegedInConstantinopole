@@ -15,6 +15,8 @@ public class ManagerUI : UIWindowFam
 
     [SerializeField] TMP_Text date;
 
+
+    //*****************************
     public void BringUpDiplomacy()
     {
         SwitchPhase(diplomacyUI);
@@ -22,7 +24,6 @@ public class ManagerUI : UIWindowFam
     }
 
     //*****************************
-
     public void BringUpSiegeUI()
     {
         SwitchPhase(siegeUI);
@@ -38,6 +39,7 @@ public class ManagerUI : UIWindowFam
 
     public void ApproveRepairs()
     {
+        ActionResults.Instance.LastAction = 0;
         ControlSingleton.Instance.GoBack();
         ControlSingleton.Instance.GoBack();
         ContinueToRest();
@@ -45,13 +47,33 @@ public class ManagerUI : UIWindowFam
 
 
     //*****************************
-
     public void BringUpTroopsUI()
     {
         SwitchPhase(troopsUI);
         ControlSingleton.Instance.LogToEsc(this.gameObject, troopsUI);
     }
 
+    [SerializeField] GameObject recruitmentAction;
+    public void OrderTroopRecruitment()
+    {
+        recruitmentAction.SetActive(true);
+        ControlSingleton.Instance.LogToEsc(troopsUI, recruitmentAction);
+    }
+
+    public void ApproveTroopRecruitment()
+    {
+        ActionResults.Instance.LastAction = 1;
+        ControlSingleton.Instance.GoBack();
+        ControlSingleton.Instance.GoBack();
+        ContinueToRest();
+    }
+
+
+
+
+
+
+    //*****************************
     public void BringUpSpiesUI()
     {
         SwitchPhase(spiesUI);

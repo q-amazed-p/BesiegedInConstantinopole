@@ -6,8 +6,8 @@ using Yarn.Unity;
 
 public class EventDriver : MonoBehaviour
 {
-    [SerializeField] TMP_Text damageDescript;
-    [SerializeField] TMP_Text wallHealth;
+    //[SerializeField] TMP_Text damageDescript;
+    //[SerializeField] TMP_Text wallHealth;
 
     [SerializeField] DialogueRunner myRunner;
     private void OnEnable()
