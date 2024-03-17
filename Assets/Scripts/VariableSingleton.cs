@@ -3,17 +3,13 @@ using UnityEngine;
 using System;
 using System.IO;
 using Yarn.Unity;
-using Unity.Collections.LowLevel.Unsafe;
+using System.Collections;
 
 public class VariableSingleton : MonoBehaviour
 {
     static private VariableSingleton _instance;
 
-    static public VariableSingleton Instance
-    {
-        get => _instance;
-        private set => _instance = value;
-    }
+    static public VariableSingleton Instance => _instance;
 
     static Dictionary<string, bool> bDict = new Dictionary<string, bool>();
     static Dictionary<string, int> iDict = new Dictionary<string, int>();
@@ -46,7 +42,8 @@ public class VariableSingleton : MonoBehaviour
         }
     }
 
-    //VARIABLE ACCESS
+    /*******************
+     * VARIABLE ACCESS */
 
     [YarnFunction("GetBool")]
     static public bool GetBoolVariable(string varName)
@@ -73,8 +70,40 @@ public class VariableSingleton : MonoBehaviour
     {
         return Mathf.RoundToInt(100 * fDict[varName]).ToString() + "%";
     }
+    /*************************
+     * VARIABLE MODIFICATION */
 
-    //VARIABLE MODIFICATION
+    [YarnCommand("Change")]
+    static public void Change(string varName, string newValue)
+    {
+        switch (varName[0])
+        {
+            case 'b':
+                {
+                    ChangeBool(varName, (newValue[0] == 't' || newValue[0] == 'T') ? true : false);
+                    break;
+                }
+
+            case 'i':
+                {
+                    ChangeInt(varName, int.Parse(newValue));
+                    break;
+                }
+
+            case 'f':
+                {
+                    ChangeFloat(varName, float.Parse(newValue));
+                    break;
+                }
+        }
+    }
+
+    [YarnCommand("RndChange")]
+    static public void RndChange(string varName, float min, float max)
+    {
+        if (varName[0] == 'i') ChangeInt(varName, (int)min, (int)max);
+        else if (varName[0] == 'f') ChangeFloat(varName, min, max);
+    }
 
     [YarnCommand("ChangeBool")]
     static public void ChangeBool(string varName, bool newValue)
@@ -120,8 +149,161 @@ public class VariableSingleton : MonoBehaviour
         ChangeFloat(varName, UnityEngine.Random.Range(min, max));
     }
 
+    /***************************
+     *VARIABLE INITIALISATION*/
 
-    //STORY POINT LISTS
+    class VarCSVParser : IEnumerator
+    {
+        public string input;
+        int position = -1;
+        char type;
+        public char Type => type;
+
+        (string name, float val) fReadout;
+        (string name, int val) iReadout;
+        (string name, bool val) bReadout;
+
+        public (string, float) FReadout => fReadout;
+        public (string, int) IReadout => iReadout;
+        public (string, bool) BReadout => bReadout;
+
+        public VarCSVParser(string init)
+        {
+            input = init;
+        }
+
+        public bool MoveNext()
+        {
+            Debug.Log(position + " " + input.Length);
+            string varName = "";
+            position++;
+            type = input[position];
+            Debug.Log(type);
+
+            while (input[position] != ',')
+            {
+                varName += input[position];
+                position++;
+            }
+            Debug.Log(varName);
+            position++;
+
+            switch (type)
+            {
+                case 'f':
+                    {
+                        int intComp = 0;
+                        float outcome;
+                        while (input[position] != '.')
+                        {
+                            intComp = 10 * intComp + AmazUtil.NumFromChar(input[position]);
+                            position++;
+                        }
+                        outcome = intComp;
+                        position++;
+                        while (input[position] != '\n' && input[position] != '\r')
+                        {
+                            float decimalComp = 0.1f;
+                            outcome += decimalComp * AmazUtil.NumFromChar(input[position]);
+                            decimalComp /= 10;
+                            position++;
+                        }
+                        fReadout = (varName, outcome);
+                        Debug.Log(outcome);
+                        break;
+                    }
+
+                case 'i':
+                    {
+                        int outcome = 0;
+                        bool negative = false;
+                        if (input[position] == '-')
+                        {
+                            negative = true;
+                            position++;
+                        }
+                        while (input[position] != '\n' && input[position] != '\r')
+                        {
+                            outcome *= 10;
+                            outcome += AmazUtil.NumFromChar(input[position]);
+                            position++;
+                        }
+                        if (negative) outcome *= -1;
+                        iReadout = (varName, outcome);
+                        Debug.Log(outcome);
+                        break;
+                    }
+
+
+                case 'b':
+                    {
+                        if (input[position] == 'T' || input[position] == 't') bReadout = (varName, true);
+                        else bReadout = bReadout = (varName, false);
+                        while (input[position] != '\n' && input[position] != '\r')
+                        {
+                            position++;
+                        }
+                        Debug.Log(bReadout.val);
+                        break;
+                    }
+
+            }
+            position++;
+            return position < input.Length - 2;
+        }
+
+        public void Reset()
+        {
+            position = -1;
+        }
+
+        object IEnumerator.Current
+        {
+            get
+            {
+                switch (type)
+                {
+                    case 'f':
+                        return fReadout;
+
+                    case 'i':
+                        return iReadout;
+
+                    case 'b':
+                        return bReadout;
+                }
+                return type;
+            }
+        }
+
+        public object Current
+        {
+            get
+            {
+                switch (type)
+                {
+                    case 'f':
+                        return fReadout;
+
+                    case 'i':
+                        return iReadout;
+
+                    case 'b':
+                        return bReadout;
+                }
+                return type;
+            }
+        }
+
+        public bool NotComplete()
+        {
+            return position < input.Length - 2;
+        }
+    }
+
+
+    /*********************
+     *STORY POINT LISTS*/
 
     [SerializeField] List<int> possibleStory = new List<int>() {0, 1, 2, 3};
     [SerializeField] List<int> possibleRandom = new List<int>();
@@ -179,7 +361,8 @@ public class VariableSingleton : MonoBehaviour
     }
 
 
-    //SAVE SERVICE
+    /**************
+     *SAVE SERVICE*/
     public string Save()
     {
         string saveCode;
@@ -191,7 +374,6 @@ public class VariableSingleton : MonoBehaviour
             saveCode += b;
             saveCode += " ";
         }*/
-
 
         File.WriteAllText("Save", saveCode);
         return saveCode;
@@ -222,22 +404,56 @@ public class VariableSingleton : MonoBehaviour
         //outerWallH = float.Parse(saveBreakdown[1]);
     }
 
+    /*******
+     *UNITY*/
+
     private void Awake()
     {
-        _instance = this;
-        iDict.Add("cavalry", 2);
-        iDict.Add("money", 100);
-        fDict.Add("wall_outer", 0.8f);
-        fDict.Add("people_rep", 2);
-        fDict.Add("noble_rep", 2);
+
     }
 
     private void Start()
     {
-        transform.GetComponentInChildren<LoaderScript>().RunLoader();
+        if (File.Exists("Save"))        //temporary, double file exists check, LoaderScript 
+        {                               //should be redesigned to handle all of this
+            transform.GetComponentInChildren<LoaderScript>().RunLoader();
+        }
+        else
+        {
+            Debug.Log("No save file found.");
+
+            string varCSVFile = File.ReadAllText("Constantinopole_System_Variables.csv");
+            for (VarCSVParser csvEnum = new VarCSVParser(varCSVFile); csvEnum.NotComplete(); csvEnum.MoveNext())
+            {
+                switch (csvEnum.Type)
+                {
+                    case 'f':
+                        {
+                            (string name, float val) readout = ((string, float))csvEnum.Current;
+                            fDict.Add(readout.name, readout.val);
+                            break;
+                        }
+
+                    case 'i':
+                        {
+                            (string name, int val) readout = ((string, int))csvEnum.Current;
+                            iDict.Add(readout.name, readout.val);
+                            break;
+                        }
+
+                    case 'b':
+                        {
+                            (string name, bool val) readout = ((string, bool))csvEnum.Current;
+                            bDict.Add(readout.name, readout.val);
+                            break;
+                        }
+                }
+            }
+        }
     }
 
-    //DEBUG
+    /*******
+     *DEBUG*/
 
     [ContextMenu("PrintVariables")]
     public void PrintVariables()
