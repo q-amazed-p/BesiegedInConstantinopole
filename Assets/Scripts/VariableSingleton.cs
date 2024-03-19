@@ -70,29 +70,30 @@ public class VariableSingleton : MonoBehaviour
     {
         return Mathf.RoundToInt(100 * fDict[varName]).ToString() + "%";
     }
+
     /*************************
      * VARIABLE MODIFICATION */
 
     [YarnCommand("Change")]
-    static public void Change(string varName, string newValue)
+    static public void Change(string varName, float Value)
     {
         switch (varName[0])
         {
             case 'b':
                 {
-                    ChangeBool(varName, (newValue[0] == 't' || newValue[0] == 'T') ? true : false);
+                    ChangeBool(varName, (Value != 0) ? true : false);
                     break;
                 }
 
             case 'i':
                 {
-                    ChangeInt(varName, int.Parse(newValue));
+                    ChangeInt(varName, Mathf.RoundToInt(Value));
                     break;
                 }
 
             case 'f':
                 {
-                    ChangeFloat(varName, float.Parse(newValue));
+                    ChangeFloat(varName, Value);
                     break;
                 }
         }
@@ -105,13 +106,12 @@ public class VariableSingleton : MonoBehaviour
         else if (varName[0] == 'f') ChangeFloat(varName, min, max);
     }
 
-    [YarnCommand("ChangeBool")]
+
     static public void ChangeBool(string varName, bool newValue)
     {
         bDict[varName] = newValue;
     }
 
-    [YarnCommand("ChangeInt")]
     static public void ChangeInt(string varName, int delta)
     {
         if (iDict[varName] + delta < 0)
@@ -124,13 +124,11 @@ public class VariableSingleton : MonoBehaviour
         }
     }
 
-    [YarnCommand("RndChangeInt")]
     static public void ChangeInt(string varName, int min, int max)
     {
         ChangeInt(varName, UnityEngine.Random.Range(min, max + 1));
     }
 
-    [YarnCommand("ChangeFloat")]
     static public void ChangeFloat(string varName, float delta)
     {
         if (fDict[varName] + delta < 0)
@@ -143,7 +141,6 @@ public class VariableSingleton : MonoBehaviour
         }
     }
 
-    [YarnCommand("RndChangeFloat")]
     static public void ChangeFloat(string varName, float min, float max)
     {
         ChangeFloat(varName, UnityEngine.Random.Range(min, max));

@@ -1334,8 +1334,8 @@ MonoBehaviour:
   m_Padding:
     m_Left: 10
     m_Right: 20
-    m_Top: 80
-    m_Bottom: 80
+    m_Top: 120
+    m_Bottom: 120
   m_ChildAlignment: 4
   m_Spacing: 40
   m_ChildForceExpandWidth: 1
@@ -1799,8 +1799,8 @@ MonoBehaviour:
   m_Padding:
     m_Left: 20
     m_Right: 10
-    m_Top: 80
-    m_Bottom: 80
+    m_Top: 120
+    m_Bottom: 120
   m_ChildAlignment: 4
   m_Spacing: 40
   m_ChildForceExpandWidth: 1
