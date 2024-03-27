@@ -81,7 +81,7 @@ public class VariableSingleton : MonoBehaviour
         {
             case 'b':
                 {
-                    ChangeBool(varName, (Value != 0) ? true : false);
+                    ChangeBool(varName, Value!=0 ? true : false);
                     break;
                 }
 
@@ -146,7 +146,7 @@ public class VariableSingleton : MonoBehaviour
         ChangeFloat(varName, UnityEngine.Random.Range(min, max));
     }
 
-    /***************************
+    /*************************
      *VARIABLE INITIALISATION*/
 
     class VarCSVParser : IEnumerator
@@ -300,7 +300,7 @@ public class VariableSingleton : MonoBehaviour
 
 
     /*********************
-     *STORY POINT LISTS*/
+     * STORY POINT LISTS */
 
     [SerializeField] List<int> possibleStory = new List<int>() {0, 1, 2, 3};
     [SerializeField] List<int> possibleRandom = new List<int>();
@@ -358,8 +358,8 @@ public class VariableSingleton : MonoBehaviour
     }
 
 
-    /**************
-     *SAVE SERVICE*/
+    /****************
+     * SAVE SERVICE */
     public string Save()
     {
         string saveCode;
@@ -401,8 +401,8 @@ public class VariableSingleton : MonoBehaviour
         //outerWallH = float.Parse(saveBreakdown[1]);
     }
 
-    /*******
-     *UNITY*/
+    /*********
+     * UNITY */
 
     private void Awake()
     {
@@ -449,8 +449,8 @@ public class VariableSingleton : MonoBehaviour
         }
     }
 
-    /*******
-     *DEBUG*/
+    /*********
+     * DEBUG */
 
     [ContextMenu("PrintVariables")]
     public void PrintVariables()
