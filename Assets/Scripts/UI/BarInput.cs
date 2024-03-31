@@ -21,12 +21,9 @@ public class BarInput : MonoBehaviour
                 if (value < division) currentState = value;
                 else currentState = division;
                 myRect.anchorMax = new Vector3((float) currentState / division, myRect.anchorMax.y, 0);
-                OnValueChange.Invoke();
             }
         }
     }
-
-    public UnityEvent OnValueChange;
 
 
     //DEBUG
