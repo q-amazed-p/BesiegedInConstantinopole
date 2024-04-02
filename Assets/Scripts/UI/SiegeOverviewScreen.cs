@@ -6,7 +6,8 @@ using Unity.VisualScripting;
 
 public class SiegeOverviewScreen : MonoBehaviour
 {
-    [SerializeField] BarInput spyNumber;
+    [SerializeField] BarInput spyNumberBar;
+    [SerializeField] string BarVariableName;
 
     [SerializeField] TMP_Text[] intelTypes;
     [SerializeField] TMP_Text[] intelValues;
@@ -15,7 +16,7 @@ public class SiegeOverviewScreen : MonoBehaviour
     { 
         for(int i = intelTypes.Length-1; i >= 0; i--)
         {
-            if (i >= spyNumber.Value) intelTypes[i].alpha = 0.5f;
+            if (i >= spyNumberBar.Value) intelTypes[i].alpha = 0.5f;
             else intelTypes[i].alpha = 1;
         }
     }
@@ -24,7 +25,7 @@ public class SiegeOverviewScreen : MonoBehaviour
     {
         for (int i = intelValues.Length-1; i >= 0; i--)
         {
-            if (i >= spyNumber.Value) intelValues[i].enabled = false;
+            if (i >= spyNumberBar.Value) intelValues[i].enabled = false;
             else intelValues[i].enabled = true;
         }
     }
@@ -33,5 +34,12 @@ public class SiegeOverviewScreen : MonoBehaviour
     {
         UpdateIntelTypes();
         UpdateIntelValues();
+    }
+
+    private void OnEnable()
+    {
+        spyNumberBar.Value = VariableSingleton.GetIntVariable(BarVariableName);
+        UpdateIntelTypes() ;
+        UpdateIntelValues() ;
     }
 }

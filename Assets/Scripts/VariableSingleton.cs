@@ -188,61 +188,63 @@ public class VariableSingleton : MonoBehaviour
             switch (type)
             {
                 case 'f':
+                {
+                    int intComp = 0;
+                    float outcome;
+
+                    while (input[position] != '.' && input[position] != '\n' && input[position] != '\r')
                     {
-                        int intComp = 0;
-                        float outcome;
-                        while (input[position] != '.')
-                        {
-                            intComp = 10 * intComp + AmazUtil.NumFromChar(input[position]);
-                            position++;
-                        }
-                        outcome = intComp;
+                        intComp = 10 * intComp + AmazUtil.NumFromChar(input[position]);
                         position++;
-                        while (input[position] != '\n' && input[position] != '\r')
-                        {
-                            float decimalComp = 0.1f;
-                            outcome += decimalComp * AmazUtil.NumFromChar(input[position]);
-                            decimalComp /= 10;
-                            position++;
-                        }
-                        fReadout = (varName, outcome);
-                        Debug.Log(outcome);
-                        break;
                     }
+                    outcome = intComp;
+                    if (input[position] != '\n' && input[position] != '\r') position++;
+
+                    while (input[position] != '\n' && input[position] != '\r')
+                    {
+                        float decimalComp = 0.1f;
+                        outcome += decimalComp * AmazUtil.NumFromChar(input[position]);
+                        decimalComp /= 10;
+                        position++;
+                    }
+                    fReadout = (varName, outcome);
+                    Debug.Log(outcome);
+                    break;
+                }
 
                 case 'i':
+                {
+                    int outcome = 0;
+                    bool negative = false;
+                    if (input[position] == '-')
                     {
-                        int outcome = 0;
-                        bool negative = false;
-                        if (input[position] == '-')
-                        {
-                            negative = true;
-                            position++;
-                        }
-                        while (input[position] != '\n' && input[position] != '\r')
-                        {
-                            outcome *= 10;
-                            outcome += AmazUtil.NumFromChar(input[position]);
-                            position++;
-                        }
-                        if (negative) outcome *= -1;
-                        iReadout = (varName, outcome);
-                        Debug.Log(outcome);
-                        break;
+                        negative = true;
+                        position++;
                     }
+                    while (input[position] != '\n' && input[position] != '\r')
+                    {
+                        outcome *= 10;
+                        outcome += AmazUtil.NumFromChar(input[position]);
+                        position++;
+                    }
+                    if (negative) outcome *= -1;
+                    iReadout = (varName, outcome);
+                    Debug.Log(outcome);
+                    break;
+                }
 
 
                 case 'b':
+                {
+                    if (input[position] == 'T' || input[position] == 't') bReadout = (varName, true);
+                    else bReadout = bReadout = (varName, false);
+                    while (input[position] != '\n' && input[position] != '\r')
                     {
-                        if (input[position] == 'T' || input[position] == 't') bReadout = (varName, true);
-                        else bReadout = bReadout = (varName, false);
-                        while (input[position] != '\n' && input[position] != '\r')
-                        {
-                            position++;
-                        }
-                        Debug.Log(bReadout.val);
-                        break;
+                        position++;
                     }
+                    Debug.Log(bReadout.val);
+                    break;
+                }
 
             }
             position++;
