@@ -54,7 +54,7 @@ public class OttomanDecision : MonoBehaviour
         cumulativeChance[0] = tacticalOptions[0].Chance;
         for(int i = 1; i < tacticalOptions.Count; i++)
         {
-            cumulativeChance[1] = tacticalOptions[i].Chance + cumulativeChance[i - 1];
+            cumulativeChance[i] = tacticalOptions[i].Chance + cumulativeChance[i - 1];
         }
 
         float randomFloatWithinChance = UnityEngine.Random.value * totalChance;
