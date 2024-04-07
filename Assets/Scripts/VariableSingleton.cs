@@ -15,32 +15,34 @@ public class VariableSingleton : MonoBehaviour
     static Dictionary<string, int> iDict = new Dictionary<string, int>();
     static Dictionary<string, float> fDict = new Dictionary<string, float>();
 
-    static DateTime siegeStart = new(1453, 4, 6);
-
     static int turn = 0;
-    static public int Turn
-    {
-        get => turn;
-        private set => turn = value;
-    }
-
-    static public int IncrementTurn()
-    {
-        turn++;
-        return turn;
-    }
-
-    static public DateTime GetDate()
-    {
-        if (turn < 15)
+        static public int Turn
         {
-            return siegeStart - new TimeSpan((14 - turn) * 7, 0, 0, 0);
+            get => turn;
+            private set => turn = value;
         }
-        else
+
+        static public int IncrementTurn()
         {
-            return siegeStart + new TimeSpan(turn - 14, 0, 0, 0);
+            turn++;
+            return turn;
         }
-    }
+
+    static DateTime siegeStart = new(1453, 4, 6);
+        static public DateTime GetDate()
+        {
+            if (turn < 15)
+            {
+                return siegeStart - new TimeSpan((14 - turn) * 7, 0, 0, 0);
+            }
+            else
+            {
+                return siegeStart + new TimeSpan(turn - 14, 0, 0, 0);
+            }
+        }
+
+    [SerializeField]
+    public WallData EnduringWall = new WallData("OuterWall");
 
     /*******************
      * VARIABLE ACCESS */
