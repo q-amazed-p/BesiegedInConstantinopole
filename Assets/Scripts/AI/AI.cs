@@ -17,8 +17,7 @@ public class AI: MonoBehaviour
     [SerializeField] GameObject TacticSendAssault;
     [SerializeField] GameObject TacticAdvance;
 
-
-    //static AssaultSystem assaultSystem;
+    [SerializeField] AssaultSystem assaultSystem;
 
     public void TakeAIAction()
     {
