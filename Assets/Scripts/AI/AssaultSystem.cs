@@ -6,10 +6,6 @@ public class AssaultSystem : MonoBehaviour
 {
     [SerializeField] int WallOverrunThreshold;
     [Space(3)]
-    [SerializeField] int christianBalkanSubjectAV;
-    [SerializeField] int bashiBazoukAV;
-    [SerializeField] int janissaryAV;
-    [Space(3)]
     [SerializeField] int rampAV;
     [SerializeField] int siegeTowerAV;
     [SerializeField] int batteringRamAV;

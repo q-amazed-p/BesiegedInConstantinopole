@@ -19,6 +19,12 @@ public class AI: MonoBehaviour
 
     [SerializeField] AssaultSystem assaultSystem;
 
+    [SerializeField] int christianBalkanSubjectAV;
+    [SerializeField] int bashiBazoukAV;
+    [SerializeField] int janissaryAV;
+
+    //fields for assault numbers
+
     public void TakeAIAction()
     {
         float moatRemaining = VariableSingleton.GetFloatVariable("fMoat");
@@ -97,17 +103,29 @@ public class AI: MonoBehaviour
 
     public void BalkanSubjectAssault()
     {
-        VariableSingleton.GetIntVariable("iBalkanSubjects");
+        int balkanSubjectNumbers = VariableSingleton.GetIntVariable("iBalkanSubjects");
+        if (assaultSystem.TestAssault(christianBalkanSubjectAV)) 
+        {
+            assaultSystem.AssaultAftermath(false, 5000 < balkanSubjectNumbers ? 5000 : balkanSubjectNumbers);
+        }
     }
 
     public void BashiBazoukAssault()
     {
-        VariableSingleton.GetIntVariable("iBashiBazouk");
+        int bashiBazoukNumbers = VariableSingleton.GetIntVariable("iBashiBazouk");
+        if (assaultSystem.TestAssault(bashiBazoukAV)) 
+        {
+            assaultSystem.AssaultAftermath(false, 10000 < bashiBazoukNumbers ? 10000 : bashiBazoukNumbers);
+        }
     }
 
     public void JanissaryAssault()
     {
-        VariableSingleton.GetIntVariable("iJanissaries");
+        int janissaryNumbers = VariableSingleton.GetIntVariable("iJanissaries");
+        if (assaultSystem.TestAssault(janissaryAV))
+        {
+            assaultSystem.AssaultAftermath(true, 8000 < janissaryNumbers ? 8000 : janissaryNumbers);
+        }
     }
 
 
