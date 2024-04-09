@@ -23,15 +23,15 @@ public class DefenseActions : MonoBehaviour
         
         switch (variableName)
         {
-            case "fouter_wall":
+            case "fOuterWall":
                 selectionName.text = "Theodesian";
                 break;
 
-            case "fmiddle_wall":
+            case "fMiddleWall":
                 selectionName.text = "Constantinian";
                 break;
 
-            case "finner_wall":
+            case "fInnerWall":
                 selectionName.text = "Severan";
                 break;
         }

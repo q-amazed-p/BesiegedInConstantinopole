@@ -988,10 +988,10 @@ RectTransform:
   - {fileID: 2979057829970374606}
   m_Father: {fileID: 7195613085096387791}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 324.00006, y: -215.91263}
-  m_SizeDelta: {x: 618.0001, y: 137.27509}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3604312956750919796
 MonoBehaviour:
@@ -1538,7 +1538,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7195613085096387791
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2555,7 +2555,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: fouter_wall
+          m_StringArgument: fOuterWall
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &8184982133845168252
@@ -3010,10 +3010,10 @@ RectTransform:
   - {fileID: 4875101649849007746}
   m_Father: {fileID: 7195613085096387791}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 324.00006, y: -353.0777}
-  m_SizeDelta: {x: 618.0001, y: 117.055084}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8150047305783724893
 CanvasRenderer:
@@ -3196,10 +3196,10 @@ RectTransform:
   - {fileID: 3269513307970308000}
   m_Father: {fileID: 2737721079883121456}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 492.36758, y: -68.63754}
-  m_SizeDelta: {x: 251.26506, y: 137.27509}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1118249409020848891
 CanvasRenderer:
@@ -3291,10 +3291,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 7195613085096387791}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 324.00006, y: -68.63754}
-  m_SizeDelta: {x: 618.0001, y: 137.27509}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6126774586609501314
 CanvasRenderer:
@@ -3524,7 +3524,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: fouter_wall
+          m_StringArgument: fInnerWall
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &6698520445466231707
@@ -3941,10 +3941,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2737721079883121456}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 183.36752, y: -68.63754}
-  m_SizeDelta: {x: 366.73505, y: 137.27509}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3357650359943431264
 CanvasRenderer:
@@ -4077,10 +4077,10 @@ RectTransform:
   - {fileID: 546479629187952279}
   m_Father: {fileID: 7195613085096387791}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 324.00006, y: -480.1328}
-  m_SizeDelta: {x: 618.0001, y: 117.055084}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7869002287439478923
 CanvasRenderer:
@@ -4295,7 +4295,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: fouter_wall
+          m_StringArgument: fMiddleWall
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &5338745735963233789

@@ -53,6 +53,12 @@ MonoBehaviour:
   TacticSendAssault: {fileID: 8390790068732623792, guid: 6d9046a36ac241a44b0cbe339454053d, type: 3}
   TacticAdvance: {fileID: 8390790068732623792, guid: 47081ac918644ab4b8c63c5b7493cf38, type: 3}
   assaultSystem: {fileID: 6249235966759036046}
+  christianBalkanSubjectAV: 75
+  bashiBazoukAV: 100
+  janissaryAV: 125
+  averageBalkanSubjectForce: 5000
+  averageBashiBazoukForce: 10000
+  averageJanissaryForce: 8000
 --- !u!114 &6249235966759036046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,9 +72,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WallOverrunThreshold: 100
-  christianBalkanSubjectAV: 75
-  bashiBazoukAV: 100
-  janissaryAV: 125
   rampAV: 20
   siegeTowerAV: 10
   batteringRamAV: 5

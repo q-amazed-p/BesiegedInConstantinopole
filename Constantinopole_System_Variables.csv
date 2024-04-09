@@ -5,16 +5,16 @@ fMiddleWall,0.2
 fInnerWall,0.2
 fNobleRep,0.5
 fTroopRep,0.5
-fPriestRep,0.5
+fPriestRep,0.55
 fPeopleRep,0.5
 fGalataRep,0.75
 iPopulation,100
 iMaterials,1000
-iMoney,100 000
+iMoney,100000
 iAmmunition,20
 iProvisions,3000
 iSecrets,3
-iSpies,10
+iSpies,2
 iEngineers,30
 iSentries,50
 iHealers,100
@@ -57,8 +57,8 @@ bTechRomanTaxation,FALSE
 bTechRomanArchitecture,FALSE
 bTechUpgradedCrossbows,FALSE
 bTechPlateArmour,FALSE
-iBalkans,10 000
-iBazouks,70 000
+iBalkans,10000
+iBazouks,70000
 iJanissaries,8000
 iTurkCannons,5
 iTurkSpies,5

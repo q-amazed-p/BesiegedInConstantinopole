@@ -173,84 +173,89 @@ public class VariableSingleton : MonoBehaviour
 
         public bool MoveNext()
         {
-            Debug.Log(position + " " + input.Length);
-            string varName = "";
-            position++;
-            type = input[position];
-            Debug.Log(type);
-
-            while (input[position] != ',')
+            if (position > input.Length - 2) return false;
+            else
             {
-                varName += input[position];
+                Debug.Log(position + " " + input.Length);
+                string varName = "";
                 position++;
-            }
-            Debug.Log(varName);
-            position++;
+                type = input[position];
+                Debug.Log(type);
 
-            switch (type)
-            {
-                case 'f':
+                while (input[position] != ',')
                 {
-                    int intComp = 0;
-                    float outcome;
+                    varName += input[position];
+                    position++;
+                }
+                Debug.Log(varName);
+                position++;
 
-                    while (input[position] != '.' && input[position] != '\n' && input[position] != '\r')
-                    {
-                        intComp = 10 * intComp + AmazUtil.NumFromChar(input[position]);
-                        position++;
-                    }
-                    outcome = intComp;
-                    if (input[position] != '\n' && input[position] != '\r') position++;
+                switch (type)
+                {
+                    case 'f':
+                        {
+                        int intComp = 0;
+                        float outcome;
 
-                    while (input[position] != '\n' && input[position] != '\r')
-                    {
+                        while (input[position] != '.' && input[position] != '\n' && input[position] != '\r')
+                        {
+                            intComp = 10 * intComp + AmazUtil.NumFromChar(input[position]);
+                            position++;
+                        }
+                        outcome = intComp;
+                        if (input[position] != '\n' && input[position] != '\r') position++;
+
                         float decimalComp = 0.1f;
-                        outcome += decimalComp * AmazUtil.NumFromChar(input[position]);
-                        decimalComp /= 10;
-                        position++;
-                    }
-                    fReadout = (varName, outcome);
-                    Debug.Log(outcome);
-                    break;
+                        while (input[position] != '\n' && input[position] != '\r')
+                        {
+                            outcome += decimalComp * AmazUtil.NumFromChar(input[position]);
+                            decimalComp /= 10;
+                            position++;
+                        }
+                        fReadout = (varName, outcome);
+                        Debug.Log(outcome);
+                        break;
+                        }
+
+                    case 'i':
+                        {
+                        int outcome = 0;
+                        bool negative = false;
+                        if (input[position] == '-')
+                        {
+                            negative = true;
+                            position++;
+                        }
+                        while (input[position] != '\n' && input[position] != '\r')
+                        {
+                            outcome *= 10;
+                            outcome += AmazUtil.NumFromChar(input[position]);
+                            position++;
+                        }
+                        if (negative) outcome *= -1;
+                        iReadout = (varName, outcome);
+                        Debug.Log(outcome);
+                        break;
+                        }
+
+
+                    case 'b':
+                        {
+                        if (input[position] == 'T' || input[position] == 't') bReadout = (varName, true);
+                        else bReadout = bReadout = (varName, false);
+                        while (input[position] != '\n' && input[position] != '\r')
+                        {
+                            position++;
+                        }
+                        Debug.Log(bReadout.val);
+                        break;
+                        }
+
                 }
-
-                case 'i':
-                {
-                    int outcome = 0;
-                    bool negative = false;
-                    if (input[position] == '-')
-                    {
-                        negative = true;
-                        position++;
-                    }
-                    while (input[position] != '\n' && input[position] != '\r')
-                    {
-                        outcome *= 10;
-                        outcome += AmazUtil.NumFromChar(input[position]);
-                        position++;
-                    }
-                    if (negative) outcome *= -1;
-                    iReadout = (varName, outcome);
-                    Debug.Log(outcome);
-                    break;
-                }
-
-
-                case 'b':
-                {
-                    if (input[position] == 'T' || input[position] == 't') bReadout = (varName, true);
-                    else bReadout = bReadout = (varName, false);
-                    while (input[position] != '\n' && input[position] != '\r')
-                    {
-                        position++;
-                    }
-                    Debug.Log(bReadout.val);
-                    break;
-                }
-
+                position++;
+                return true;
             }
-            position++;
-            return position < input.Length - 2;
+                
         }
 
         public void Reset()
@@ -298,7 +303,7 @@ public class VariableSingleton : MonoBehaviour
 
         public bool NotComplete()
         {
-            return position < input.Length - 2;
+            return position < input.Length-1;
         }
     }
 
@@ -424,7 +429,7 @@ public class VariableSingleton : MonoBehaviour
             Debug.Log("No save file found.");
 
             string varCSVFile = File.ReadAllText("Constantinopole_System_Variables.csv");
-            for (VarCSVParser csvEnum = new VarCSVParser(varCSVFile); csvEnum.NotComplete(); csvEnum.MoveNext())
+            for (VarCSVParser csvEnum = new VarCSVParser(varCSVFile); csvEnum.MoveNext();) //csvEnum.NotComplete()
             {
                 switch (csvEnum.Type)
                 {

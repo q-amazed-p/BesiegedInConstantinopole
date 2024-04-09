@@ -23,6 +23,9 @@ public class AI: MonoBehaviour
     [SerializeField] int bashiBazoukAV;
     [SerializeField] int janissaryAV;
 
+    [SerializeField] int averageBalkanSubjectForce;
+    [SerializeField] int averageBashiBazoukForce;
+    [SerializeField] int averageJanissaryForce;
     //fields for assault numbers
 
     public void TakeAIAction()
@@ -106,7 +109,7 @@ public class AI: MonoBehaviour
         int balkanSubjectNumbers = VariableSingleton.GetIntVariable("iBalkanSubjects");
         if (assaultSystem.TestAssault(christianBalkanSubjectAV)) 
         {
-            assaultSystem.AssaultAftermath(false, 5000 < balkanSubjectNumbers ? 5000 : balkanSubjectNumbers);
+            assaultSystem.AssaultAftermath(false, averageBalkanSubjectForce < balkanSubjectNumbers ? averageBalkanSubjectForce : balkanSubjectNumbers);
         }
     }
 
@@ -115,7 +118,7 @@ public class AI: MonoBehaviour
         int bashiBazoukNumbers = VariableSingleton.GetIntVariable("iBashiBazouk");
         if (assaultSystem.TestAssault(bashiBazoukAV)) 
         {
-            assaultSystem.AssaultAftermath(false, 10000 < bashiBazoukNumbers ? 10000 : bashiBazoukNumbers);
+            assaultSystem.AssaultAftermath(false, averageBashiBazoukForce < bashiBazoukNumbers ? averageBashiBazoukForce : bashiBazoukNumbers);
         }
     }
 
@@ -124,7 +127,7 @@ public class AI: MonoBehaviour
         int janissaryNumbers = VariableSingleton.GetIntVariable("iJanissaries");
         if (assaultSystem.TestAssault(janissaryAV))
         {
-            assaultSystem.AssaultAftermath(true, 8000 < janissaryNumbers ? 8000 : janissaryNumbers);
+            assaultSystem.AssaultAftermath(true, averageJanissaryForce < janissaryNumbers ? averageJanissaryForce : janissaryNumbers);
         }
     }
 

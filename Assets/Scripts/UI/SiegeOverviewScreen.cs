@@ -25,8 +25,8 @@ public class SiegeOverviewScreen : MonoBehaviour
     {
         for (int i = intelValues.Length-1; i >= 0; i--)
         {
-            if (i >= spyNumberBar.Value) intelValues[i].enabled = false;
-            else intelValues[i].enabled = true;
+            if (i >= spyNumberBar.Value) intelValues[i].alpha = 0;
+            else intelValues[i].alpha = 1;
         }
     }
 
