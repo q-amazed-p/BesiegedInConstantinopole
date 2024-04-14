@@ -24,9 +24,9 @@ iCavalry,200
 iCannons,3
 iVarangians,150
 iShips,26
-iInfantryQuality,0.5
-iArchersQuality,1
-iCavalryQuality,1
+fInfantryQuality,0.5
+fArchersQuality,1
+fCavalryQuality,1
 iFocus,0
 iReligion,0
 iFleetMission,2
