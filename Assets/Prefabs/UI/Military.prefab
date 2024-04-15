@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4450532323232319247}
   - component: {fileID: 7414880513297911389}
   m_Layer: 5
-  m_Name: Fact Name
+  m_Name: Name Field
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -472,18 +472,6 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 417978467710718617}
-        m_TargetAssemblyTypeName: RecruitationSelection, Assembly-CSharp
-        m_MethodName: GetSelectionName
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 4079641536903310942}
-          m_ObjectArgumentAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
-          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
@@ -966,18 +954,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 417978467710718617}
-        m_TargetAssemblyTypeName: RecruitationSelection, Assembly-CSharp
-        m_MethodName: GetSelectionName
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8791597878280906445}
-          m_ObjectArgumentAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &1218258065933389259
 GameObject:
   m_ObjectHideFlags: 0
@@ -1218,7 +1194,7 @@ GameObject:
   - component: {fileID: 4328371562187729762}
   - component: {fileID: 8016584265632150966}
   m_Layer: 5
-  m_Name: Fact Name
+  m_Name: Name Field
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2040,7 +2016,7 @@ GameObject:
   - component: {fileID: 383309242101159762}
   - component: {fileID: 4686214076688295329}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Cost Field
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2946,7 +2922,7 @@ GameObject:
   - component: {fileID: 4079641536903310942}
   - component: {fileID: 7347129180730224183}
   m_Layer: 5
-  m_Name: Fact Name
+  m_Name: Name Field
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3553,7 +3529,7 @@ GameObject:
   - component: {fileID: 1474447940850034037}
   - component: {fileID: 3296484170686887835}
   m_Layer: 5
-  m_Name: Fact Name
+  m_Name: Name Field
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4430,18 +4406,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 417978467710718617}
-        m_TargetAssemblyTypeName: RecruitationSelection, Assembly-CSharp
-        m_MethodName: GetSelectionName
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1068051956637744056}
-          m_ObjectArgumentAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &4328924369189426918
 GameObject:
   m_ObjectHideFlags: 0
@@ -5225,6 +5189,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   superMenu: {fileID: 4328924369189426918}
   displayName: {fileID: 1474447940850034037}
+  displayCost: {fileID: 4235419374437329155}
+  costDeterminant: {fileID: 1168179124573722521}
 --- !u!1 &5228536631101788567
 GameObject:
   m_ObjectHideFlags: 0
@@ -5439,7 +5405,7 @@ GameObject:
   - component: {fileID: 8791597878280906445}
   - component: {fileID: 704855917081405154}
   m_Layer: 5
-  m_Name: Fact Name
+  m_Name: Name Field
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5721,18 +5687,6 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 417978467710718617}
-        m_TargetAssemblyTypeName: RecruitationSelection, Assembly-CSharp
-        m_MethodName: GetSelectionName
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 4328371562187729762}
-          m_ObjectArgumentAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
-          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -7618,18 +7572,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 417978467710718617}
-        m_TargetAssemblyTypeName: RecruitationSelection, Assembly-CSharp
-        m_MethodName: GetSelectionName
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 7952102106997189261}
-          m_ObjectArgumentAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &6609354595237819155
 GameObject:
   m_ObjectHideFlags: 0
@@ -8545,7 +8487,7 @@ GameObject:
   - component: {fileID: 1068051956637744056}
   - component: {fileID: 1974330331304642824}
   m_Layer: 5
-  m_Name: Fact Name
+  m_Name: Name Field
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8625,7 +8567,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 49.5
+  m_fontSize: 50.75
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -8793,7 +8735,7 @@ GameObject:
   - component: {fileID: 172296617747977274}
   - component: {fileID: 3262710814510842107}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Buy Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8900,25 +8842,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 417978467710718617}
+        m_TargetAssemblyTypeName: RecruitationSelection, Assembly-CSharp
+        m_MethodName: CommitRecruitmentTransaction
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -9499,18 +9429,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 417978467710718617}
-        m_TargetAssemblyTypeName: RecruitationSelection, Assembly-CSharp
-        m_MethodName: GetSelectionName
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 4450532323232319247}
-          m_ObjectArgumentAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Infantry
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &8348894323844179609
 GameObject:
   m_ObjectHideFlags: 0
@@ -9524,7 +9442,7 @@ GameObject:
   - component: {fileID: 7952102106997189261}
   - component: {fileID: 317185975646281416}
   m_Layer: 5
-  m_Name: Fact Name
+  m_Name: Name Field
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9794,7 +9712,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 43.15
+  m_fontSize: 46.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

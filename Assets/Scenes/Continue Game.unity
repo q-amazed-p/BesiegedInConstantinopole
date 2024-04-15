@@ -5854,6 +5854,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58ffdb466a8c7c445bf2f1b4a743ba6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RecruitmentPricelist:
+  - variableName: iInfantry
+    unitName: Infantry
+    cost: 10
+  - variableName: iArchers
+    unitName: Archers
+    cost: 20
+  - variableName: iCavalry
+    unitName: Cavalry
+    cost: 100
+  - variableName: iVarangians
+    unitName: Varangian Guard
+    cost: 500
+  - variableName: iCannons
+    unitName: Cannons
+    cost: 500
+  - variableName: iShips
+    unitName: Warships
+    cost: 1000
   EnduringWall:
     outerWallName: 
     middlewallName: 
@@ -5984,11 +6003,15 @@ PrefabInstance:
     - target: {fileID: 3262710814510842107, guid: 71684311ee6714c479d6e7232449006d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 878093346}
+      objectReference: {fileID: 1314530485}
     - target: {fileID: 3262710814510842107, guid: 71684311ee6714c479d6e7232449006d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 878093347}
+    - target: {fileID: 3262710814510842107, guid: 71684311ee6714c479d6e7232449006d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CommitRecruitmentTransaction
+      objectReference: {fileID: 0}
     - target: {fileID: 3262710814510842107, guid: 71684311ee6714c479d6e7232449006d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: GoBack
@@ -8881,6 +8904,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1311826760}
   m_CullTransparentMesh: 1
+--- !u!114 &1314530485 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 417978467710718617, guid: 71684311ee6714c479d6e7232449006d, type: 3}
+  m_PrefabInstance: {fileID: 878246050}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55e3635c6eaea63418c4efac5b4f2ee0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1321615479
 GameObject:
   m_ObjectHideFlags: 0
@@ -13484,7 +13518,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.2}
   m_AnchorMax: {x: 1, y: 0.8}
-  m_AnchoredPosition: {x: -112, y: 0}
+  m_AnchoredPosition: {x: -75, y: 0}
   m_SizeDelta: {x: 691, y: 0}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &2035267480

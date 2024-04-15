@@ -11,10 +11,6 @@ public class VariableSingleton : MonoBehaviour
 
     static public VariableSingleton Instance => _instance;
 
-    static Dictionary<string, bool> bDict = new Dictionary<string, bool>();
-    static Dictionary<string, int> iDict = new Dictionary<string, int>();
-    static Dictionary<string, float> fDict = new Dictionary<string, float>();
-
     static int turn = 0;
         static public int Turn
         {
@@ -41,12 +37,17 @@ public class VariableSingleton : MonoBehaviour
             }
         }
 
-    [SerializeField]
-    public WallData EnduringWall = new WallData("OuterWall");
+    [SerializeField] public RecruitmentData[] RecruitmentPricelist;
+
+    [SerializeField] public WallData EnduringWall = new WallData("OuterWall");
 
     /*******************
-     * VARIABLE ACCESS */
+     * YARN VARIABLES */
 
+    static Dictionary<string, bool> bDict = new Dictionary<string, bool>();
+    static Dictionary<string, int> iDict = new Dictionary<string, int>();
+    static Dictionary<string, float> fDict = new Dictionary<string, float>();
+        
     [YarnFunction("GetBool")]
     static public bool GetBoolVariable(string varName)
     {
@@ -72,9 +73,6 @@ public class VariableSingleton : MonoBehaviour
     {
         return Mathf.RoundToInt(100 * fDict[varName]).ToString() + "%";
     }
-
-    /*************************
-     * VARIABLE MODIFICATION */
 
     [YarnCommand("Change")]
     static public void Change(string varName, float Value)
@@ -309,7 +307,7 @@ public class VariableSingleton : MonoBehaviour
 
 
     /*********************
-     * STORY POINT LISTS */
+     * STORY INDEX */
 
     [SerializeField] List<int> possibleStory = new List<int>() {0, 1, 2, 3};
     [SerializeField] List<int> possibleRandom = new List<int>();
@@ -385,7 +383,6 @@ public class VariableSingleton : MonoBehaviour
         return saveCode;
     }
 
-
     public void Load()
     {
         string[] saveBreakdown = new string[2];
@@ -415,7 +412,7 @@ public class VariableSingleton : MonoBehaviour
 
     private void Awake()
     {
-
+        _instance = this;
     }
 
     private void Start()
@@ -479,4 +476,5 @@ public class VariableSingleton : MonoBehaviour
             Debug.Log(b.Key + " : " + b.Value);
         }
     }
+
 }
