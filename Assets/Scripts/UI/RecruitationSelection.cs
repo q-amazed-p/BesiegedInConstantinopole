@@ -16,11 +16,12 @@ public class RecruitationSelection : MonoBehaviour
 
     public void GetSelectionIndex(int newIndex)
     {
+        Debug.Log(newIndex);
         transform.SetSiblingIndex(newIndex);
 
         troopVariableName = VariableSingleton.Instance.RecruitmentPricelist[newIndex].GetVariableName();
         troopCost = VariableSingleton.Instance.RecruitmentPricelist[newIndex].GetCost();
-        displayCost.text = troopCost.ToString();
+        displayCost.text = troopCost.ToString()+"g";
         displayName.text = VariableSingleton.Instance.RecruitmentPricelist[newIndex].GetName();
 
         costDeterminant.SetMaxAffordable(VariableSingleton.GetIntVariable("iMoney") / troopCost);

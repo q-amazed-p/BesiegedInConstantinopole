@@ -10,7 +10,23 @@ public class ValueIncrementer : MonoBehaviour
     int maxAffordable;
     public void SetMaxAffordable(int newMax) => maxAffordable = newMax;
 
-    int numberHeld = 0;
+    int _numberHeld = 0;
+    int numberHeld
+    {
+        get => _numberHeld;
+        set
+        {
+            if (_numberHeld != value)
+            { 
+                if (value <= 0) _numberHeld = 0;
+                else if(value >= maxAffordable) _numberHeld = maxAffordable;
+                else _numberHeld = value;
+
+                numberDisplayed.text = _numberHeld.ToString();
+            }
+        }
+    }
+
     public int CommitNumber() 
     {
         int reading = numberHeld;
@@ -20,17 +36,12 @@ public class ValueIncrementer : MonoBehaviour
 
     public void IncreaseNumber(int delta) 
     {
-        if(numberHeld + delta >= 0 && numberHeld + delta <= maxAffordable) numberHeld += delta;
-        else numberHeld = 0;
-        numberDisplayed.text = numberHeld.ToString();
+        numberHeld += delta;
     }
 
     public void OverrideNumber(string newNumberText) 
     {
-        int newNumber = int.Parse(newNumberText);
-        if (newNumber >= 0 && numberHeld <= maxAffordable) numberHeld = newNumber;
-        else numberHeld = 0;
-        numberDisplayed.text = numberHeld.ToString();
+        numberHeld = int.Parse(newNumberText);
     }
 
     private void OnEnable()
