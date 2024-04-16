@@ -40,6 +40,7 @@ public class VariableSingleton : MonoBehaviour
     [SerializeField] public RecruitmentData[] RecruitmentPricelist;
 
     [SerializeField] public WallData EnduringWall = new WallData("OuterWall");
+    public void Abandon() => EnduringWall.Abandon();
 
     /*******************
      * YARN VARIABLES */

@@ -19,7 +19,7 @@ public class DefenseActions : MonoBehaviour
         Options.SetActive(false);
 
         wallSelected = variableName;
-        abandonable = VariableSingleton.GetFloatVariable(variableName) > 0.2f ? false : true;             //requires real logic
+        abandonable = variableName == "f" + VariableSingleton.Instance.EnduringWall.GetCodeName() ? true : false;
         
         switch (variableName)
         {
