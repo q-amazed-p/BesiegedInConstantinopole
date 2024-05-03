@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AssaultSystem : MonoBehaviour
 {
-    [SerializeField] int WallOverrunThreshold;
     [Space(3)]
     [SerializeField] int rampAV;
     [SerializeField] int siegeTowerAV;
@@ -24,7 +23,7 @@ public class AssaultSystem : MonoBehaviour
     public int AssaultAftermath(bool isJanissaryAssault, int attackerNumbers, bool isWallHeld = true, int VarangiansDeployed = 0)
     {
         int attackersPervading = Mathf.RoundToInt( attackerNumbers * (VariableSingleton.GetFloatVariable("fMoat") > 0 ? 0.9f : 1) //info needed
-                                 - VariableSingleton.GetFloatVariable("fArcherQuality") * VariableSingleton.GetIntVariable("iArchers")
+                                 - VariableSingleton.GetFloatVariable("fArchersQuality") * VariableSingleton.GetIntVariable("iArchers")
                                  - cannonLethalityFactor * VariableSingleton.GetIntVariable("iCannons"));
 
         VariableSingleton.ChangeFloat("fMoat", -0.1f);
@@ -42,6 +41,7 @@ public class AssaultSystem : MonoBehaviour
 
         int invaderCasualities = attackersPervading - Mathf.RoundToInt(VariableSingleton.GetFloatVariable("fInfantryQuality") * VariableSingleton.GetIntVariable("iInfantry")
                                  + varangianLethalityFactor * VarangiansDeployed + Random.value * 100 - 50);
+
 
         if (archerCasualities > VariableSingleton.GetIntVariable("iArchers"))
         { infantryCasualities += -archerCasualities + VariableSingleton.GetIntVariable("iArchers"); }
@@ -63,13 +63,11 @@ public class AssaultSystem : MonoBehaviour
         return invaderCasualities;
     }
 
-    public bool TestAssault(int assaultTypeAddend)
+    public int TestAssault(int assaultTypeAddend)
     {
-        int assaultValue = assaultTypeAddend + VariableSingleton.GetIntVariable("iSultan") + SiegeEngeneeringAddend()
+        return assaultTypeAddend + VariableSingleton.GetIntVariable("iSultan") + SiegeEngeneeringAddend()
                             - Mathf.RoundToInt(100 * VariableSingleton.Instance.EnduringWall.GetHealth())
                             - VariableSingleton.GetIntVariable("iMorale") - WallBonus();
-
-        return assaultValue > WallOverrunThreshold;
     }
 
     int SiegeEngeneeringAddend() 

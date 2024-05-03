@@ -5,8 +5,10 @@ using UnityEngine.Events;
 
 public class AI: MonoBehaviour
 {
-    private AI _instance;
-    public AI Instance => _instance;
+    private static AI _instance;
+    public static AI Instance => _instance;
+
+    [SerializeField] AssaultUI assaultUI;
 
     OttomanDecision ottomanTactic;
 
@@ -18,6 +20,8 @@ public class AI: MonoBehaviour
     [SerializeField] GameObject TacticAdvance;
 
     [SerializeField] AssaultSystem assaultSystem;
+
+    [SerializeField] int WallOverrunThreshold;
 
     [SerializeField] int christianBalkanSubjectAV;
     [SerializeField] int bashiBazoukAV;
@@ -33,8 +37,9 @@ public class AI: MonoBehaviour
         float moatRemaining = VariableSingleton.GetFloatVariable("fMoat");
         float wallHealth = VariableSingleton.GetFloatVariable("fOuterWall");     //needs function identifying current wall
         float sultanRage = VariableSingleton.GetFloatVariable("fSultanRage");    //needs update
-        if (moatRemaining > wallHealth) 
+        if (moatRemaining >= wallHealth) 
         {
+            Debug.Log("Enemy chose preparatory tactic");
             ottomanTactic = Instantiate(TacticPrepare, transform).GetComponent<OttomanDecision>();
         }
         else switch (wallHealth) 
@@ -104,30 +109,68 @@ public class AI: MonoBehaviour
         VariableSingleton.GetIntVariable("iTurkCannons");    //can do maths on it first
     }
 
+    //there could be a custom object to contain these for turns where it's necessary
+    int assaultTest;            //equal to required varangian n
+    bool isJanissaryAssault;
+    int attackerNumbers;
+
+    public void BreachingAssaultAftermath(bool deployVarangians) 
+    {
+        assaultSystem.AssaultAftermath(isJanissaryAssault, attackerNumbers, false, deployVarangians? assaultTest : 0);
+        assaultUI.AssaultAftermathUI();
+    }
+
     public void BalkanSubjectAssault()
     {
-        int balkanSubjectNumbers = VariableSingleton.GetIntVariable("iBalkanSubjects");
-        if (assaultSystem.TestAssault(christianBalkanSubjectAV)) 
+        Debug.Log("Enemy launched Balkan Subject Assault");
+        int balkanSubjectNumbers = VariableSingleton.GetIntVariable("iBalkans");
+        assaultTest = assaultSystem.TestAssault(christianBalkanSubjectAV) - WallOverrunThreshold;
+        if (assaultTest > 0) 
+        {
+            isJanissaryAssault = false;
+            attackerNumbers = averageBalkanSubjectForce < balkanSubjectNumbers ? averageBalkanSubjectForce : balkanSubjectNumbers;
+            assaultUI.SetAssaultResultButton(false);
+        }
+        else
         {
             assaultSystem.AssaultAftermath(false, averageBalkanSubjectForce < balkanSubjectNumbers ? averageBalkanSubjectForce : balkanSubjectNumbers);
+            assaultUI.SetAssaultResultButton(true);
         }
     }
 
     public void BashiBazoukAssault()
     {
-        int bashiBazoukNumbers = VariableSingleton.GetIntVariable("iBashiBazouk");
-        if (assaultSystem.TestAssault(bashiBazoukAV)) 
+        Debug.Log("Enemy launched Bashi Bazouk Assault");
+        int bashiBazoukNumbers = VariableSingleton.GetIntVariable("iBazouks");
+        assaultTest = assaultSystem.TestAssault(bashiBazoukAV) - WallOverrunThreshold;
+        if (assaultTest > 0) 
+        {
+            isJanissaryAssault = false;
+            attackerNumbers = averageBashiBazoukForce < bashiBazoukNumbers ? averageBashiBazoukForce : bashiBazoukNumbers;
+            assaultUI.SetAssaultResultButton(false);
+        }
+        else
         {
             assaultSystem.AssaultAftermath(false, averageBashiBazoukForce < bashiBazoukNumbers ? averageBashiBazoukForce : bashiBazoukNumbers);
+            assaultUI.SetAssaultResultButton(true);
         }
     }
 
     public void JanissaryAssault()
     {
+        Debug.Log("Enemy launched Janissary Assault");
         int janissaryNumbers = VariableSingleton.GetIntVariable("iJanissaries");
-        if (assaultSystem.TestAssault(janissaryAV))
+        assaultTest = assaultSystem.TestAssault(janissaryAV) - WallOverrunThreshold;
+        if (assaultTest > 0)
+        {
+            isJanissaryAssault = true;
+            attackerNumbers = averageJanissaryForce < janissaryNumbers ? averageJanissaryForce : janissaryNumbers;
+            assaultUI.SetAssaultResultButton(false);
+        }
+        else
         {
             assaultSystem.AssaultAftermath(true, averageJanissaryForce < janissaryNumbers ? averageJanissaryForce : janissaryNumbers);
+            assaultUI.SetAssaultResultButton(true);
         }
     }
 

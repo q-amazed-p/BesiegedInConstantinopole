@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -18,7 +19,7 @@ public class OttomanDecision : MonoBehaviour
         //Space for conditions to validate before choice
 
         [SerializeField]
-        UnityEvent ottomanAction;
+        public UnityEvent ottomanAction;
 
         public bool IsRestricted() 
         {
@@ -45,7 +46,7 @@ public class OttomanDecision : MonoBehaviour
         }
     }
 
-    public int ExecuteRandomAction() 
+    public int SelectRandomAction() 
     {
         float totalChance = 0;
         foreach (possibility option in tacticalOptions) { totalChance += option.Chance; }
@@ -70,8 +71,11 @@ public class OttomanDecision : MonoBehaviour
         }
 
         return selection;
+    }
 
-        //possibleActions[selection].Invoke();
+    public void ExecuteRandomAction() 
+    {
+        tacticalOptions[SelectRandomAction()].ottomanAction.Invoke();
     }
 
     //DEBUG
@@ -82,7 +86,7 @@ public class OttomanDecision : MonoBehaviour
     public void FeignExecuteAction() 
     {
 
-        Debug.Log(ExecuteRandomAction());
+        Debug.Log(SelectRandomAction());
     }
 
 
@@ -92,7 +96,7 @@ public class OttomanDecision : MonoBehaviour
         int[] results = new int[tacticalOptions.Count];
         for (int i = DebugNumberOfRolls; i>0; i--) 
         {
-            results[ExecuteRandomAction()]++;
+            results[SelectRandomAction()]++;
         }
 
         for(int i = 0; i < results.Length; i++) 

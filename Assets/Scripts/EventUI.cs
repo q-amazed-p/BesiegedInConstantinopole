@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class EventUI : UIWindowFam
 {
-    [SerializeField] GameObject managerUI;
+    [SerializeField] GameObject assaultUI;
 
-    public void ContinueToEmperorAction()
+    public void ContinueToAssault()
     {
-        VariableSingleton.IncrementTurn();
-        SwitchPhase(managerUI);
+        SwitchPhase(assaultUI);
     }
 }

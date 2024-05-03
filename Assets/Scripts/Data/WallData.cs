@@ -6,7 +6,7 @@ using UnityEngine;
 [Serializable]
 public class WallData
 {
-    string enduringWallName;                                //this is component to construct variable key such as "fOuterWallHealth" <= "f" + enduringWall + "Health"
+    string enduringWallName;                                //this is component to construct variable key such as "fOuterWallHealth" <= "f" + enduringWall
     public string GetCodeName() => enduringWallName;
 
     [SerializeField] string outerWallName;
@@ -15,7 +15,7 @@ public class WallData
 
     public WallData(string wallName) { enduringWallName = wallName; }
 
-    public float GetHealth() => VariableSingleton.GetFloatVariable("f" + enduringWallName + "health");
+    public float GetHealth() => VariableSingleton.GetFloatVariable("f" + enduringWallName);
 
     public string GetDisplayName() 
     { 
