@@ -3358,7 +3358,43 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2539236924991273605}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4138024369260344692}
+        m_TargetAssemblyTypeName: DefenseActions, Assembly-CSharp
+        m_MethodName: RepairSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2579089886906923766}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2579089886906923766}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &7352373156598510519
 GameObject:
   m_ObjectHideFlags: 0
@@ -4126,8 +4162,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Options: {fileID: 3541734541416492190}
   selectionName: {fileID: 8289338027865468464}
-  repairCost: {fileID: 3072106849346327700}
+  repairCostDisplay: {fileID: 3072106849346327700}
   abandonButton: {fileID: 4184486743295164948}
+  repairButton: {fileID: 419883701395426628}
 --- !u!1 &7972494674303644695
 GameObject:
   m_ObjectHideFlags: 0

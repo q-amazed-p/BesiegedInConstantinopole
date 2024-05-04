@@ -18,14 +18,18 @@ public class RestUI : UIWindowFam
 
     public void ContinueToEvent()
     {
+        string nodeSelection;
         if (VariableSingleton.Instance.StoryScheduled())
         {
-            eventPhaseUI.GetComponentInChildren<DialogueRunner>().startNode = "story" + VariableSingleton.Turn;
+            nodeSelection = "story" + VariableSingleton.Turn;
+            eventPhaseUI.GetComponent<EventUI>().SetStartNode(nodeSelection);
         }
         else
         {
-            eventPhaseUI.GetComponentInChildren<DialogueRunner>().startNode = "random" + VariableSingleton.Instance.RandomEventID();
+            nodeSelection = "random" + VariableSingleton.Instance.RandomEventID();
+            eventPhaseUI.GetComponent<EventUI>().SetStartNode(nodeSelection);
         }
+        Debug.Log("Node selected: " + nodeSelection);
         SwitchPhase(eventPhaseUI);
     }
 }

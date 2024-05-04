@@ -17,6 +17,8 @@ public class AssaultUI : UIWindowFam
     public void ContinueToEmperorAction()
     {
         VariableSingleton.IncrementTurn();
+        wallsHeldMessage.SetActive(false);
+        assaultAftermathMessage.SetActive(false);
         SwitchPhase(managerUI);
     }
 
@@ -45,6 +47,7 @@ public class AssaultUI : UIWindowFam
     public void DecideVarangianDeployment() 
     {
         AI.Instance.BreachingAssaultAftermath(DeployVarangiansDecision);
+        wallsOverwhelmedChoice.SetActive(false);
     }
 
     /*********

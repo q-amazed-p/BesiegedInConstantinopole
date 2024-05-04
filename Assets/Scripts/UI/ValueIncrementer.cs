@@ -6,6 +6,7 @@ using TMPro;
 public class ValueIncrementer : MonoBehaviour
 {
     [SerializeField] TMP_InputField numberDisplayed;
+    [SerializeField] CostMultiplyingDisplay totalCostDisplay;
 
     int maxAffordable;
     public void SetMaxAffordable(int newMax) => maxAffordable = newMax;
@@ -23,6 +24,7 @@ public class ValueIncrementer : MonoBehaviour
                 else _numberHeld = value;
 
                 numberDisplayed.text = _numberHeld.ToString();
+                totalCostDisplay.UpdateMultipliedCost(numberHeld);
             }
         }
     }
@@ -41,7 +43,11 @@ public class ValueIncrementer : MonoBehaviour
 
     public void OverrideNumber(string newNumberText) 
     {
-        numberHeld = int.Parse(newNumberText);
+        if (!string.IsNullOrEmpty(newNumberText)) 
+        {
+            numberHeld = int.Parse(newNumberText);
+        }
+        else numberHeld = 0;
     }
 
     private void OnEnable()

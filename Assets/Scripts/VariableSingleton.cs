@@ -142,6 +142,15 @@ public class VariableSingleton : MonoBehaviour
         }
     }
 
+    static public void ChangePercentFloat(string varName, float delta) 
+    {
+        if (fDict[varName] + delta > 1)
+        {
+            fDict[varName] = 1;
+        }
+        else ChangeFloat(varName, delta);
+    }
+
     static public void ChangeFloat(string varName, float min, float max)
     {
         ChangeFloat(varName, UnityEngine.Random.Range(min, max));

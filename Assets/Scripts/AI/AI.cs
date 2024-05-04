@@ -109,14 +109,31 @@ public class AI: MonoBehaviour
         VariableSingleton.GetIntVariable("iTurkCannons");    //can do maths on it first
     }
 
+    enum AssaultType 
+    { 
+        Balkan,
+        Bazouk,
+        Janissary
+    }
     //there could be a custom object to contain these for turns where it's necessary
     int assaultTest;            //equal to required varangian n
-    bool isJanissaryAssault;
+    AssaultType assaultType;
     int attackerNumbers;
 
     public void BreachingAssaultAftermath(bool deployVarangians) 
     {
-        assaultSystem.AssaultAftermath(isJanissaryAssault, attackerNumbers, false, deployVarangians? assaultTest : 0);
+        int enemyLosses = assaultSystem.AssaultAftermath(assaultType==AssaultType.Janissary, attackerNumbers, false, deployVarangians? assaultTest : 0);
+        switch (assaultType) 
+        {
+            case AssaultType.Balkan:
+                VariableSingleton.ChangeInt("iBalkans", enemyLosses); break;
+
+            case AssaultType.Bazouk:
+                VariableSingleton.ChangeInt("iBazouks", enemyLosses); break;
+
+            case AssaultType.Janissary:
+                VariableSingleton.ChangeInt("iJanissaries", enemyLosses); break;
+        }
         assaultUI.AssaultAftermathUI();
     }
 
@@ -127,13 +144,14 @@ public class AI: MonoBehaviour
         assaultTest = assaultSystem.TestAssault(christianBalkanSubjectAV) - WallOverrunThreshold;
         if (assaultTest > 0) 
         {
-            isJanissaryAssault = false;
+            assaultType = AssaultType.Balkan;
             attackerNumbers = averageBalkanSubjectForce < balkanSubjectNumbers ? averageBalkanSubjectForce : balkanSubjectNumbers;
             assaultUI.SetAssaultResultButton(false);
         }
         else
         {
-            assaultSystem.AssaultAftermath(false, averageBalkanSubjectForce < balkanSubjectNumbers ? averageBalkanSubjectForce : balkanSubjectNumbers);
+            int enemyLosses = assaultSystem.AssaultAftermath(false, averageBalkanSubjectForce < balkanSubjectNumbers ? averageBalkanSubjectForce : balkanSubjectNumbers);
+            VariableSingleton.ChangeInt("iBalkans", enemyLosses);
             assaultUI.SetAssaultResultButton(true);
         }
     }
@@ -145,13 +163,14 @@ public class AI: MonoBehaviour
         assaultTest = assaultSystem.TestAssault(bashiBazoukAV) - WallOverrunThreshold;
         if (assaultTest > 0) 
         {
-            isJanissaryAssault = false;
+            assaultType = AssaultType.Bazouk;
             attackerNumbers = averageBashiBazoukForce < bashiBazoukNumbers ? averageBashiBazoukForce : bashiBazoukNumbers;
             assaultUI.SetAssaultResultButton(false);
         }
         else
         {
-            assaultSystem.AssaultAftermath(false, averageBashiBazoukForce < bashiBazoukNumbers ? averageBashiBazoukForce : bashiBazoukNumbers);
+            int enemyLosses = assaultSystem.AssaultAftermath(false, averageBashiBazoukForce < bashiBazoukNumbers ? averageBashiBazoukForce : bashiBazoukNumbers);
+            VariableSingleton.ChangeInt("iBazouks", enemyLosses);
             assaultUI.SetAssaultResultButton(true);
         }
     }
@@ -163,17 +182,17 @@ public class AI: MonoBehaviour
         assaultTest = assaultSystem.TestAssault(janissaryAV) - WallOverrunThreshold;
         if (assaultTest > 0)
         {
-            isJanissaryAssault = true;
+            assaultType = AssaultType.Janissary;
             attackerNumbers = averageJanissaryForce < janissaryNumbers ? averageJanissaryForce : janissaryNumbers;
             assaultUI.SetAssaultResultButton(false);
         }
         else
         {
-            assaultSystem.AssaultAftermath(true, averageJanissaryForce < janissaryNumbers ? averageJanissaryForce : janissaryNumbers);
+            int enemyLosses = assaultSystem.AssaultAftermath(true, averageJanissaryForce < janissaryNumbers ? averageJanissaryForce : janissaryNumbers);
+            VariableSingleton.ChangeInt("iJanissaries", -enemyLosses);
             assaultUI.SetAssaultResultButton(true);
         }
     }
-
 
     /*********
      * UNITY */

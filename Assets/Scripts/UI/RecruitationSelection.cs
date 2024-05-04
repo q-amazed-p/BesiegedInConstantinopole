@@ -9,6 +9,7 @@ public class RecruitationSelection : MonoBehaviour
 
     [SerializeField] TMP_Text displayName;
     [SerializeField] TMP_Text displayCost;
+    [SerializeField] CostMultiplyingDisplay displayMultiplied;
     [SerializeField] ValueIncrementer costDeterminant;
 
     string troopVariableName;
@@ -16,15 +17,17 @@ public class RecruitationSelection : MonoBehaviour
 
     public void GetSelectionIndex(int newIndex)
     {
-        Debug.Log(newIndex);
         transform.SetSiblingIndex(newIndex);
 
         troopVariableName = VariableSingleton.Instance.RecruitmentPricelist[newIndex].GetVariableName();
-        troopCost = VariableSingleton.Instance.RecruitmentPricelist[newIndex].GetCost();
-        displayCost.text = troopCost.ToString()+"g";
         displayName.text = VariableSingleton.Instance.RecruitmentPricelist[newIndex].GetName();
 
+        troopCost = VariableSingleton.Instance.RecruitmentPricelist[newIndex].GetCost();
+        displayCost.text = troopCost.ToString()+"g / Unit";
+        displayMultiplied.TroopCost = troopCost;
+
         costDeterminant.SetMaxAffordable(VariableSingleton.GetIntVariable("iMoney") / troopCost);
+
 
         LogRecruitationToEsc();
     }
@@ -46,6 +49,7 @@ public class RecruitationSelection : MonoBehaviour
             VariableSingleton.ChangeInt(troopVariableName, troopsOrdered);
         }
         
+
         ControlSingleton.Instance.GoBack();
     }
 }

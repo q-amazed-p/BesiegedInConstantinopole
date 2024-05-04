@@ -1,0 +1,43 @@
+title: story0
+---
+
+<b>Messenger arrives</b> <br> A dusty messenger stumbles into your court room, clearly after riding many miles. Loukas Notaras, your megas doux and chief minister, takes the scroll out of messenger's shaking hand and unfolds it. You can see how blood leaves the face of your trusted advisor. He reads it and you realise that peace has come to an end. Sultan Mehmed the Second, Lord of the Turks, Master of the Ottoman Empire, is gathering armies in the city of Adrianople. His criers are spreading the call of Jihad across the Anatolia and the Balkans, his engineers are improving roads and bridges leading to Constantinople and there are rumours of massive cannons being forged. A massive army is being gathered and there can be only a single target for it - the last piece of the Eastern Roman Empire, the Holy City of Constantinople, your home. Although you have suspected that this attack will come, you hoped for more time. But now, you realise that you have mere months to prepare. Notaras asks: Imperator, what shall be your orders? How do we prepare for this? 
+  -> Theodosian Walls defended the City for over a thousand years. Our focus will be Fortifications and Artillery!
+   We will do all we can, but Fortifications and Artillery will be our main focus during the preparation for the siege.
+   <<set $Focus to "0">>
+  -> No walls can defend the City if there are no men to guard them. Our focus will be Mobilisation!
+   We will do all we can, but Mobilisation will be our main focus during the preparation for the siege.
+   <<set $Focus to "1">>
+  -> Gold is the sinews of war. We need money and resources to arm ourselves. Our focus will be War Economy!
+   We will do all we can, but War Economy will be our main focus during the preparation for the siege.
+   <<set $Focus to "2">>
+  -> God, not gold, will save us, as he did so many times before. Our focus will be Faith and Unity!
+   We will do all we can, but Faith and Unity will be our main focus during the preparation for the siege.
+   <<set $Focus to "3">>
+  -> Our strongest weapon is our mind and our reputation. We need strategise, scheme and to call allies. Our focus will be Diplomacy and Spycraft!
+   We will do all we can, but diplomacy will be our main focus during the preparation for the siege.
+   <<set $Focus to "4">> 
+
+===
+
+title: story1
+---
+
+<b>Mending the Schism</b> <br> For years there have been attempts to mend the Great Schism between the Rome and Constantinople. Both churches proclaim themselves to be the rightful inheritors of the temple of Jesus on Earth. Cardinal Isidore of Kiev, one of the most prominent priests of our Empire, has worked for many years to secure so called "Union of Florence" between Constantinople and Rome and he strongly advocates that we accept it in order so that we can secure aid from the Pope and other Catholic nations. Meanwhile Loukas Notaras, our chief minister, stresses that the people and most clergy are opposed to this, as accursed Latins have once already been the reason of our downfall, when they took the City and almost destroyed the Empire in 1204. We need to consider the political and religious implications, should we stick with our tradition or consider converting to the Catholic faith, hoping to secure additional assistance?
+-> We shall support Orthodox Church unto death.
+ Damned be those heretics, war or peace, we shall remain Orthodox. Your decision causes a brief celebration among your elites, but will reduce the likelihood that Catholic nations will aid us.
+  <<set $Religion to "0">>
+<<Change fNobleRep +10>>
+<<Change fPriestRep +15>>
+-> We must seek to Mend the Schism, adopt Catholicism fully!
+The time has come to swallow our pride and admit our fault. The Emperor will convert to Catholicism and require everyone in the palace to do the same. We will fully embrace Union of Florence - Roma suprema est.  Your decision will cause anger among our priesthood and the nobles, but the Catholic nations will rejoice and we hope that the Pope shall call for a new crusade to save Constantinople.
+<<set $Religion to "1">>
+<<Change fNobleRep -20>>
+<<Change fPriestRep -30>>
+-> The Emperor shall embrace Union of Florence, but will not enforce it.
+We need the Catholic aid, but also we need to maintain our priests happy. Let us adopt Catholic faith by symbolically accepting Union of Florence, but without enforcing it. Your decision will still somewhat annoy the priesthood and the nobility will grumble, but the Catholics will aid us, although less than they would with full conversion.
+  <<set $Religion to "2">>
+<<Change fNobleRep -5>>
+<<Change fPriestRep -10>>
+
+===
