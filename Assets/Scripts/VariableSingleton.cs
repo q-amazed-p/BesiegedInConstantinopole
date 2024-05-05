@@ -75,6 +75,13 @@ public class VariableSingleton : MonoBehaviour
         return Mathf.RoundToInt(100 * fDict[varName]).ToString() + "%";
     }
 
+    [YarnCommand("SetInt")]
+    static  public void SetInt(string varName, int newValue) 
+    {
+        iDict[varName] = newValue;
+    }
+
+
     [YarnCommand("Change")]
     static public void Change(string varName, float Value)
     {
@@ -142,6 +149,7 @@ public class VariableSingleton : MonoBehaviour
         }
     }
 
+    [YarnCommand("ChangeFraction")]
     static public void ChangePercentFloat(string varName, float delta) 
     {
         if (fDict[varName] + delta > 1)
