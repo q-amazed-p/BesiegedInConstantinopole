@@ -10,9 +10,12 @@ public class DialogueController : MonoBehaviour
 
     [SerializeField] DialogueRunner dialogueRunner;
 
+
+    bool initialized;
     private void OnEnable()
     {
-        dialogueRunner.StartDialogue(startNode);
+        if(initialized) dialogueRunner.StartDialogue(startNode);
+        else initialized = true;
     }
 
 }
