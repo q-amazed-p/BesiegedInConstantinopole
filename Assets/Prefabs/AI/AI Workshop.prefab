@@ -1,5 +1,276 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &932252464547097836
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5560607848701654732}
+  - component: {fileID: 5346726578358485572}
+  m_Layer: 0
+  m_Name: Tactic Advance
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5560607848701654732
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932252464547097836}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5301135395730895076}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5346726578358485572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932252464547097836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 330256994c4d0594fb533dc5f7e29918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tacticalOptions: []
+  DebugNumberOfRolls: 0
+--- !u!1 &1315026909952034318
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6045189473075387438}
+  - component: {fileID: 6123927726189979814}
+  m_Layer: 0
+  m_Name: Tactic Prepare
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6045189473075387438
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315026909952034318}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5301135395730895076}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6123927726189979814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315026909952034318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 330256994c4d0594fb533dc5f7e29918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tacticalOptions:
+  - _chance: 0.5
+    restrictions: []
+    ottomanAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3025948242962614695}
+          m_TargetAssemblyTypeName: AI, Assembly-CSharp
+          m_MethodName: DecisionFillMoat
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - _chance: 0.1
+    restrictions: []
+    ottomanAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3025948242962614695}
+          m_TargetAssemblyTypeName: AI, Assembly-CSharp
+          m_MethodName: DecisionBuildRamp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - _chance: 0.1
+    restrictions:
+    - bBatteringRam
+    ottomanAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3025948242962614695}
+          m_TargetAssemblyTypeName: AI, Assembly-CSharp
+          m_MethodName: DecisionBuildRam
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - _chance: 0.1
+    restrictions:
+    - bSiegeTower
+    ottomanAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3025948242962614695}
+          m_TargetAssemblyTypeName: AI, Assembly-CSharp
+          m_MethodName: DecisionBuildTower
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - _chance: 0.2
+    restrictions: []
+    ottomanAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3025948242962614695}
+          m_TargetAssemblyTypeName: AI, Assembly-CSharp
+          m_MethodName: MoarCannons
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  DebugNumberOfRolls: 0
+--- !u!1 &1679070903535340151
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6239310514006560855}
+  - component: {fileID: 5876678289847117023}
+  m_Layer: 0
+  m_Name: Tactic Bombard Wall
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6239310514006560855
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679070903535340151}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5301135395730895076}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5876678289847117023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679070903535340151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 330256994c4d0594fb533dc5f7e29918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tacticalOptions: []
+  DebugNumberOfRolls: 0
+--- !u!1 &2566381477813069817
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7081531729128930777}
+  - component: {fileID: 7304552209982540113}
+  m_Layer: 0
+  m_Name: Tactic Send Assault
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7081531729128930777
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2566381477813069817}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5301135395730895076}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7304552209982540113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2566381477813069817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 330256994c4d0594fb533dc5f7e29918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tacticalOptions: []
+  DebugNumberOfRolls: 0
 --- !u!1 &3364847319141052811
 GameObject:
   m_ObjectHideFlags: 0
@@ -31,7 +302,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1898935126341586287}
+  - {fileID: 6045189473075387438}
+  - {fileID: 6239310514006560855}
+  - {fileID: 498839770929984263}
+  - {fileID: 8927391130879103944}
+  - {fileID: 7081531729128930777}
+  - {fileID: 5560607848701654732}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3025948242962614695
@@ -46,13 +322,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66f9600fb0263514fb7d474a6ab94494, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TacticPrepare: {fileID: 8390790068732623792, guid: d74bc5c659e8ebf448870bb63e385011, type: 3}
-  TacticBombardWall: {fileID: 8390790068732623792, guid: 9ee03f8eed7e0ed48be47ab9ae497483, type: 3}
-  TacticTestWall: {fileID: 8390790068732623792, guid: 54bf6b5d0a20fd342a103b42d6e4b606, type: 3}
-  TacticAttackWall: {fileID: 8390790068732623792, guid: 7cd091c6b1caf044692fdbccdd66c409, type: 3}
-  TacticSendAssault: {fileID: 8390790068732623792, guid: 6d9046a36ac241a44b0cbe339454053d, type: 3}
-  TacticAdvance: {fileID: 8390790068732623792, guid: 47081ac918644ab4b8c63c5b7493cf38, type: 3}
+  assaultUI: {fileID: 0}
+  TacticPrepare: {fileID: 1315026909952034318}
+  TacticBombardWall: {fileID: 1679070903535340151}
+  TacticTestWall: {fileID: 4197160389413571048}
+  TacticAttackWall: {fileID: 5131576816570329383}
+  TacticSendAssault: {fileID: 2566381477813069817}
+  TacticAdvance: {fileID: 932252464547097836}
   assaultSystem: {fileID: 6249235966759036046}
+  WallOverrunThreshold: 0
   christianBalkanSubjectAV: 75
   bashiBazoukAV: 100
   janissaryAV: 125
@@ -71,7 +349,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a7d4f538954c2f40bc9651830a171b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WallOverrunThreshold: 100
   rampAV: 20
   siegeTowerAV: 10
   batteringRamAV: 5
@@ -84,121 +361,95 @@ MonoBehaviour:
   commonEnemyLethalityFactor: 0.1
   archerLossWeight: 1
   infantryLossWeight: 3
---- !u!1001 &3455234798395026687
-PrefabInstance:
+--- !u!1 &4197160389413571048
+GameObject:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 5301135395730895076}
-    m_Modifications:
-    - target: {fileID: 3652831406483281176, guid: d74bc5c659e8ebf448870bb63e385011, type: 3}
-      propertyPath: DebugNumberOfRolls
-      value: 31
-      objectReference: {fileID: 0}
-    - target: {fileID: 3652831406483281176, guid: d74bc5c659e8ebf448870bb63e385011, type: 3}
-      propertyPath: tacticalOptions.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3652831406483281176, guid: d74bc5c659e8ebf448870bb63e385011, type: 3}
-      propertyPath: tacticalOptions.Array.data[0]._chance
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3652831406483281176, guid: d74bc5c659e8ebf448870bb63e385011, type: 3}
-      propertyPath: tacticalOptions.Array.data[1]._chance
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3652831406483281176, guid: d74bc5c659e8ebf448870bb63e385011, type: 3}
-      propertyPath: tacticalOptions.Array.data[2]._chance
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3652831406483281176, guid: d74bc5c659e8ebf448870bb63e385011, type: 3}
-      propertyPath: tacticalOptions.Array.data[0].ottomanAction.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3652831406483281176, guid: d74bc5c659e8ebf448870bb63e385011, type: 3}
-      propertyPath: tacticalOptions.Array.data[1].ottomanAction.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3652831406483281176, guid: d74bc5c659e8ebf448870bb63e385011, type: 3}
-      propertyPath: tacticalOptions.Array.data[2].ottomanAction.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3652831406483281176, guid: d74bc5c659e8ebf448870bb63e385011, type: 3}
-      propertyPath: tacticalOptions.Array.data[0].ottomanAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 3364847319141052811}
-    - target: {fileID: 3652831406483281176, guid: d74bc5c659e8ebf448870bb63e385011, type: 3}
-      propertyPath: tacticalOptions.Array.data[1].ottomanAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 3364847319141052811}
-    - target: {fileID: 3652831406483281176, guid: d74bc5c659e8ebf448870bb63e385011, type: 3}
-      propertyPath: tacticalOptions.Array.data[2].ottomanAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 3364847319141052811}
-    - target: {fileID: 3652831406483281176, guid: d74bc5c659e8ebf448870bb63e385011, type: 3}
-      propertyPath: tacticalOptions.Array.data[0].ottomanAction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3652831406483281176, guid: d74bc5c659e8ebf448870bb63e385011, type: 3}
-      propertyPath: tacticalOptions.Array.data[1].ottomanAction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3652831406483281176, guid: d74bc5c659e8ebf448870bb63e385011, type: 3}
-      propertyPath: tacticalOptions.Array.data[2].ottomanAction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3866668835113099664, guid: d74bc5c659e8ebf448870bb63e385011, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3866668835113099664, guid: d74bc5c659e8ebf448870bb63e385011, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3866668835113099664, guid: d74bc5c659e8ebf448870bb63e385011, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3866668835113099664, guid: d74bc5c659e8ebf448870bb63e385011, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3866668835113099664, guid: d74bc5c659e8ebf448870bb63e385011, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3866668835113099664, guid: d74bc5c659e8ebf448870bb63e385011, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3866668835113099664, guid: d74bc5c659e8ebf448870bb63e385011, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3866668835113099664, guid: d74bc5c659e8ebf448870bb63e385011, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3866668835113099664, guid: d74bc5c659e8ebf448870bb63e385011, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3866668835113099664, guid: d74bc5c659e8ebf448870bb63e385011, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8390790068732623792, guid: d74bc5c659e8ebf448870bb63e385011, type: 3}
-      propertyPath: m_Name
-      value: Tactic Prepare
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d74bc5c659e8ebf448870bb63e385011, type: 3}
---- !u!4 &1898935126341586287 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3866668835113099664, guid: d74bc5c659e8ebf448870bb63e385011, type: 3}
-  m_PrefabInstance: {fileID: 3455234798395026687}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8927391130879103944}
+  - component: {fileID: 9006120569613805376}
+  m_Layer: 0
+  m_Name: Tactic Test Wall
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8927391130879103944
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4197160389413571048}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5301135395730895076}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9006120569613805376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4197160389413571048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 330256994c4d0594fb533dc5f7e29918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tacticalOptions: []
+  DebugNumberOfRolls: 0
+--- !u!1 &5131576816570329383
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 498839770929984263}
+  - component: {fileID: 140843311403403151}
+  m_Layer: 0
+  m_Name: Tactic Attack Wall
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &498839770929984263
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5131576816570329383}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5301135395730895076}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &140843311403403151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5131576816570329383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 330256994c4d0594fb533dc5f7e29918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tacticalOptions: []
+  DebugNumberOfRolls: 0
