@@ -7086,17 +7086,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 793558036}
   m_CullTransparentMesh: 1
---- !u!114 &794460339 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3025948242962614695, guid: 851b5b24e31fe5646a0fc1b0a9bc2e31, type: 3}
-  m_PrefabInstance: {fileID: 1712458040}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66f9600fb0263514fb7d474a6ab94494, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &803596636
 GameObject:
   m_ObjectHideFlags: 0
@@ -7477,10 +7466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8db892ad4e56fa04f913782a819d281d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionText:
-  - BuildingBuild
-  - RectuitingRectuit
-  - UpgraidingUpUp
+  actionResultTexts: []
 --- !u!1001 &878246050
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14378,11 +14364,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6609354595237819155, guid: 71684311ee6714c479d6e7232449006d, type: 3}
   m_PrefabInstance: {fileID: 878246050}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1708355720 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6593664177066841935, guid: 851b5b24e31fe5646a0fc1b0a9bc2e31, type: 3}
-  m_PrefabInstance: {fileID: 1712458040}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1712458040
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14391,78 +14372,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2108251361881946599, guid: 851b5b24e31fe5646a0fc1b0a9bc2e31, type: 3}
-      propertyPath: tacticalOptions.Array.data[0].ottomanAction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2108251361881946599, guid: 851b5b24e31fe5646a0fc1b0a9bc2e31, type: 3}
-      propertyPath: tacticalOptions.Array.data[1].ottomanAction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2108251361881946599, guid: 851b5b24e31fe5646a0fc1b0a9bc2e31, type: 3}
-      propertyPath: tacticalOptions.Array.data[2].ottomanAction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2108251361881946599, guid: 851b5b24e31fe5646a0fc1b0a9bc2e31, type: 3}
-      propertyPath: tacticalOptions.Array.data[0].ottomanAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 794460339}
-    - target: {fileID: 2108251361881946599, guid: 851b5b24e31fe5646a0fc1b0a9bc2e31, type: 3}
-      propertyPath: tacticalOptions.Array.data[1].ottomanAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 794460339}
-    - target: {fileID: 2108251361881946599, guid: 851b5b24e31fe5646a0fc1b0a9bc2e31, type: 3}
-      propertyPath: tacticalOptions.Array.data[2].ottomanAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 794460339}
-    - target: {fileID: 2108251361881946599, guid: 851b5b24e31fe5646a0fc1b0a9bc2e31, type: 3}
-      propertyPath: tacticalOptions.Array.data[0].ottomanAction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BalkanSubjectAssault
-      objectReference: {fileID: 0}
-    - target: {fileID: 2108251361881946599, guid: 851b5b24e31fe5646a0fc1b0a9bc2e31, type: 3}
-      propertyPath: tacticalOptions.Array.data[1].ottomanAction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BashiBazoukAssault
-      objectReference: {fileID: 0}
-    - target: {fileID: 2108251361881946599, guid: 851b5b24e31fe5646a0fc1b0a9bc2e31, type: 3}
-      propertyPath: tacticalOptions.Array.data[2].ottomanAction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: JanissaryAssault
-      objectReference: {fileID: 0}
-    - target: {fileID: 2108251361881946599, guid: 851b5b24e31fe5646a0fc1b0a9bc2e31, type: 3}
-      propertyPath: tacticalOptions.Array.data[0].ottomanAction.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: AI, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2108251361881946599, guid: 851b5b24e31fe5646a0fc1b0a9bc2e31, type: 3}
-      propertyPath: tacticalOptions.Array.data[1].ottomanAction.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: AI, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2108251361881946599, guid: 851b5b24e31fe5646a0fc1b0a9bc2e31, type: 3}
-      propertyPath: tacticalOptions.Array.data[2].ottomanAction.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: AI, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2108251361881946599, guid: 851b5b24e31fe5646a0fc1b0a9bc2e31, type: 3}
-      propertyPath: tacticalOptions.Array.data[0].ottomanAction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 2108251361881946599, guid: 851b5b24e31fe5646a0fc1b0a9bc2e31, type: 3}
-      propertyPath: tacticalOptions.Array.data[1].ottomanAction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 2108251361881946599, guid: 851b5b24e31fe5646a0fc1b0a9bc2e31, type: 3}
-      propertyPath: tacticalOptions.Array.data[2].ottomanAction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 3025948242962614695, guid: 851b5b24e31fe5646a0fc1b0a9bc2e31, type: 3}
-      propertyPath: assaultUI
-      value: 
-      objectReference: {fileID: 544773589}
-    - target: {fileID: 3025948242962614695, guid: 851b5b24e31fe5646a0fc1b0a9bc2e31, type: 3}
-      propertyPath: TacticPrepare
-      value: 
-      objectReference: {fileID: 1708355720}
-    - target: {fileID: 3025948242962614695, guid: 851b5b24e31fe5646a0fc1b0a9bc2e31, type: 3}
-      propertyPath: WallOverrunThreshold
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 3364847319141052811, guid: 851b5b24e31fe5646a0fc1b0a9bc2e31, type: 3}
       propertyPath: m_Name
       value: AI Workshop

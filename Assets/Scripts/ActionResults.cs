@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,8 +8,29 @@ public class ActionResults : MonoBehaviour
     private static ActionResults _instance;
     public static ActionResults Instance => _instance;
 
+    public enum ActionType 
+    { 
+        RepairWall,
+        RecruitTroops,
+        UpgradeTroops
+    }
 
-    [SerializeField] private List<string> actionText;
+    [Serializable]
+    class ActionResultText 
+    {
+        [SerializeField] ActionType actionType;
+        [SerializeField] [TextArea] string actionText;
+
+        public void saveEntry(string[] stringArray)     //this may not work when array is passed as argument
+        {
+            stringArray[(int)actionType] = actionText;
+        }
+    }
+
+    [SerializeField] List<ActionResultText> actionResultTexts;
+
+
+    string[] actionTextStorage;
     /**Action indices:
      * 0 - repair wall
      * 1 - recruit troops
@@ -19,13 +41,18 @@ public class ActionResults : MonoBehaviour
 
     public string GetActionText()
     {
-        return actionText[_lastAction];
+        return actionTextStorage[_lastAction];
     }
     
 
     private void Awake()
     {
         _instance = this;
+        actionTextStorage = new string[actionResultTexts.Count];
+        foreach(ActionResultText entry in actionResultTexts) 
+        {
+            entry.saveEntry(actionTextStorage);
+        }
     }
 
 }
