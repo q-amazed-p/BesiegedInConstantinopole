@@ -1,0 +1,404 @@
+title: story0
+---
+
+<b>Messenger arrives</b> <br> A dusty messenger stumbles into your court room, clearly after riding many miles. Loukas Notaras, your megas doux and chief minister, takes the scroll out of messenger's shaking hand and unfolds it. You can see how blood leaves the face of your trusted advisor. He reads it and you realise that peace has come to an end. Sultan Mehmed the Second, Lord of the Turks, Master of the Ottoman Empire, is gathering armies in the city of Adrianople. His criers are spreading the call of Jihad across the Anatolia and the Balkans, his engineers are improving roads and bridges leading to Constantinople and there are rumours of massive cannons being forged. A massive army is being gathered and there can be only a single target for it - the last piece of the Eastern Roman Empire, the Holy City of Constantinople, your home. Although you have suspected that this attack will come, you hoped for more time. But now, you realise that you have mere months to prepare. Notaras asks: Imperator, what shall be your orders? How do we prepare for this? 
+  -> Theodosian Walls defended the City for over a thousand years. Our focus will be Fortifications and Artillery!
+   We will do all we can, but Fortifications and Artillery will be our main focus during the preparation for the siege.
+   <<SetInt iFocus 1>>
+  -> No walls can defend the City if there are no men to guard them. Our focus will be Mobilisation!
+   We will do all we can, but Mobilisation will be our main focus during the preparation for the siege.
+   <<SetInt iFocus 1>>
+  -> Gold is the sinews of war. We need money and resources to arm ourselves. Our focus will be War Economy!
+   We will do all we can, but War Economy will be our main focus during the preparation for the siege.
+   <<SetInt iFocus 2>>
+  -> God, not gold, will save us, as he did so many times before. Our focus will be Faith and Unity!
+   We will do all we can, but Faith and Unity will be our main focus during the preparation for the siege.
+   <<SetInt iFocus 3>>
+  -> Our strongest weapon is our mind and our reputation. We need strategise, scheme and to call allies. Our focus will be Diplomacy and Spycraft!
+   We will do all we can, but diplomacy will be our main focus during the preparation for the siege.
+   <<SetInt iFocus 4>>
+
+===
+
+title: story1
+---
+
+<b>Mending the Schism</b> <br> For years there have been attempts to mend the Great Schism between the Rome and Constantinople. Both churches proclaim themselves to be the rightful inheritors of the temple of Jesus on Earth. Cardinal Isidore of Kiev, one of the most prominent priests of our Empire, has worked for many years to secure so called "Union of Florence" between Constantinople and Rome and he strongly advocates that we accept it in order so that we can secure aid from the Pope and other Catholic nations. Meanwhile Loukas Notaras, our chief minister, stresses that the people and most clergy are opposed to this, as accursed Latins have once already been the reason of our downfall, when they took the City and almost destroyed the Empire in 1204. We need to consider the political and religious implications, should we stick with our tradition or consider converting to the Catholic faith, hoping to secure additional assistance?
+-> We shall support Orthodox Church unto death.
+ Damned be those heretics, war or peace, we shall remain Orthodox. Your decision causes a brief celebration among your elites, but will reduce the likelihood that Catholic nations will aid us.
+ <<SetInt iReligion 0>>
+ <<Change fNobleRep 10>>
+ <<Change fPriestRep 15>>
+-> We must seek to Mend the Schism, adopt Catholicism fully!
+ The time has come to swallow our pride and admit our fault. The Emperor will convert to Catholicism and require everyone in the palace to do the same. We will fully embrace Union of Florence - Roma suprema est.  Your decision will cause anger among our priesthood and the nobles, but the Catholic nations will rejoice and we hope that the Pope shall call for a new crusade to save Constantinople.
+ <<SetInt iReligion 1>>
+ <<Change fNobleRep -20>>
+ <<Change fPriestRep -30>>
+-> The Emperor shall embrace Union of Florence, but will not enforce it.
+ We need the Catholic aid, but also we need to maintain our priests happy. Let us adopt Catholic faith by symbolically accepting Union of Florence, but without enforcing it. Your decision will still somewhat annoy the priesthood and the nobility will grumble, but the Catholics will aid us, although less than they would with full conversion.
+  <<SetInt iReligion 2>>
+ <<Change fNobleRep -5>>
+ <<Change fPriestRep -10>>
+
+===
+
+title: story2
+---
+
+<b>Siege Preparation - Walls</b> <br> The main defense of your city are the walls separating the enemy scimitars from your throat. As everyone knows, the outer walls of the city, built by the Emperor Theodosius in the 5th century, are the greatest, most impressive piece of siege architecture in the whole of Europe. The only time these walls have been breached, was during the sack of the city in 1204 by the Frankish crusaders. If these walls would fall, the second line of defence would be the Constantinian walls, which have been abandoned for a long time and in their current condition could not stop even a determined beggar. Finally, the core of the city is defended by the final line of Severan walls, which are also crumbling and haven't been properly maintained for centuries. In order to prepare for the siege, we need to restore our once glorious fortifications. How shall we focus on their reconstruction?
++++Explanation - Enemy will attempt to tear down your walls. When the walls are low enough, they will assault the city. If they successfully breach all the walls, after the final assault you will lose the game. Do not let this happen!+++
+-> The Theodosian Wall is the first and strongest line of defence, it needs to be repaired - this is the highest priority.
+    Theodosian Wall is the longest and strongest of City's fortifications, stretching for 3.5 miles from North to South. The battle for our lives will be won or lost on its battlements, so you order reconstruction and the Theodosian Wall is restored to 100% condition.
+    <<ChangeFraction fOuterWall 1>>   
+    <<Change iMaterials -60>> 
+-> The Constantinian Wall hasn't seen combat for centuries and is in a really bad shape. However, it will be vital if the outer wall would be breached. It must be rebuilt.
+    Constantinian Wall is barely more than a ruin and hasn't seen action for a thousand years. However, with our efforts, it is now restored to 100% condition.
+    <<ChangeFraction fMiddleWall 1>>   
+    <<Change iMaterials -160>> 
+-> While the Severan Wall is the weakest of the three, it protects the Great Palace and the heart of the city. It must be rebuilt.
+    The core of the city is now once more protected and Severan wall is restored to 100% condition, for the first time in over a millenium! While this wall will not stop a determined Turkish assault, it will definitely protect you from your own angry population or any infiltrators lurking in the city.
+    <<ChangeFraction fInnerWall 1>>   
+    <<Change iMaterials -80>> 
+-> It will be a massive undertaking, but all the three Walls must be restored before the siege begins. Our Focus on Fortification will help us efficiently use materials and save some of the costs. <<if GetInt(iFocus) == 0>>
+    You initiate the greatest reconstruction effort in Constantinople since the times of Emperor Justinian the Great. Thousands of citizens are used for the massive labour projects. Soon, all three Walls are restored to 100%. 
+    <<ChangeFraction fOuterWall 1>> 
+    <<ChangeFraction fMiddleWall 1>>  
+    <<ChangeFraction fInnerWall 1>> 
+    <<Change iMaterials -250>> 
+===
+
+title: story3
+---
+
+<b>Decision regarding Morea</b>  <br> While the territories under the control of the Eastern Roman Empire have waxed and waned over the centuries, never have they been smaller than today. Grandeur that was once Rome is lost and buried. Constantinople is the only major city left under the control of our Empire, however we still have holdings in Morea (or as Greeks call it - Peloponnesus) peninsula in the southern Greece and some of the islands of the Marmara sea. As the siege approaches, we need to issue orders to our troops serving there. We could summon them to help us, but it could anger our nobles, whose estates would remain unprotected. Alternatively, we could tell them to launch a diversion against the Turks and win us time. What shall be your orders?
+-> They should remain where they are and protect our lands from bandits and raiders, support of the nobility will be important to me.
+    The nobles are pleased with your decision and promise to make good use of the imperial troops to protect your lands. They also send you a monetary contribution worth 15000 gold to support siege preparation.
+    <<Change iMoney 10000>> 
+    <<Change fNobleRep 0.05>> 
+-> Summon all of the trained troops to Constantinople. If the City falls, nothing else will matter, we need every bow and every blade on our holy walls!
+   Soon, a few ships from Morea arrive, bringing the whole garrison - a total of 1000 soldiers, 400 archers and 100 cavalry. People of the city rejoice, as this significantly bolsters your forces.
+    <<Change iInfantry 1000>> 
+    <<Change iArchers 400>> 
+    <<Change iCavalry 100>> 
+    <<Change fNobleRep -0.1>>  
+-> Order the lords of Morea to distract Mehmed's forces by attacking his supply lines.
+    While the distraction is too small to truly disrupt the main Ottoman army, Sultan Mehmed nonetheless sends 12 500 soldiers to hunt down your troops. This means that they won't participate in the siege, however the nobility think that your orders are a suicide mission, hurting your image.
+    <<Change iBazouks -12500>> 
+    <<Change fNobleRep -0.15>>  
+-> As our Focus is mobilisation, we should order every able bodied man from our holdings to come to defend Constantinople immediately. <<if GetInt(iFocus) == 1>>
+    While majority of the recruits are Morean farmers without much fighting experience, their numbers will significantly bolster our fighting strength. Unfortunately, the mood among soldiers turns sour as they mix with country bumpkins. Soon, a few ships arrive, bringing 3000 soldiers, 500 archers and 100 cavalry.   
+    <<Change iInfantry 3000>> 
+    <<Change iArchers 500>> 
+    <<Change iCavalry 100>> 
+    <<Change fTroopRep -0.07>>  
+-> As our Focus is War Economy, we should instead demand our holdings to provide all the resources and money they can. <<if GetInt(iFocus) == 2>>
+    The troops, instead of travelling to Constantinople, are used to shake everyone dry, collecting every penny for your treasury.
+    <<Change iMoney 25000>> 
+    <<Change fNobleRep -0.07>>  
+    <<Change fPriestRep -0.07>>
+    <<Change fPeopleRep -0.07>>    
+-> As our Focus is Faith, we should instead order all of our holdings to pray for us. This will raise morale of all the defenders. <<if FGetInt(iFocus) == 3>>
+    Every church in Morea is ringing bells day and night, every soldier and peasant spends their days praying for their Imperator and the Constantinople. This raises the mood across the board, as people, soldiers, priests and even the nobles are astounded by such show of piety. Truly God cannot abandon us now?
+    <<Change fNobleRep 0.12>>  
+    <<Change fPriestRep 0.12>>
+    <<Change fPeopleRep 0.12>>
+    <<Change fTroopRep 0.12>>   
+===
+title: story4
+---
+<b>Siege Preparation - Raising an Army</b> <br> The people of Constantinople have gotten used to the peace and our military has for a long time been underfunded and the troops we have are too weak to withstand Ottoman might. The answer is clear - we need more men. There are many ways to recruit more soldiers, but which one is the best?
+-> Infantry is the backbone of our army, they will hold the walls during the enemy assaults. Raise 3000 infantry. [30,000 gold] <<if GetInt(iMoney) >= 30000>>
+  We quickly recruit more spearmen from the citizens of Constantinople. Some have never held a weapon in their lives. They will learn quickly or they will die.
+  <<Change iInfantry 3000>>
+  <<Change iMoney -30000>>
+-> Nothing is more dangerous when approaching the walls than a well-aimed arrow. Ranged troops are most effective at killing attackers. Raise 1500 archers. <<if GetInt(iMoney) >= 30000>>
+ You order the ancient Hippodrome to be converted into three archery ranges, where hundreds of archers train daily. By the time siege comes, they should be ready.
+  <<Change iArchers 1500>>
+  <<Change iMoney -30000>>
+-> Cavalry will provide us with the flexibility to sally out and strike at our enemy and in the worst case scenario they will dismount and fight on the walls as knights. Raise 300 cavalry. <<if GetInt(iMoney) >= 30000>>
+  One does not become a knight overnight, but you hurry to ennoble promising candidates. This new force will train day and night to prepare for the war.
+  <<Change iCavalry 300>>
+  <<Change iMoney -30000>>
+-> As our Focus is Mobilisation, we can return to tradition and raise a Legion of 5000 infantry and 1000 archers, in the honour of our Roman ancestors. <<if GetInt(iFocus) == 1 and GetInt(iMoney) >= 50000 >>
+  On your orders, the whole city is turned into a massive training encampment. As per ancient tradition, a legionary Aquila is forged from gold, perched atop an Orthodox Cross. Freshly minted legionnaries are motivated, but only time will tell if they deserve the name of their forebears.
+  <<Change iInfantry 5000>>
+  <<Change iArchers 1000>>
+  <<Change fTroopRep 0.1>> 
+  <<Change iMoney -50000>>
+-> As our Focus is Faith, we should call upon the religious fanatics, forming their mobs into military units. They will be poorly trained, but cheap to raise. <<if GetInt(iFocus) == 3>>
+    While the nobles don't like our decision, these new fanatical troops are very motivated and numerous, numbering around 3000. But the best thing about them is that they are cheap. However, they are not trained, don't like taking orders from your officers and the overall quality of your infantry suffers.
+    <<Change iInfantry 3000>>
+    <<Change fNobleRep -0.05>> 
+    <<Change fTroopRep 0.3>>  
+    <<Change fInfantryQuality -0.2>> //PROBLEM: quality steps
+    <<Change iMoney -3000>>
+-> As our Focus is Diplomacy, we should summon foreign mercenaries, promising them land and titles after the war if we are victorious. [Loss of support] <<if iFocus == 4>>
+    Soon brigands and mercenaries of all kinds flock to our banner. Primarily they are Italians from various states, but also come Cumans, Bulgars and even some Turks. They are not very numerous, but they are hardened killers, veterans of many wars, so their presence raises the quality of your troops across the board. However, their presence and unknown tongues and weird customs unnerve your people, priests, nobles and even other troops. In total, 750 infantry, 750 archers and 100 cavalry join your ranks.
+    <<Change iInfantry 750>>
+    <<Change iArchers 750>>
+    <<Change iCavalry 100>>
+    <<Change fNobleRep -0.05>> 
+    <<Change fTroopRep -0.05>> 
+    <<Change fPriestRep -0.05>> 
+    <<Change fPeopleRep -0.05>> 
+    <<Change fInfantryQuality 0.2>> //PROBLEM: quality steps
+    <<Change fArchersQuality 0.2>> //PROBLEM: quality steps
+    <<Change fCavalryQuality 0.2>> //PROBLEM: quality steps
+    
+===
+title: story5
+---
+<b>Hungry Mouths</b>: <br> As the rumours about the coming Turkish invasion spread, people from the countryside start trickling into the City. At first they come in small numbers, family here or a merchant there, but soon whole villages start flocking towards the mirage of safety in the Capital. Loukas Notaras, your Mesazon, chief minister, comes to you with concern in his eyes, arguing that a decision needs to be taken as to what course of action should be taken regarding these refugees. As the Emperor, you have to consider a few factors. These are your subjects and as many of them as possible should be saved. However, currently Constantinople already houses around 100 thousand people and all of them need to eat. Once the siege begins, our stores have enough food to hold out for about 30 days. Additional people will mean higher food consumption, but greater population will also provide more taxes, recruits and manpower for labour. This is one of the most important decisions to take before the siege.
++++Explanation - City's supplies, or provisions, are consumed by the population daily. One thousand people is listed as 1 unit of Population and consumes 1 unit of Provisions per day. 7 thousand will consume 7 units, 100 thousand people will consume 100 units, etc. When you run out of provisions, people will starve and unrest will begin. Soon after that, you will lose your head.+++
+-> The City is the final bastion of the Roman civilisation and everyone is welcome, open the gates.
+  Thousands upon thousands of people flock through the Gate of St.Romanus. You come to inspect the crowds yourself and thousands of cheering, happy faces greet you. Everyone, even the nobles, feel that this is the right thing to do. For the time being you feel that you are doing your duty as the saviour of your people. What effect it will have, only time will tell.
+ <<RndChange iPopulation 20 50>>
+ <<Change fPeopleRep 0.3>> 
+ <<Change fNobleRep 0.05>> 
+ <<Change fTroopRep 0.1>> 
+ <<Change fPriestRep 0.01>>  
+-> We need to save the flower of the nation, but leave the peasants beyond the gate. Open the gates to the nobles and their servants, priests, merchants, craftsmen and tax all of them on the entry to help pay for the siege costs. 
+ Your decision is rational, but depressing. No one seriously objects, but there is a feeling of gloom around the city. Everyone is thinking - what if I would have ended up on the other side of the gate?
+ <<RndChange iPopulation 5 10>>
+ <<Change fPeopleRep -0.1>>
+ <<Change fNobleRep -0.1>> 
+ <<Change fTroopRep -0.1>> 
+ <<Change fPriestRep -0.1>> 
+ <<RndChange iMoney 10000 20000>>
+-> Close the gate, we are full. No one is to be admitted inside. 
+ Wailing of the refugees beyond the gate doesn't let you sleep for a few days, but soon, they realise that nothing will change and start departing. You may have turned the hungry mouths away, but most of the City sees you as a cruel ruler who betrayed his own people. Only time will tell if you were right to do this.
+  <<Change fPeopleRep -0.3>>
+ <<Change fNobleRep -0.05>> 
+ <<Change fTroopRep -0.15>> 
+ <<Change fPriestRep -0.15>> 
+-> As our Focus is Mobilisation, we could press all the able bodied refugees to serve in our armed forces. Send the peasants to train with the spears and the hunters shall become archers. <<if iFocus == 1>>
+  Their quality is poor, but these men know that they owe their lives to you, they shall fight like beasts when the Turks come, so the morale of your army improves. You gain 2000 infantry and 500 archers.
+ <<Change fPeopleRep 0.2>>
+ <<RndChange iPopulation 20 40>>
+ <<Change iInfantry 2000>>
+ <<Change iArchers 500>>
+ <<Change fTroopRep 0.1>> 
+ <<Change fInfantryQuality 0.2>> //PROBLEM: quality steps
+ <<Change fArchersQuality 0.2>> //PROBLEM: quality steps
+-> As our Focus is Diplomacy & Spycraft, we could order our agents to spread rumours among refugees about the awful conditions in the City, while mentioning that Pelopponesus is very nice this time of year and not as far as it seems, so they should consider going there instead. <<if iFocus == 4 and iMoney >= 2500>>
+    The plan works, our agents manage to successfuly divert majority of the refugees away from Constantinople. 
+    <<RndChange iPopulation 3 7>>
+    <<Change iMoney -2500>> 
+===
+title: story6
+---
+<b>Preparing Provisions</b> <br> One of the most important things to survive the siege will be to have adequate provisions to feed the population of the City. We need to take urgent measures to hoard enough food for everyone.  However, food costs money and merchants are likely to start raising price the more we buy, as it would become more scarce. How much food should we procure and how?
+-> We have enough food, this siege won't take longer than a month. 
+  Our confidence inspires the people, but our advisors think that we are mad.
+  <<Change fPeopleRep 0.1>>
+-> Buy all the food in the city. <<if GetInt(iMoney) >= 6000>>
+  Head of the palace stores went around all of the merchants in the city and bought everything available on the market.
+ <<Change iProvisions 3000>> 
+ <<Change iMoney -6000>> 
+-> Buy all the food in the province. <<if GetInt(iMoney) >= 15000>>
+ Merchants are quick to notice that there's a chance to make a killing and they raise the prices, but we still manage to secure a significant supply of food.
+ <<Change iProvisions 6000>> 
+ <<Change iMoney -15000>> 
+-> Buy the food from everyone, even the Turkish smugglers from across the Straits. It will cost an arm and a leg, but it is necessary. <<if GetInt(iMoney) >= 35000>>
+ <<Change iProvisions 10000>> 
+ <<Change iMoney -35000>> 
+ Desperate times call for desperate measures. We spent so much money that our treasurer is crying, but at least our warehouses are absolutely brimming with food.
+-> As our Focus is War Economy, we could implement absolute food control in all of our domains. Our troops will confiscate all the food and then ration it. This will be highly unpopular and implementing this will still cost money, but we will secure a massive supply of food. <<if iFocus == 2 && iMoney >= 10000>>
+  <<Change iProvisions 20000>> 
+  <<Change iMoney -10000>> 
+ <<Change fPeopleRep -0.1>>
+ <<Change fNobleRep -0.1>> 
+ <<Change fTroopRep -0.1>> 
+ <<Change fPriestRep -0.1>> 
+  With an iron fist Imperator has declared that food in your mouth now belongs to the Empire and you will eat only when you are ordered and only how much you are ordered.
+
+===
+title: story7
+---
+<b>Call of Christendom - Major Powers</b> <br> Alone we shall fall, that is certain to everyone from megas doux himself down to the blind Cuman beggar wailing by the walls of Hippodrome. But not all is lost. The time has come to call upon Christendom and ask for their help. Recent battle of Varna in 1444 has been a major defeat for the Christian nations, who suffered heavy casualties against the Ottomans. The memories are still fresh, but maybe we could offer them a chance to even the score? Whom shall we reach out to in the first place?
+-> Send our envoy to the Pope. As the leader of the Christendom, he is guaranteed to provide at least some aid. <<if GetInt(iReligion) == 2 || GetInt(iReligion) == 1>> 
+ <<set $chance = dice(100)>>
+ <<if $chance <= 40>> 
+ Pope sends 6 ships packed with food, carrying money and 600 archers, along with his letter in which he offers his prayers for the soul of Constantinople and promise of further aid.
+ <<Change iProvisions 3000>>
+ <<Change iMoney 10000>> 
+ <<Change iArchers 600>>
+ <<Change iShips 6>>
+ <<else>>
+ <<Change iProvisions 1000>>
+ <<Change iMoney 10000>> 
+ <<Change iArchers 200>>
+ <<Change iShips 2>>
+ Pope sends 2 ships packed with food, carrying money and 200 archers, along with his letter in which he offers his prayers for the soul of Constantinople.
+ <<endif>>
+-> As we have accepted Catholicism fully and our Focus is Diplomacy, send our envoy to the Pope and request him to launch a new crusade to help us! <<if GetInt(iReligion) == 1 && GetInt(iFocus) == 4>> 
+ <<set $chance = dice(100)>>
+ <<if $chance <= 30>> 
+ Tireless work of your diplomats and the wise decision to mend the Schism create the conditions which allow the Pope to call the Xth crusade, this time to protect Constantinople and repay the sins of the IVth crusade, when Western crusaders sacked the City! Soon, pilgrim warriors flock to your cause, Italians, French, English, Scotish, Spanish, Germans, Portuguese, Hungarians, Polish and even a few Lithuanians. Over the coming months some 3000 infantry, 4000 archers and 800 cavalry arrive, along with maybe 15 000 pilgrims and camp followers who join your general population.
+ 3000 infantry, 4000 archers and 800
+ <<Change iInfantry 3000>>
+ <<Change iArchers 4000>>
+ <<Change iCavalry 800>>
+ <<Change fTroopRep 0.5>>
+ <<Change iPopulation 15>>
+ <<elseif $chance <= 80>> 
+ While the Christian kingdoms are not yet ready to commit to a full crusade, many send their volunteers to help you. Venetian and Genoese mercenaries soon arrive, bringing 600 infantry and 600 archers to support the defence of your city.
+ <<Change iInfantry 600>>
+ <<Change iArchers 600>>
+ <<else>>
+ Memories of the defeat at Varna are too fresh... Your call for a new crusade falls on deaf ears, but you do receive a lot of thoughts and prayers directed your way.
+ <<endif>>
+-> As we have embraced truth of the Orthodoxy and our Focus is Faith, we send our envoys to Trebizond and the Georgian Kingdom, stressing that if Constantinople falls, it will be the end of the Orthodox world and that they will be next. Announce the first Orthodox Crusade to save Constantinople and call all righteous Stavrophoroi - Orthodox crusaders - to our banner! <<if GetInt(iReligion) == 0 and GetInt(iFocus) == 3>> 
+ <<set $chance = dice(100)>>
+ <<if $chance <= 20>> 
+ In our days, Orthodox realms are few and weak, but your call raises their hearts and triggers an unexpected movement of support for your cause. Orthodox monks from the villages of Ruthenia to the mountains of Armenia ring bells and preach the need to defend Constantinople. Soon, pilgrim warriors flock to your cause, Bulgarians, Georgians, Armenians, Serbs, Ruthenians and even a few Cossacks. Over the coming months some 8000 infantry, 2500 archers and 1200 cavalry arrive, along with maybe 15 000 pilgrims and camp followers who join your general population.
+ <<Change iInfantry 8000>>
+ <<Change iArchers 2500>>
+ <<Change iCavalry 1200>>
+ <<Change fTroopRep 0.5>>
+ <<Change iPopulation 15>>
+ <<elseif $chance <= 80>> 
+ In our days, Orthodox realms are few and weak, and there is no will among them for a crusade, but some nonetheless answer the call. Georgian nobility sends 100 young knights and soon a ship of volunteers from Ruthenia arrives, adding another 400 infantry. Also 200 Armenian archers join your cause as well.
+  <<Change iInfantry 400>>
+ <<Change iArchers 200>>
+ <<Change iCavalry 100>>
+ <<Change iShips 1>>
+ <<else>>
+ In our days, Orthodox realms are few and weak. They close their eyes and ears to your pleas.
+ <<endif>>
+-> Make a general call for help to the Catholic realms. You know that your success here will depend greatly on how you managed to mend the Schism...
+ <<if GetInt(iReligion) == 0>>
+ In our days, Orthodox realms are few and weak, but they answer the call. Georgian nobility sends 50 young knights and soon a ship of volunteers from Ruthenia arrives, adding another 200 infantry.
+ <<Change iInfantry 200>>
+ <<Change iCavalry 50>>
+ <<Change iShips 1>>
+  <<elseif GetInt(iReligion) == 1>>
+ <<Change iInfantry 200>>
+ <<Change iArchers 200>>
+ <<Change iCavalry 100>>
+ <<Change iShips 5>>
+ Your recent conversion to Catholicism has moved the hearts of believers. Knights Hospitaller have sent their fleet from Rhodes to support you, bringing 100 knights, 200 archers, 200 infantry and 5 ships.
+ <<elseif GetInt(iReligion) == 2>>
+  While you are not enforcing Union of Florence, pragmatically minded Italians nonetheless see the opportunity to find a place for themselves in your new Empire. Venetian and Genoese mercenaries soon arrive, bringing 400 infantry and 400 archers to support the defence of your city.
+ <<Change iInfantry 400>>
+ <<Change iArchers 400>>
+ <<endif>>
+
+===
+title: story8
+---
+<b>Orders for the Fleet</b> <br> It is clear that the Empire is too weak to meet Mehmed in the open field, however our small, but professional fleet is one of the few tools we have which we could still use offensively against our enemy. What shall be the purpose of our fleet during this siege?
+-> The fleet should be used to raid Ottoman food shipping and disrupt their logistics, so that their food supplies would run out as soon as possible.
+  <<SetInt iFleet 0>>
+-> The fleet should be ordered to raid Ottoman coastal villages and target valuable merchant ships, we could use their plunder to fund the siege.
+ <<SetInt iFleet 1>>
+-> The fleet should travel to Genoan colonies in Crimea, we know that their markets are full of cheap grain - they should run the blockade and keep bringing supplies to the city whenever possible.
+ <<SetInt iFleet 2>>
+-> Order the fleet to remain in the Golden Horn, protecting the city and shooting their cannons at the attackers.
+ <<SetInt iFleet 3>>
+-> Order the fleet to visit various ports around the Meditteranean Sea and bring volunteers, supplies and donations to help the besieged City.
+ <<SetInt iFleet 4>>
+-> Order the fleet to engage the Ottoman fleet in direct battle and destroy them. 
+ <<set $chance = dice(100)>>
+ <<if $chance <= (10+iShips)>> 
+ On your orders, the fleet departed and soon located the core of the Ottoman navy off the isle of Lesbos. In a dramatic turn of fortune, your fleet engaged the Ottoman navy in a battle that defied all expectations. Skillfully navigating the treacherous waters, your admirals outmaneuvered the opposing forces, unleashing a barrage of cannon fire and decisive naval tactics. As the smoke cleared, it became evident that your fleet had emerged triumphant, dealing a significant blow to the Ottoman naval power. The resounding victory not only bolstered the morale of your city's defenders but also disrupted the blockade, providing a glimmer of hope in the looming shadow of the approaching siege. The waves of Marmara now bow to your power alone.
+ <<Change bTurkFleet FALSE>>
+ <<jump story10>>
+ <<else>>
+ On your orders, the fleet departed and soon located the core of the Ottoman navy off the isle of Lesbos. The clash was fierce, with cannons thundering, galleys being boarded and cries of anguish ringing as the warships locked in a desperate struggle for control of the Marmara Sea. Despite the unwavering resolve of your naval forces, the battle ended in devastation as the Turks emerged victorious, leaving your ships shattered and scattered across the waves. Now, as the sun sets on the beleaguered waters surrounding Constantinople, the reality of the lost naval engagement casts a shadow over the city, intensifying the challenges that lie ahead in the face of the impending siege. Your fleet is gone.
+ <<SetInt iFleet 5>>
+ <<Change iShips -100>>
+ <<endif>>
+===
+
+title: story9
+---
+<b>Easter Speech</b> <br> As you gaze out over the majestic City below you, you contemplate the dire situation facing your beloved empire. With the mighty Ottoman forces encircling the city, you realise that siege will begin in mere hours, a couple of days at most. Heavy responsibility lies on your shoulders. While everyone knows about the impending siege, you are on your way to Hagia Sophia to rally the spirits of your people for the impending battle. Everyone will be there, from the lowest whores to the most esteemed nobles. What will you focus on in your speech?
+-> Citizens of the Roman Empire! We are the defenders of a legacy that spans millenia. Let every heart beat as one, for it is our resilience and unwavering spirit...
+ Your speech leaves a generally good impression on everyone gathered at the Hagia Sophia, but the nobles and the general population love it more than the rest.
+ <<<Change fPeopleRep 0.15>>
+ <<Change fNobleRep 0.15>> 
+ <<Change fTroopRep 0.05>> 
+ <<Change fPriestRep 0.05>>  
+-> Soldiers of Christ! We have gathered here under the majestic dome of our blessed temple, to worship our God and to steel ourselves to defend our creed...
+ Your speech leaves a generally good impression on everyone gathered at the Hagia Sophia, but the troops and the priests love it more than the rest.
+ <<<Change fPeopleRep 0.05>>
+ <<Change fNobleRep 0.05>> 
+ <<Change fTroopRep 0.15>> 
+ <<Change fPriestRep 0.15>>
+-> My faithful subjects, all who live and breathe to serve our great cause - it is time for us to prepare to meet our enemies...
+ Your speech leaves a generally good impression on everyone gathered at the Hagia Sophia.
+ <<<Change fPeopleRep 0.1>>
+ <<Change fNobleRep 0.1>> 
+ <<Change fTroopRep 0.1>> 
+ <<Change fPriestRep 0.1>>
+-> As your Focus is War Economy, you have a different plan. Order the Varangian Guard to close the doors and make them all donate to the war fund before they leave. Make exception for the priests if they help you convince the people.
+ People feel somewhat betrayed, but there's little they can do and the priests are happy to preach to them about the joys of donating for the common cause. Some nobles have to leave their jewelry, while the poor end up leaving their last pennies. But you know that you need this money more than they do.
+  <<set $money = $money  +15000>>
+ <<<Change fPeopleRep -0.1>>
+ <<Change fNobleRep -0.1>> 
+ <<Change fTroopRep -0.1>> 
+ <<Change fPriestRep 0.1>>
+-> It is not for the speeches that we have gathered here! Let everyone feast and enjoy themselves for one last time before the siege begins! Let us celebrate, for tomorrow we may die!
+ On your orders Guards roll in wine barrels and start hand out bread, while musicians strike up uplifting tunes. The priests are unhappy about their temple becoming a feast hall, but they cannot do anything. People who moments ago were sullen and concerned, soon relax, drink and laugh.
+  <<Change iProvisions (GetInt(iPopulation)*3) >>
+  <<Change iMoney -2500>>
+ <<<Change fPeopleRep 0.2>>
+ <<Change fNobleRep 0.2>> 
+ <<Change fTroopRep 0.2>> 
+ <<Change fPriestRep -0.05>>
+===
+title: story10
+---
+<b>Victorious Fleet</b> <br> Now that our fleet has claimed an amazing victory over the Turks at Lesbos, it has much more freedom to operate and requires new orders. Now that the Ottoman fleet sleeps with the fish, we can expect that our ships will be twice more efficient at their tasks. What will be its main purpose during the siege? 
+-> The fleet should be used to raid Ottoman food shipping and disrupt their logistics, so that their food supplies would run out as soon as possible.
+  <<SetInt iFleet 0>>
+-> The fleet should be ordered to raid Ottoman coastal villages and target valuable merchant ships, we could use their plunder to fund the siege.
+ <<SetInt iFleet 1>>
+-> The fleet should travel to the Genoan colonies in Crimea, we know that their markets are full of cheap grain - they should run the blockade and keep bringing supplies to the city whenever possible.
+ <<SetInt iFleet 2>>
+-> Order the fleet to remain in the Golden Horn, protecting the city and shooting their cannons at the attackers.
+ <<SetInt iFleet 3>>
+-> Order the fleet to visit various ports around the Meditteranean Sea and bring volunteers, supplies and donations to help the besieged City.
+ <<SetInt iFleet 4>>
+ ===
+title: story11
+---
+<b>Siege Begins</b> <br> So the time has come. You can see Mehmed's army marching in the distance, sky in their direction is marked by plumes of black smoke from the villages they set on fire while coming here. The siege of Constantinople has begun.
++++Explanation - You have now entered siege phase. Please note that while in the early game turns marked passing weeks, currently each turn marks a passing day. Furthermore, as food will now stop coming into the city, your provisions will start decreasing at a rate based on your population size. Enemy will be attacking your walls daily and when they will be reduced enough, they will launch an assault, trying to take your head. Good luck.+++
+-> Greet our guests - send the cavalry to harrass their forward formations, but avoid serious engagements.
+ <<set $chance = dice(100)>>
+ <<if $chance <= (GetInt(iCavalry)/10+10)>> 
+ Your cavalry, adept at hit-and-run tactics, successfully disrupts the Ottoman vanguard, overrunning surprised column of slaves, engineers and cooks and inflicting notable damage without being drawn into a decisive battle. One of your knights even manages to set a gunpowder wagon on fire, exploding it and destroying a few enemy cannons.The maneuver not only sets the stage for a more fortified defense but also instills a renewed sense of confidence among your ranks.
+  <<Change iTurkCannons -5>> 
+  <<RndChange iBazouks -517 -1578>> 
+  <<RndChange iCavalry -5 -25>>
+ <<else>>
+ Your decision to send the cavalry to harass Ottoman forward formations takes a disastrous turn. The seemingly straightforward plan unravels as the Turks send their light steppe horsemen to intercept your force. They are more formidable than expected and manage to repel your cavalry. What was intended as a show of strength turns into a minor defeat as both sides suffer casualties.
+  <<RndChange iBazouks -312 -895>> 
+  <<RndChange iCavalry -25 -50>>
+ <<endif>>
+-> It is time for the Imperator to stretch his legs. I am going to personally lead the cavalry charge. Our goal is to kill as many of them as possible and retreat.
+ <<set $chance = dice(100)>>
+ <<if $chance <= (GetInt(iCavalry)/10+20)>> 
+  Accompanied by a formidable contingent of heavily armored cataphracts, you charge headlong into the heart of Mehmed II's advancing army, hoping to surprise them. The thunderous clash of steel reverberates across the battlefield as the elite Byzantine cavalry fiercely engages the enemy, determined to disrupt the impending siege and strike a resounding blow against the encroaching threat to Constantinople. You lead your force bravely, and Theotoke protects you. Disciplined charge and tactical brilliance of your Byzantine forces shatter the cohesion of the Ottoman troops arriving after a long march, forcing them into a retreat. The intoxicating thrill of victory surges through your veins, offering a fleeting respite from the encroaching siege and instilling renewed hope among your city's defenders. You lost a few knights, but hundreds of enemies lay dead on the field.
+  <<RndChange iBazouks -751 -2565>> 
+  <<RndChange iCavalry -5 -25>>
+ <<elseif $chance <= (GetInt(iCavalry)/10+45)>> 
+  Accompanied by a formidable contingent of heavily armored cataphracts, you charge headlong into the heart of Mehmed II's advancing army, hoping to surprise them. The thunderous clash of steel reverberates across the battlefield as the elite Byzantine cavalry fiercely engages the enemy, determined to disrupt the impending siege and strike a resounding blow against the encroaching threat to Constantinople. The brutal clash is unforgiving, the relentless tide of Ottoman soldiers proving insurmountable. Despite the gallant effort, your cataphracts are slowly swallowed by the vast enemy numbers. Even though you kill more enemies than you lose knights, the battle ends in defeat and the somber reality sets in as you retreat within the city walls, leaving the dead and facing the grim prospect of an imminent siege.
+  <<RndChange iBazouks -312 -895>>
+  <<RndChange iCavalry -50 -100>>
+ <<else>>
+  Accompanied by a formidable contingent of heavily armored cataphracts, you charge headlong into the heart of Mehmed II's advancing army. The thunderous clash of steel reverberates across the battlefield as the elite Byzantine cavalry fiercely engages the enemy, determined to disrupt the impending siege and strike a resounding blow against the encroaching threat to Constantinople. You charge fearlessly with your cataphracts, but the brutal chaos of the battlefield claims your life. Such is fate.
+  //[GAME OVER] PROBLEM - create event/outcome
+  <<endif>>
+-> Conserve our forces. Set the fields and houses in front of the city on fire.
+ Ashes and dust will be all that will greet our invaders. Let them feast on that! We must hope that they will not be able to procure enough food to sustain this siege for long...
+ <<Change iTurkProvisions -20>> 
+-> Send spies to infiltrate enemy camp while they are still setting up and try to recruit agents for your cause. <<if GetInt(iMoney) >= 5000>>
+ The mission is a success, you have managed to recruit 5 spies.
+<<Change iSpies 5>> 
+<<Change iMoney -5000>> 
+===
+
+
