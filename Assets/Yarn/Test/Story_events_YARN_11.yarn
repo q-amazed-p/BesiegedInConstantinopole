@@ -1,6 +1,6 @@
 title: story0
 ---
-
+<<declare $chance = 100>>
 <b>Messenger arrives</b> <br> A dusty messenger stumbles into your court room, clearly after riding many miles. Loukas Notaras, your megas doux and chief minister, takes the scroll out of messenger's shaking hand and unfolds it. You can see how blood leaves the face of your trusted advisor. He reads it and you realise that peace has come to an end. Sultan Mehmed the Second, Lord of the Turks, Master of the Ottoman Empire, is gathering armies in the city of Adrianople. His criers are spreading the call of Jihad across the Anatolia and the Balkans, his engineers are improving roads and bridges leading to Constantinople and there are rumours of massive cannons being forged. A massive army is being gathered and there can be only a single target for it - the last piece of the Eastern Roman Empire, the Holy City of Constantinople, your home. Although you have suspected that this attack will come, you hoped for more time. But now, you realise that you have mere months to prepare. Notaras asks: Imperator, what shall be your orders? How do we prepare for this? 
   -> Theodosian Walls defended the City for over a thousand years. Our focus will be Fortifications and Artillery!
    We will do all we can, but Fortifications and Artillery will be our main focus during the preparation for the siege.
@@ -181,9 +181,9 @@ title: story5
  <<Change fInfantryQuality 0.2>> //PROBLEM: quality steps
  <<Change fArchersQuality 0.2>> //PROBLEM: quality steps
 -> As our Focus is Diplomacy & Spycraft, we could order our agents to spread rumours among refugees about the awful conditions in the City, while mentioning that Pelopponesus is very nice this time of year and not as far as it seems, so they should consider going there instead. <<if GetInt("iFocus") == 4 and GetInt("iMoney") >= 2500>>
-    The plan works, our agents manage to successfuly divert majority of the refugees away from Constantinople. 
-    <<RndChange iPopulation 3 7>>
-    <<Change iMoney -2500>> 
+ The plan works, our agents manage to successfuly divert majority of the refugees away from Constantinople. 
+  <<RndChange iPopulation 3 7>>
+  <<Change iMoney -2500>> 
 ===
 title: story6
 ---
