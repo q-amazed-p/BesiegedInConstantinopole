@@ -20,6 +20,9 @@ public class AssaultSystem : MonoBehaviour
     [SerializeField] int archerLossWeight;
     [SerializeField] int infantryLossWeight;
 
+
+    [SerializeField] PlayerLossDisplay playerLossDisplay;
+
     public int AssaultAftermath(bool isJanissaryAssault, int attackerNumbers, bool isWallHeld = true, int VarangiansDeployed = 0)
     {
         int attackersPervading = Mathf.RoundToInt( attackerNumbers * (VariableSingleton.GetFloatVariable("fMoat") > 0 ? 0.9f : 1) //info needed
@@ -28,8 +31,9 @@ public class AssaultSystem : MonoBehaviour
 
         VariableSingleton.ChangeFloat("fMoat", -0.1f);
 
-        int archerCasualities;
-        int infantryCasualities;
+        int cavalryCasualities = 0;
+        int archerCasualities = 0;
+        int infantryCasualities = 0;
         {
             float wallProtection = isWallHeld ? 1.0f - VariableSingleton.Instance.EnduringWall.GetHealth() : 0;
             int defenderCasualities = Mathf.RoundToInt((attackersPervading * (isJanissaryAssault ? jannisaryLethalityFacotr : commonEnemyLethalityFactor)
@@ -44,11 +48,16 @@ public class AssaultSystem : MonoBehaviour
 
 
         if (archerCasualities > VariableSingleton.GetIntVariable("iArchers"))
-        { infantryCasualities += -archerCasualities + VariableSingleton.GetIntVariable("iArchers"); }
+        { 
+            infantryCasualities += -archerCasualities + VariableSingleton.GetIntVariable("iArchers"); 
+        }
         VariableSingleton.ChangeInt("iArchers", -archerCasualities);
 
         if(infantryCasualities > VariableSingleton.GetIntVariable("iInfantry"))
-        { VariableSingleton.ChangeInt("iCavalry", -infantryCasualities + VariableSingleton.GetIntVariable("iInfantry")); }
+        {
+            cavalryCasualities = infantryCasualities - VariableSingleton.GetIntVariable("iInfantry");
+            VariableSingleton.ChangeInt("iCavalry", -cavalryCasualities); 
+        }
         VariableSingleton.ChangeInt("iInfantry", -infantryCasualities);
         //forgives Negative Cavalry
         //healers
@@ -59,6 +68,8 @@ public class AssaultSystem : MonoBehaviour
             VariableSingleton.ChangeBool("bSiegeTower", false);
             VariableSingleton.ChangeBool("bBattteringRam", false);
         }
+
+        playerLossDisplay.SetLossesInfo(infantryCasualities, archerCasualities, cavalryCasualities, VarangiansDeployed, isWallHeld);
 
         return invaderCasualities;
     }

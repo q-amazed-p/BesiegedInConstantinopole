@@ -32,6 +32,8 @@ public class AI: MonoBehaviour
     [SerializeField] int averageJanissaryForce;
     //fields for assault numbers
 
+    [SerializeField] EnemyLossDisplay enemyLossDisplay;
+    
     public void TakeAIAction()
     {
         float moatRemaining = VariableSingleton.GetFloatVariable("fMoat");
@@ -134,6 +136,9 @@ public class AI: MonoBehaviour
             case AssaultType.Janissary:
                 VariableSingleton.ChangeInt("iJanissaries", enemyLosses); break;
         }
+
+        enemyLossDisplay.SetLossesInfo((int)assaultType, enemyLosses);
+
         assaultUI.AssaultAftermathUI();
     }
 

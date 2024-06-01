@@ -47,7 +47,7 @@ public class AssaultUI : UIWindowFam
     public void DecideVarangianDeployment() 
     {
         AI.Instance.BreachingAssaultAftermath(DeployVarangiansDecision);
-        wallsOverwhelmedChoice.SetActive(false);
+        assaultAftermathMessage.SetActive(true);
     }
 
     /*********
