@@ -58,8 +58,8 @@ title: story2
     The core of the city is now once more protected and Severan wall is restored to 100% condition, for the first time in over a millenium! While this wall is unlikely to stop a determined Turkish assault, it will definitely protect you from your own angry population or any infiltrators lurking in the city. <br> \[Materials -80\] 
     <<ChangeFraction fInnerWall 1>>   
     <<Change iMaterials -80>> 
--> All the three Walls must be restored before the siege begins. Our Focus on Fortification will help us efficiently use materials and save some of the costs.\[Materials -250\] <<if GetInt("iFocus") == 0>>
-    You initiate the greatest reconstruction effort in Constantinople since the times of Emperor Justinian the Great. Thousands of citizens are used for the massive labour projects. Soon, all three Walls are restored to 100%. <br> \[Materials -250\]
+-> \[Focus - Fortification\] All the three Walls must be restored before the siege begins - fixing all of them will help us efficiently use materials and save some of the costs.\[Materials -250\] <<if GetInt("iFocus") == 0>>
+    You initiate the greatest reconstruction effort in Constantinople since the times of Emperor Justinian the Great. Thousands of citizens are used for the massive labour projects. Soon, all three Walls are restored fully. <br> \[Materials -250\] 
     <<ChangeFraction fOuterWall 1>> 
     <<ChangeFraction fMiddleWall 1>>  
     <<ChangeFraction fInnerWall 1>> 
@@ -214,7 +214,7 @@ title: story6
 ===
 title: story7
 ---
-<b>Call of Christendom - Major Powers</b>: <br> Alone we shall fall, that is certain to everyone from megas doux himself down to the blind Cuman beggar wailing by the walls of Hippodrome. But not all is lost. The time has come to call upon Christendom and ask for their help. Recent battle of Varna in 1444 has been a major defeat for the Christian nations, who suffered heavy casualties against the Ottomans. The memories are still fresh, but maybe we could offer them a chance to even the score? Whom shall we reach out to in the first place?
+<b>Call of Christendom - Major Powers</b>: <br> Alone we shall fall, that is certain to everyone from megas doux himself down to the blind Cuman beggar wailing by the walls of the Hippodrome. But not all is lost. The time has come to call upon Christendom and ask for their help. Recent battle of Varna in 1444 has been a major defeat for the Christian nations, who suffered heavy casualties against the Ottomans. The memories are still fresh, but maybe we could offer them a chance to even the score? Whom shall we reach out to in the first place?
 -> Send our envoy to the Pope. As the leader of the Christendom, he is guaranteed to provide at least some aid. <<if GetInt("iReligion") == 2 || GetInt("iReligion") == 1>> 
  <<set $chance = dice(100)>>
  <<if $chance <= 40>> 
@@ -224,30 +224,30 @@ title: story7
  <<Change iArchers 600>>
  <<Change iShips 6>>
  <<else>>
+ Pope sends 2 ships packed with food, carrying money and 200 archers, along with his letter in which he offers his prayers for the soul of Constantinople.
  <<Change iProvisions 1000>>
  <<Change iMoney 10000>> 
  <<Change iArchers 200>>
- <<Change iShips 2>>
- Pope sends 2 ships packed with food, carrying money and 200 archers, along with his letter in which he offers his prayers for the soul of Constantinople.
+ <<Change iShips 2>> 
  <<endif>>
--> As we have accepted Catholicism fully and our Focus is Diplomacy, send our envoy to the Pope and request him to launch a new crusade to help us! <<if GetInt("iReligion") == 1 && GetInt("iFocus") == 4>> 
+-> \[Focus - Diplomacy\] As we have accepted Catholicism fully, send our envoy to the Pope and request him to launch a new crusade to help us! <<if GetInt("iReligion") == 1 && GetInt("iFocus") == 4>> 
  <<set $chance = dice(100)>>
  <<if $chance <= 30>> 
- Tireless work of your diplomats and the wise decision to mend the Schism create the conditions which allow the Pope to call the Xth crusade, this time to protect Constantinople and repay the sins of the IVth crusade, when Western crusaders sacked the City! Soon, pilgrim warriors flock to your cause, Italians, French, English, Scotish, Spanish, Germans, Portuguese, Hungarians, Polish and even a few Lithuanians. Over the coming months some 3000 infantry, 4000 archers and 800 cavalry arrive, along with maybe 15 000 pilgrims and camp followers who join your general population.
- 3000 infantry, 4000 archers and 800
+ Tireless work of your diplomats and the wise decision to mend the Schism create the conditions which allow the Pope to call the Xth crusade, this time to protect Constantinople and repay the sins of the IVth crusade, when Western crusaders sacked the City! Soon, pilgrim warriors flock to your cause, Italians, French, English, Scotish, Spanish, Germans, Portuguese, Hungarians, Polish, Lithuanians, Danes and even a few Swedes. Over the coming months some 3000 infantry, 4000 archers and 800 cavalry arrive, along with maybe 15 000 pilgrims and camp followers who join your general population. The morale of your defenders has never been higher!
  <<Change iInfantry 3000>>
  <<Change iArchers 4000>>
  <<Change iCavalry 800>>
- <<Change fTroopRep 0.5>>
+ <<Change fTroopRep 0.4>>
  <<Change iPopulation 15>>
  <<elseif $chance <= 80>> 
- While the Christian kingdoms are not yet ready to commit to a full crusade, many send their volunteers to help you. Venetian and Genoese mercenaries soon arrive, bringing 600 infantry and 600 archers to support the defence of your city.
+ While the Christian kingdoms are not yet ready to commit to a full crusade, many send their volunteers to help you. Venetian and Genoese mercenaries also soon arrive, bringing 600 infantry and 600 archers to support the defence of your city.
  <<Change iInfantry 600>>
  <<Change iArchers 600>>
  <<else>>
- Memories of the defeat at Varna are too fresh... Your call for a new crusade falls on deaf ears, but you do receive a lot of thoughts and prayers directed your way.
+ Memories of the defeat at Varna are too fresh... Your call for a new crusade falls on deaf ears, but you do receive a lot of supportive thoughts and prayers directed your way. Some even send you some money, but it feels like a disappointment...
+ <<RndChange iMoney 1000 5000>>
  <<endif>>
--> As we have embraced truth of the Orthodoxy and our Focus is Faith, we send our envoys to Trebizond and the Georgian Kingdom, stressing that if Constantinople falls, it will be the end of the Orthodox world and that they will be next. Announce the first Orthodox Crusade to save Constantinople and call all righteous Stavrophoroi - Orthodox crusaders - to our banner! <<if GetInt("iReligion") == 0 and GetInt("iFocus") == 3>> 
+-> \[Focus - Faith\] As we have embraced truth of the Orthodoxy and rejected Roman heresy, we send our envoys to Trebizond and the Georgian Kingdom, stressing that if Constantinople falls, it will be the end of the Orthodox world and that they will be next. Announce the first Orthodox Crusade to save Constantinople and call all righteous Stavrophoroi - Orthodox crusaders - to our banner! <<if GetInt("iReligion") == 0 && GetInt("iFocus") == 3>> 
  <<set $chance = dice(100)>>
  <<if $chance <= 20>> 
  In our days, Orthodox realms are few and weak, but your call raises their hearts and triggers an unexpected movement of support for your cause. Orthodox monks from the villages of Ruthenia to the mountains of Armenia ring bells and preach the need to defend Constantinople. Soon, pilgrim warriors flock to your cause, Bulgarians, Georgians, Armenians, Serbs, Ruthenians and even a few Cossacks. Over the coming months some 8000 infantry, 2500 archers and 1200 cavalry arrive, along with maybe 15 000 pilgrims and camp followers who join your general population.
@@ -265,7 +265,7 @@ title: story7
  <<else>>
  In our days, Orthodox realms are few and weak. They close their eyes and ears to your pleas.
  <<endif>>
--> Make a general call for help to the Catholic realms. You know that your success here will depend greatly on how you managed to mend the Schism...
+-> Make a general call for help to all the Christian realms. You know that your success here will depend greatly on how you managed to mend the Schism...
  <<if GetInt("iReligion") == 0>>
  In our days, Orthodox realms are few and weak, but they answer the call. Georgian nobility sends 50 young knights and soon a ship of volunteers from Ruthenia arrives, adding another 200 infantry.
  <<Change iInfantry 200>>
@@ -278,7 +278,7 @@ title: story7
  <<Change iCavalry 100>>
  <<Change iShips 5>> 
  <<elseif GetInt("iReligion") == 2>>
- While you are not enforcing Union of Florence, pragmatically minded Italians nonetheless see the opportunity to find a place for themselves in your new Empire. Venetian and Genoese mercenaries soon arrive, bringing 400 infantry and 400 archers to support the defence of your city.
+ While you are not enforcing Union of Florence, pragmatically minded Italians nonetheless see an opportunity to find a place for themselves in your new Empire. Venetian and Genoese mercenaries soon arrive, bringing 400 infantry and 400 archers to support the defence of your city.
  <<Change iInfantry 400>>
  <<Change iArchers 400>>
  <<endif>>
