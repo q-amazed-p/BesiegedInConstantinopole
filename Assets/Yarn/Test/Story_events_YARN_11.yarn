@@ -2,7 +2,7 @@ title: story0
 ---
 <<declare $chance = 100>>
 <b>Messenger arrives</b>: <br> A dusty messenger stumbles into your court room, clearly after riding many miles. Loukas Notaras, your megas doux and chief minister, takes the scroll out of messenger's shaking hand and unfolds it. You can see how blood leaves the face of your trusted advisor. He reads it and you realise that peace has come to an end. Sultan Mehmed the Second, Lord of the Turks, Master of the Ottoman Empire, is gathering armies in the city of Adrianople. His criers are spreading the call of Jihad across the Anatolia and the Balkans, his engineers are improving roads and bridges leading to Constantinople and there are rumours of massive cannons being forged. A massive army is being gathered and there can be only a single target for it - the last piece of the Eastern Roman Empire, the Holy City of Constantinople, your home. Although you have suspected that this attack will come, you hoped for more time. But now, you realise that you have mere months to prepare. Notaras asks - 'Imperator, what shall be your orders? How do we prepare for this?'. 
- -> Theodosian Walls defended the City for over a thousand years, however we also need to embrace the gunpowder to keep with the times. Our focus will be Fortifications and Artillery!
+ -> Theodosian Walls defended the City for over a thousand years, however we also need to embrace gunpowder to keep pace with the times. Our focus will be Fortifications and Artillery!
    We will do all we can, but Fortifications and Artillery will be our main focus during the preparation for the siege. <br> \[Siege Focus is set to Fortifications.\]
    <<SetInt iFocus 0>>
  -> No walls can defend the City if there are no men to guard them. Our focus will be Mobilisation!
@@ -25,17 +25,17 @@ title: story1
 
 <b>Mending the Schism</b>: <br> For years there have been attempts to mend the Great Schism between the Rome and Constantinople. Both churches proclaim themselves to be the rightful inheritors of the temple of Jesus on Earth. Cardinal Isidore of Kiev, one of the most prominent priests of our Empire, has worked for many years to secure so called "Union of Florence" between Constantinople and Rome and he strongly advocates that we accept it in order so that we can secure aid from the Pope and other Catholic nations. Meanwhile Loukas Notaras, our chief minister, stresses that the people and most clergy are opposed to this, as accursed Latins have once already been the reason of our downfall, when they took the City and almost destroyed the Empire in 1204. We need to consider the political and religious implications, should we stick with our tradition or consider converting to the Catholic faith, hoping to secure additional assistance?
 -> We shall support Orthodox Church unto death.
- Damned be those heretics, war or peace, we shall remain Orthodox. Your decision causes a brief celebration among your elites, but will reduce the likelihood that Catholic nations will aid us.  <br> \[Noble Support +10\] <br> \[Priest Support +15\]
+ Damned be those heretics, war or peace, we shall remain Orthodox. Your decision causes a brief celebration among your elites, but will reduce the likelihood that Catholic nations will aid us.  <br> \[Noble Support +10\] <br> \[Priest Support +15\] <br> \[Religion - the Great Schism persists\]
  <<SetInt iReligion 0>>
  <<Change fNobleRep 10>>
  <<Change fPriestRep 15>>
 -> We must seek to Mend the Schism, adopt Catholicism fully!
- The time has come to swallow our pride and admit our fault. The Emperor will convert to Catholicism and require everyone in the palace to do the same. We will fully embrace Union of Florence - Roma suprema est.  Your decision will cause anger among our priesthood and the nobles, but the Catholic nations will rejoice and we hope that the Pope shall call for a new crusade to save Constantinople. <br> \[Noble Support -20\] <br> \[Priest Support -30\]
+ The time has come to swallow our pride and admit our fault. The Emperor will convert to Catholicism and require everyone in the palace to do the same. We will fully embrace Union of Florence - Roma suprema est.  Your decision will cause anger among our priesthood and the nobles, but the Catholic nations will rejoice and we hope that the Pope shall call for a new crusade to save Constantinople. <br> \[Noble Support -20\] <br> \[Priest Support -30\] <br> \[Religion - the Great Schism is mended\]
  <<SetInt iReligion 1>>
  <<Change fNobleRep -20>>
  <<Change fPriestRep -30>>
 -> The Emperor shall embrace Union of Florence, but will not enforce it.
- We need the Catholic aid, but also we need to maintain our priests happy. Let us adopt Catholic faith by symbolically accepting Union of Florence, but without enforcing it. Your decision will still somewhat annoy the priesthood and the nobility will grumble, but the Catholics will aid us, although less than they would with full conversion. <br> \[Noble Support -5\] <br> \[Priest Support -10\] 
+ We need the Catholic aid, but also we need to maintain our priests happy. Let us adopt Catholic faith by symbolically accepting the Union of Florence, but without enforcing it. Your decision will still somewhat annoy the priesthood and the nobility will grumble, but the Catholics will aid us, although less than they would with a full conversion. <br> \[Noble Support -5\] <br> \[Priest Support -10\] <br> \[Religion - the Great Schism is partially mended\]
  <<SetInt iReligion 2>>
  <<Change fNobleRep -5>>
  <<Change fPriestRep -10>>
@@ -45,21 +45,21 @@ title: story1
 title: story2
 ---
 
-<b>Siege Preparation - Walls</b>: <br> The main defense of your city are the walls separating the enemy scimitars from your throat. As everyone knows, the outer walls of the city, built by the Emperor Theodosius in the 5th century, are the greatest, most impressive piece of siege architecture in the whole of Europe. The only time these walls have been breached, was during the sack of the city in 1204 by the Frankish crusaders. If these walls would fall, the second line of defence would be the Constantinian walls, which have been abandoned for a long time and in their current condition could not stop even a determined beggar. Finally, the core of the city is defended by the final line of Severan walls, which are also crumbling and haven't been properly maintained for centuries. In order to prepare for the siege, we need to restore our once glorious fortifications. How shall we focus on their reconstruction? <br> \[Explanation: Enemy will attempt to tear down your walls. When the integrity of the walls is low enough, they will assault them. If they successfully breach all the three walls - Theodosian, Constantinian and Severan, after the final assault you will lose the game. Do not let this happen!\]
+<b>Siege Preparation - Walls</b>: <br> The main defense of your city are the walls separating the enemy scimitars from your throat. As everyone knows, the outer walls of the city, built by the Emperor Theodosius in the 5th century, are the greatest, most impressive piece of siege architecture in the whole of Europe. The only time these walls have been breached, was during the sack of the city in 1204 by the Frankish crusaders. If these walls would fall, the second line of defence would be the Constantinian walls, which have been abandoned for a long time and in their current condition could not stop even a determined beggar. Finally, the core of the city is defended by the final line of Severan walls, which are also crumbling and haven't been properly maintained for centuries. In order to prepare for the siege, we need to restore our once glorious fortifications. How shall we focus on their reconstruction? <br> <br> \[Explanation: Enemy will attempt to tear down your walls. When the integrity of the current wall closest to the enemy is low enough, they will assault them. After they take the outer wall, they will start attacking the next one in line. The walls are not identical and have different defence bonuses. If the enemy would successfully breach all the three walls - Theodosian, Constantinian and Severan, after the final assault you will lose the game. Do not let this happen, Empire must not be allowed to perish!\]
 -> The Theodosian Wall is the first and strongest line of defence, it needs to be repaired - this is the highest priority. \[Materials -60\] 
-    Theodosian Wall is the longest and strongest of City's fortifications, stretching for 3.5 miles from North to South. The battle for our lives will be won or lost on its battlements, so you order reconstruction and the Theodosian Wall is restored to 100% condition. <br> \[Materials -60\] 
+    Theodosian Wall is the longest and strongest of City's fortifications, stretching for 3.5 miles from the North to the South. The battle for our lives will be won or lost on its battlements, so you order its full reconstruction. <br> \[Materials -60\]  <br> \[Theodosian Wall is restored to 100%\]
     <<ChangeFraction fOuterWall 1>>   
     <<Change iMaterials -60>> 
--> The Constantinian Wall hasn't seen combat for centuries and is in a really bad shape. However, it will be vital if the outer wall would be breached. It must be rebuilt. \[Materials -160\] 
-    Constantinian Wall is barely more than a ruin and hasn't seen action for a thousand years. However, with our efforts, it is now restored to 100% condition. <br> \[Materials -160\] 
+-> The Constantinian Wall hasn't seen combat for a thousand years and is in a really bad shape. However, it will be vital if the outer wall is breached. It must be rebuilt. \[Materials -160\] 
+    Constantinian Wall is barely more than a ruin and for the past few centuries has mostly served a source of bricks for the town people. However, with our efforts, it is now restored and we have a secondary line of defence to fall back to. <br> \[Materials -160\] <br> \[Constantinian Wall is restored to 100%\]
     <<ChangeFraction fMiddleWall 1>>   
     <<Change iMaterials -160>> 
--> While the Severan Wall is the weakest of the three, it protects the Great Palace and the heart of the city. It must be rebuilt. \[Materials -80\] 
-    The core of the city is now once more protected and Severan wall is restored to 100% condition, for the first time in over a millenium! While this wall is unlikely to stop a determined Turkish assault, it will definitely protect you from your own angry population or any infiltrators lurking in the city. <br> \[Materials -80\] 
+-> While the Severan Wall is the weakest of the three, but it protects the Great Palace and the heart of the city. It must be rebuilt. \[Materials -80\] 
+    The core of the city is now once more protected and Severan wall is restored to 100% condition, for the first time in over a millenium! While this wall is unlikely to stop a determined Turkish assault, it will definitely protect you from your own angry population or any infiltrators lurking in the city. <br> \[Materials -80\] <br> \[Severan Wall is restored to 100%\]
     <<ChangeFraction fInnerWall 1>>   
     <<Change iMaterials -80>> 
--> \[Focus - Fortification\] All the three Walls must be restored before the siege begins - fixing all of them will help us efficiently use materials and save some of the costs.\[Materials -250\] <<if GetInt("iFocus") == 0>>
-    You initiate the greatest reconstruction effort in Constantinople since the times of Emperor Justinian the Great. Thousands of citizens are used for the massive labour projects. Soon, all three Walls are restored fully. <br> \[Materials -250\] 
+-> \[Focus - Fortification\] All the three Walls must be restored before the siege begins - the siege will be long and hard. \[Materials -250\] <<if GetInt("iFocus") == 0>>
+    You initiate the greatest reconstruction effort in Constantinople since the times of Emperor Justinian the Great. Thousands of citizens are used for the massive labour projects. Decision to repair all the Walls at once also helps to use materials more efficiently and save some of the costs. Soon, all three Walls are restored fully - Constantinople has never been so well fortified as it is now. <br> \[Materials -250\] <br> \[Theodosian Wall is restored to 100%\] <br> \[Constantinian Wall is restored to 100%\] <br> \[Severan Wall is restored to 100%\]
     <<ChangeFraction fOuterWall 1>> 
     <<ChangeFraction fMiddleWall 1>>  
     <<ChangeFraction fInnerWall 1>> 
@@ -69,19 +69,19 @@ title: story2
 title: story3
 ---
 
-<b>Decision regarding Morea</b>:  <br> While the territories under the control of the Eastern Roman Empire have waxed and waned over the centuries, never have they been smaller than today. Grandeur that was once Rome is lost and buried. Constantinople is the only major city left under the control of our Empire, however we still have holdings in Morea (or as Greeks call it - Peloponnesus) peninsula in the southern Greece and some of the islands of the Marmara sea. As the siege approaches, we need to issue orders to our troops serving there. We could summon them to help us, but it could anger our nobles, whose estates would remain unprotected. Alternatively, we could tell them to launch a diversion against the Turks and win us time. What shall be your orders?
+<b>Orders to our Morean holdings</b>:  <br> While the territories under the control of the Eastern Roman Empire have waxed and waned over the centuries, never have they been smaller than today. Grandeur that was once Rome is lost and buried. Constantinople is the only major city left under the control of our Empire, however we still have holdings in Morean peninsula (also known as Peloponnesus) in the southern Greece and in some of the islands of the Marmara sea. As the siege approaches, we need to issue orders to our troops serving there. We could summon them to help us, but it could anger our nobles, whose estates would remain unprotected. Alternatively, we could tell them to launch a diversion against the Turks and hopefully distract some of their troops. What shall be your orders?
 -> They should remain where they are and protect our lands from bandits and raiders, support of the nobility will be important to me.
     The nobles are pleased with your decision and promise to make good use of the imperial troops to protect your lands. They also send you a monetary contribution worth 15000 gold to support siege preparation. <br> \[Money +15000\] <br> \[Noble Support +5\]
     <<Change iMoney 15000>> 
     <<Change fNobleRep 0.05>> 
--> Summon all of the trained troops to Constantinople. If the City falls, nothing else will matter, we need every bow and every blade on our holy walls!
-   Soon, a few ships from Morea arrive, bringing the whole garrison - a total of 1000 soldiers, 400 archers and 100 cavalry. People of the city rejoice, as this significantly bolsters your forces. \[Infantry +1000\] <br> \[Archers +400\] <br> \[Cavalry +100\] <br> \[Noble Support -10\]
+-> Summon all of the trained troops to return to Constantinople. If the City falls, nothing else will matter, we need every bow and every blade on our holy walls!
+   Soon, a few ships from Morea arrive, bringing the whole garrison - a total of 1000 soldiers, 400 archers and 100 cavalry. People of the city rejoice, as this significantly bolsters your forces. <br> \[Infantry +1000\] <br> \[Archers +400\] <br> \[Cavalry +100\] <br> \[Noble Support -10\]
    <<Change iInfantry 1000>> 
    <<Change iArchers 400>> 
    <<Change iCavalry 100>> 
    <<Change fNobleRep -0.1>>  
--> Order the lords of Morea to distract Mehmed's forces by attacking his supply lines.
-    While the distraction is too small to truly disrupt the main Ottoman army, Sultan Mehmed nonetheless sends 12 500 soldiers to hunt down your troops. This means that they won't participate in the siege, however the nobility think that your orders are a suicide mission, hurting your image. <br> \[Enemy Force - Bashi-Bazouk Irregulars -12500\] <br> \[Noble Support -15\]
+-> Order the lords of Morea to distract Mehmed's forces by attacking his supply lines, this could become an important factor in the later stages of the siege.
+    While the distraction is too small to truly disrupt the main Ottoman army, Sultan Mehmed nonetheless sends 12 500 soldiers to hunt down your troops. This means that they won't participate in the siege, however the nobility think that your orders are a suicide mission, hurting your image. <br> \[Enemy Troops 'Bashi-Bazouk Irregulars' is reduced by -12500\] <br> \[Noble Support -15\]
     <<Change iBazouks -12500>> 
     <<Change fNobleRep -0.15>>  
 -> \[Focus - Mobilisation\] We should order every able bodied man from our holdings to come to defend Constantinople immediately. <<if GetInt("iFocus") == 1>>
@@ -106,32 +106,32 @@ title: story3
 title: story4
 ---
 <b>Siege Preparation - Raising an Army</b>: <br> The people of Constantinople have gotten used to the peace and our military has for a long time been underfunded and the troops we have are too weak to withstand Ottoman might. The answer is clear - we need more men. There are many ways to recruit more soldiers, but which one is the best?
--> Infantry is the backbone of our army, they will hold the walls during the enemy assaults. Raise 3000 infantry. \[Cost - 30 000 gold\] <<if GetInt("iMoney") >= 30000>>
+-> Infantry is the backbone of our army, they will hold the walls during the enemy assaults. Raise 3000 infantry.\[Cost - 30 000 gold\] <<if GetInt("iMoney") >= 30000>>
   We quickly recruit more spearmen from the citizens of Constantinople. Some have never held a weapon in their lives. They will learn quickly or they will die. <br> \[Money -30000\] <br> \[Infantry +3000\] 
   <<Change iInfantry 3000>>
   <<Change iMoney -30000>>
--> Nothing is more dangerous when approaching the walls than a well-aimed arrow. Ranged troops are most effective at killing attackers - raise 1500 archers. \[Cost - 30 000 gold\] <<if GetInt("iMoney") >= 30000>>
+-> Nothing is more dangerous when approaching the walls than a well-aimed arrow. Ranged troops are most effective at killing attackers - raise 1500 archers.\[Cost - 30 000 gold\] <<if GetInt("iMoney") >= 30000>>
  You order the ancient Hippodrome to be converted into three archery ranges, where hundreds of archers train daily. By the time siege comes, they should be ready. <br> \[Money -30000\] <br> \[Archers +1500\] 
  <<Change iArchers 1500>>
  <<Change iMoney -30000>>
--> Cavalry will provide us with the flexibility to sally out and strike at our enemy and in the worst case scenario they will dismount and fight on the walls as knights. Raise 300 cavalry. <<if GetInt("iMoney") >= 30000>>
+-> Cavalry allows us to sally out and strike at our enemy directly, but also the knights can dismount and fight on the walls, so let us raise 300 cavalry.\[Cost - 30 000 gold\] <<if GetInt("iMoney") >= 30000>>
   One does not become a knight overnight, but you hurry to ennoble promising candidates. This new force will train day and night to prepare for the war. <br> \[Money -30000\] <br> \[Cavalry +300\] 
   <<Change iCavalry 300>>
   <<Change iMoney -30000>>
--> \[Focus - Mobilisation\] Return to tradition and raise a Legion of 5000 infantry and 1000 archers, in the honour of our Roman ancestors. \[Cost - 50 000 gold\] <<if GetInt("iFocus") == 1 and GetInt("iMoney") >= 50000 >>
+-> \[Focus - Mobilisation\] Return to tradition and raise a Legion of 5000 infantry and 1000 archers, in the honour of our Roman ancestors. \[Cost - 50 000 gold\] <<if GetInt("iFocus") == 1 && GetInt("iMoney") >= 50000 >>
   On your orders, the whole city is turned into a massive training encampment. As per ancient tradition, a legionary Aquila is forged from gold, perched atop an Orthodox Cross, joining the Roman heritage with our Christian faith. Freshly minted legionnaries are motivated, but only time will tell if they deserve the name of their forebears. <br> \[Money -50000\] <br> \[Infantry +5000\] <br> \[Archers +1000\] <br> \[Troop Morale +10\]
   <<Change iInfantry 5000>>
   <<Change iArchers 1000>>
   <<Change fTroopRep 0.1>> 
   <<Change iMoney -50000>>
--> \[Focus - Faith\] We call upon the religious fanatics, forming their mobs into military units. They will be poorly trained, but cheap to raise. \[Cost - 3000 gold\] <<if GetInt("iFocus") == 3 and GetInt("iMoney") >= 3000 >>
+-> \[Focus - Faith\] We call upon the religious fanatics, forming their mobs into military units. They will be poorly trained, but cheap to raise. \[Cost - 3000 gold\] <<if GetInt("iFocus") == 3 && GetInt("iMoney") >= 3000 >>
     While the nobles don't like our decision, these new fanatical troops are very motivated and numerous, numbering around 3000. But the best thing about them is that they are cheap - all we need to do is to pay for their weapons. However, they are not trained, don't like taking orders from your officers and the overall quality of your infantry suffers. <br> \[Money -3000\] <br> \[Infantry +3000\] <br> \[Noble Support -5\] <br> \[Troop Morale +30\] <br> \[Troop Morale +30\] <br> \[Infantry Quality is decreased\] 
     <<Change iInfantry 3000>>
     <<Change fNobleRep -0.05>> 
     <<Change fTroopRep 0.3>>  
     <<Change fInfantryQuality -0.2>> //PROBLEM: quality steps
     <<Change iMoney -3000>>
--> \[Focus - Diplomacy\] Summon foreign mercenaries, promising them land and titles after the war if we are victorious. (Loss of support) <<if GetInt("iFocus") == 4>>
+-> \[Focus - Diplomacy\] Summon foreign mercenaries, promising them land and titles after the war if we are victorious. \[Loss of support\] <<if GetInt("iFocus") == 4>>
     Soon brigands and mercenaries of all kinds flock to our banner. Primarily they are Italians from various states, but also come Cumans, Bulgars and even some Turks. They are not very numerous, but they are hardened killers, veterans of many wars, so their presence raises the quality of your troops across the board. However, their presence and unknown tongues and weird customs unnerve your people, priests, nobles and even other troops. In total, 750 infantry, 750 archers and 100 cavalry join your ranks. <br> \[Infantry +750\] <br> \[Archers +750\] <br> \[Cavalry +100\]  <br> \[Noble Support -5\] <br> \[Priest Support -5\] <br> \[Troop Morale -5\] <br> \[Public Morale -5\] <br> \[Infantry Quality is increased\] <br> \[Archers Quality is increased\] <br> \[Cavalry Quality is increased\] 
     <<Change iInfantry 750>>
     <<Change iArchers 750>>
@@ -140,49 +140,55 @@ title: story4
     <<Change fTroopRep -0.05>> 
     <<Change fPriestRep -0.05>> 
     <<Change fPeopleRep -0.05>> 
-    <<Change fInfantryQuality 0.2>> //PROBLEM: quality steps
-    <<Change fArchersQuality 0.2>> //PROBLEM: quality steps
-    <<Change fCavalryQuality 0.2>> //PROBLEM: quality steps
+    <<Change fInfantryQuality 0.2>> //PROBLEM: quality steps - Increase
+    <<Change fArchersQuality 0.2>> //PROBLEM: quality steps - Increase
+    <<Change fCavalryQuality 0.2>> //PROBLEM: quality steps - Increase
     
 ===
 title: story5
 ---
 <b>Hungry Mouths</b>: <br> As the rumours about the coming Turkish invasion spread, people from the countryside start trickling into the City. At first they come in small numbers, family here or a merchant there, but soon whole villages start flocking towards the mirage of safety in the Capital. Loukas Notaras, your Mesazon, chief minister, comes to you with concern in his eyes, arguing that a decision needs to be taken as to what course of action should be taken regarding these refugees. As the Emperor, you have to consider a few factors. These are your subjects and as many of them as possible should be saved. However, currently Constantinople already houses around 100 thousand people and all of them need to eat. Once the siege begins, our stores have enough food to hold out for about 30 days. Additional people will mean higher food consumption, but greater population will also provide more taxes, recruits and manpower for labour. This is one of the most important decisions to take before the siege.
-+++Explanation - City's supplies, or provisions, are consumed by the population daily. One thousand people is listed as 1 unit of Population and consumes 1 unit of Provisions per day. 7 thousand will consume 7 units, 100 thousand people will consume 100 units, etc. When you run out of provisions, people will starve and unrest will begin. Soon after that, you will lose your head.+++
--> The City is the final bastion of the Roman civilisation and everyone is welcome, open the gates.
- Thousands upon thousands of people flock through the Gate of St.Romanus. You come to inspect the crowds yourself and thousands of cheering, happy faces greet you. Everyone, even the nobles, feel that this is the right thing to do. For the time being you feel that you are doing your duty as the saviour of your people. What effect it will have, only time will tell.
- <<RndChange iPopulation 20 50>>
+\[Explanation - City's food supplies and basic necessities, or Provisions, are consumed by the population daily. 1000 people are listed as 1 unit of Population and they consume 1 unit of Provisions per day after the siege begins. For example 87 Population will consume 87 units of Provisions per day. When you run out of the Provisions, people will starve and unrest will begin. Soon after that, you will lose your head, unless you can lock yourself behind the Severan wall within your palace. Food planning is an essential part of siege strategy. However Population is not merely a burden, it also provides your recruitment pool, taxation base and can play an important role in some events. Also, these are your subjects and as their Imperator, you swore to protect them in front of the Almighty himself. Good luck!\]
+-> The City is the final bastion of the Roman civilisation and everyone is welcome, open the gates!
+ Thousands upon thousands of people flock through the gate of St.Romanus. You come to inspect the crowds yourself and thousands of cheering, happy faces greet you. Everyone, even the nobles, feel that this is the right thing to do. For the time being you feel that you are doing your duty as the saviour of your people. What effect it will have, only time will tell. <br> \[Noble Support +5\] <br> \[Priest Support +10\] <br> \[Troop Morale +10\] <br> \[Public Morale +30\] <br> \[City Population is now {GetInt("iPopulation")} \]
+ <<RndChange iPopulation 20 50>> //PROBLEM: post-choice display
  <<Change fPeopleRep 0.3>> 
  <<Change fNobleRep 0.05>> 
  <<Change fTroopRep 0.1>> 
- <<Change fPriestRep 0.01>>  
--> We need to save the flower of the nation, but leave the peasants beyond the gate. Open the gates to the nobles and their servants, priests, merchants, craftsmen and tax all of them on the entry to help pay for the siege costs. 
- Your decision is rational, but depressing. No one seriously objects, but there is a feeling of gloom around the city. Everyone is thinking - what if I would have ended up on the other side of the gate?
- <<RndChange iPopulation 5 10>>
+ <<Change fPriestRep 0.1>>  
+-> We need to save the flower of the nation, but leave the peasants beyond the gate. Tax those who enter - everyone needs to contribute to the defence!
+ You Open the gates to the nobles and their servants, priests, merchants, craftsmen and tax all of them on the entry to help pay for the siege costs. Your decision is rational, but depressing. No one seriously objects, but there is a feeling of gloom around the city. Everyone is thinking - what if I would have ended up on the other side of the gate? <br> \[Noble Support -10\] <br> \[Priest Support -10\] <br> \[Troop Morale -10\] <br> \[Public Morale -10\]
+ <<RndChange iPopulation 5 10>> //PROBLEM: post-choice display
  <<Change fPeopleRep -0.1>>
  <<Change fNobleRep -0.1>> 
  <<Change fTroopRep -0.1>> 
  <<Change fPriestRep -0.1>> 
- <<RndChange iMoney 10000 20000>>
--> Close the gate, we are full. No one is to be admitted inside. 
- Wailing of the refugees beyond the gate doesn't let you sleep for a few days, but soon, they realise that nothing will change and start departing. You may have turned the hungry mouths away, but most of the City sees you as a cruel ruler who betrayed his own people. Only time will tell if you were right to do this.
+ <<RndChange iMoney 10000 20000>> //PROBLEM: post-choice display
+-> Close the gate, we are full. No one is to be admitted inside - we will be barely able to feed the population we already have. 
+ Wailing of the refugees beyond the gate doesn't let you sleep for a few days, but soon, they realise that nothing will change and start departing. You may have turned the hungry mouths away, but most of the City sees you as a cruel ruler who betrayed his own people. Only time will tell if you were right to do this. <br> \[Noble Support -5\] <br> \[Priest Support -15\] <br> \[Troop Morale -15\] <br> \[Public Morale -30\]
  <<Change fPeopleRep -0.3>>
  <<Change fNobleRep -0.05>> 
  <<Change fTroopRep -0.15>> 
  <<Change fPriestRep -0.15>> 
--> \[Focus - Mobilisation\] We could press all the able bodied refugees to serve in our armed forces. Send the peasants to train with the spears and the hunters shall become archers. <<if GetInt("iFocus") == 1>>
- Their quality is poor, but these men know that they owe their lives to you, they shall fight like beasts when the Turks come, so the morale of your army improves. You gain 2000 infantry and 500 archers.
+-> \[Focus - Mobilisation\] Allow everyone in, but press all the able bodied refugees to serve in our armed forces. Send the peasants to train with the spears and the hunters shall become archers. <<if GetInt("iFocus") == 1>>
+ Their quality is poor, but these men know that they owe their lives to you, they shall fight like beasts when the Turks come, so the morale of your army improves. You gain 2000 infantry and 500 archers. <br> \[Public Morale +20\] <br> \[Troop Morale +10\] <br> \[Infantry +2000\] <br> \[Archers +500\] 
  <<Change fPeopleRep 0.2>>
- <<RndChange iPopulation 20 40>>
+ <<RndChange iPopulation 20 40>> //PROBLEM: post-choice display
  <<Change iInfantry 2000>>
  <<Change iArchers 500>>
  <<Change fTroopRep 0.1>> 
- <<Change fInfantryQuality 0.2>> //PROBLEM: quality steps
- <<Change fArchersQuality 0.2>> //PROBLEM: quality steps
--> \[Focus - Diplomacy\] We could order our agents to spread rumours among refugees about the awful conditions in the City, while mentioning that Pelopponesus is very nice this time of year and not as far as it seems, so they should consider going there instead. <<if GetInt("iFocus") == 4 and GetInt("iMoney") >= 2500>>
- The plan works, our agents manage to successfuly divert majority of the refugees away from Constantinople. 
- <<RndChange iPopulation 3 7>>
+ <<Change fInfantryQuality -0.2>> //PROBLEM: quality steps - REDUCTION
+ <<Change fArchersQuality -0.2>> //PROBLEM: quality steps - REDUCTION
+-> \[Focus - Diplomacy\] Order our agents to divert as many refugees away from the city by spreading rumours. <<if GetInt("iFocus") == 4 && GetInt("iMoney") >= 2500>>
+ The plan works, our agents manage to successfuly divert majority of the refugees away from Constantinople by spreading rumours among the refugees about the awful conditions in the City, while mentioning that Pelopponesus is very nice this time of year and not as far as it seems, so they should consider going there instead. <br> \[Money -2500\]
+ <<RndChange iPopulation 3 7>> //PROBLEM: post-choice display
  <<Change iMoney -2500>> 
+-> \[Focus - Fortification\] Let us use this mass of people into a labour force to gather materials to better prepare for the siege. <<if GetInt("iFocus") == 0>>
+ Your taskmasters soon organise labour camps outside of the gate of St. Romanos where the refugees are used to cut down timber from the neighbouring Veligrádio forest. Anyone who wants to enter through the gate, must also bring some timber or stone from the local quarry. Not everyone is physically fit enough to participate in this labour and many thousands of refugees instead choose to depart somewhere else instead. The people feel that this is harsh decision, but nobles, priests and soldiers understand that this is a necessary measure for the safety of the City. <br> \[Public Morale -10\]
+ <<RndChange iPopulation 15 30>> //PROBLEM: post-choice display
+ <<RndChange iMaterials 600 1200>> //PROBLEM: post-choice display
+ <<Change fPeopleRep -0.1>>
+
 ===
 title: story6
 ---
