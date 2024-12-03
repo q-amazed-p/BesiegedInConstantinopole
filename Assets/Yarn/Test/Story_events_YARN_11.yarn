@@ -107,23 +107,23 @@ title: story4
 ---
 <b>Siege Preparation - Raising an Army</b>: <br> The people of Constantinople have gotten used to the peace and our military has for a long time been underfunded and the troops we have are too weak to withstand Ottoman might. The answer is clear - we need more men. There are many ways to recruit more soldiers, but which one is the best?
 -> Infantry is the backbone of our army, they will hold the walls during the enemy assaults. Raise 3000 infantry.\[Cost - 30 000 gold\] <<if GetInt("iMoney") >= 30000>>
-  We quickly recruit more spearmen from the citizens of Constantinople. Some have never held a weapon in their lives. They will learn quickly or they will die. <br> \[Money -30000\] <br> \[Infantry +3000\] 
-  <<Change iInfantry 3000>>
-  <<Change iMoney -30000>>
+   We quickly recruit more spearmen from the citizens of Constantinople. Some have never held a weapon in their lives. They will learn quickly or they will die. <br> \[Money -30000\] <br> \[Infantry +3000\] 
+   <<Change iInfantry 3000>>
+   <<Change iMoney -30000>>
 -> Nothing is more dangerous when approaching the walls than a well-aimed arrow. Ranged troops are most effective at killing attackers - raise 1500 archers.\[Cost - 30 000 gold\] <<if GetInt("iMoney") >= 30000>>
- You order the ancient Hippodrome to be converted into three archery ranges, where hundreds of archers train daily. By the time siege comes, they should be ready. <br> \[Money -30000\] <br> \[Archers +1500\] 
- <<Change iArchers 1500>>
- <<Change iMoney -30000>>
+   You order the ancient Hippodrome to be converted into three archery ranges, where hundreds of archers train daily. By the time siege comes, they should be ready. <br> \[Money -30000\] <br> \[Archers +1500\] 
+   <<Change iArchers 1500>>
+   <<Change iMoney -30000>>
 -> Cavalry allows us to sally out and strike at our enemy directly, but also the knights can dismount and fight on the walls, so let us raise 300 cavalry.\[Cost - 30 000 gold\] <<if GetInt("iMoney") >= 30000>>
-  One does not become a knight overnight, but you hurry to ennoble promising candidates. This new force will train day and night to prepare for the war. <br> \[Money -30000\] <br> \[Cavalry +300\] 
-  <<Change iCavalry 300>>
-  <<Change iMoney -30000>>
+   One does not become a knight overnight, but you hurry to ennoble promising candidates. This new force will train day and night to prepare for the war. <br> \[Money -30000\] <br> \[Cavalry +300\] 
+   <<Change iCavalry 300>>
+   <<Change iMoney -30000>>
 -> \[Focus - Mobilisation\] Return to tradition and raise a Legion of 5000 infantry and 1000 archers, in the honour of our Roman ancestors. \[Cost - 50 000 gold\] <<if GetInt("iFocus") == 1 && GetInt("iMoney") >= 50000 >>
-  On your orders, the whole city is turned into a massive training encampment. As per ancient tradition, a legionary Aquila is forged from gold, perched atop an Orthodox Cross, joining the Roman heritage with our Christian faith. Freshly minted legionnaries are motivated, but only time will tell if they deserve the name of their forebears. <br> \[Money -50000\] <br> \[Infantry +5000\] <br> \[Archers +1000\] <br> \[Troop Morale +10\]
-  <<Change iInfantry 5000>>
-  <<Change iArchers 1000>>
-  <<Change fTroopRep 0.1>> 
-  <<Change iMoney -50000>>
+   On your orders, the whole city is turned into a massive training encampment. As per ancient tradition, a legionary Aquila is forged from gold, perched atop an Orthodox Cross, joining the Roman heritage with our Christian faith. Freshly minted legionnaries are motivated, but only time will tell if they deserve the name of their forebears. <br> \[Money -50000\] <br> \[Infantry +5000\] <br> \[Archers +1000\] <br> \[Troop Morale +10\]
+   <<Change iInfantry 5000>>
+   <<Change iArchers 1000>>
+   <<Change fTroopRep 0.1>> 
+   <<Change iMoney -50000>>
 -> \[Focus - Faith\] We call upon the religious fanatics, forming their mobs into military units. They will be poorly trained, but cheap to raise. \[Cost - 3000 gold\] <<if GetInt("iFocus") == 3 && GetInt("iMoney") >= 3000 >>
     While the nobles don't like our decision, these new fanatical troops are very motivated and numerous, numbering around 3000. But the best thing about them is that they are cheap - all we need to do is to pay for their weapons. However, they are not trained, don't like taking orders from your officers and the overall quality of your infantry suffers. <br> \[Money -3000\] <br> \[Infantry +3000\] <br> \[Noble Support -5\] <br> \[Troop Morale +30\] <br> \[Troop Morale +30\] <br> \[Infantry Quality is decreased\] 
     <<Change iInfantry 3000>>
@@ -150,20 +150,20 @@ title: story5
 <b>Hungry Mouths</b>: <br> As the rumours about the coming Turkish invasion spread, people from the countryside start trickling into the City. At first they come in small numbers, family here or a merchant there, but soon whole villages start flocking towards the mirage of safety in the Capital. Loukas Notaras, your Mesazon, chief minister, comes to you with concern in his eyes, arguing that a decision needs to be taken as to what course of action should be taken regarding these refugees. As the Emperor, you have to consider a few factors. These are your subjects and as many of them as possible should be saved. However, currently Constantinople already houses around 100 thousand people and all of them need to eat. Once the siege begins, our stores have enough food to hold out for about 30 days. Additional people will mean higher food consumption, but greater population will also provide more taxes, recruits and manpower for labour. This is one of the most important decisions to take before the siege.
 \[Explanation - City's food supplies and basic necessities, or Provisions, are consumed by the population daily. 1000 people are listed as 1 unit of Population and they consume 1 unit of Provisions per day after the siege begins. For example 87 Population will consume 87 units of Provisions per day. When you run out of the Provisions, people will starve and unrest will begin. Soon after that, you will lose your head, unless you can lock yourself behind the Severan wall within your palace. Food planning is an essential part of siege strategy. However Population is not merely a burden, it also provides your recruitment pool, taxation base and can play an important role in some events. Also, these are your subjects and as their Imperator, you swore to protect them in front of the Almighty himself. Good luck!\]
 -> The City is the final bastion of the Roman civilisation and everyone is welcome, open the gates!
- Thousands upon thousands of people flock through the gate of St.Romanus. You come to inspect the crowds yourself and thousands of cheering, happy faces greet you. Everyone, even the nobles, feel that this is the right thing to do. For the time being you feel that you are doing your duty as the saviour of your people. What effect it will have, only time will tell. <br> \[Noble Support +5\] <br> \[Priest Support +10\] <br> \[Troop Morale +10\] <br> \[Public Morale +30\] <br> \[City Population is now {GetInt("iPopulation")} \]
- <<RndChange iPopulation 20 50>> //PROBLEM: post-choice display
+ <<RndChange iPopulation 20 50>>
  <<Change fPeopleRep 0.3>> 
  <<Change fNobleRep 0.05>> 
  <<Change fTroopRep 0.1>> 
  <<Change fPriestRep 0.1>>  
+ Thousands upon thousands of people flock through the gate of St.Romanus. You come to inspect the crowds yourself and thousands of cheering, happy faces greet you. Everyone, even the nobles, feel that this is the right thing to do. For the time being you feel that you are doing your duty as the saviour of your people. What effect it will have, only time will tell. <br> \[Noble Support +5\] <br> \[Priest Support +10\] <br> \[Troop Morale +10\] <br> \[Public Morale +30\] <br> \[City Population is now {GetInt("iPopulation")} \]
 -> We need to save the flower of the nation, but leave the peasants beyond the gate. Tax those who enter - everyone needs to contribute to the defence!
- You Open the gates to the nobles and their servants, priests, merchants, craftsmen and tax all of them on the entry to help pay for the siege costs. Your decision is rational, but depressing. No one seriously objects, but there is a feeling of gloom around the city. Everyone is thinking - what if I would have ended up on the other side of the gate? <br> \[Noble Support -10\] <br> \[Priest Support -10\] <br> \[Troop Morale -10\] <br> \[Public Morale -10\]
- <<RndChange iPopulation 5 10>> //PROBLEM: post-choice display
+ <<RndChange iPopulation 5 10>>
  <<Change fPeopleRep -0.1>>
  <<Change fNobleRep -0.1>> 
  <<Change fTroopRep -0.1>> 
  <<Change fPriestRep -0.1>> 
- <<RndChange iMoney 10000 20000>> //PROBLEM: post-choice display
+ <<RndChange iMoney 10000 20000>>
+  You Open the gates to the nobles and their servants, priests, merchants, craftsmen and tax all of them on the entry to help pay for the siege costs. Your decision is rational, but depressing. No one seriously objects, but there is a feeling of gloom around the city. Everyone is thinking - what if I would have ended up on the other side of the gate? <br> \[Noble Support -10\] <br> \[Priest Support -10\] <br> \[Troop Morale -10\] <br> \[Public Morale -10\] <br> \[City Population is now {GetInt("iPopulation")} \] <br> \[Your treasury is now {GetInt("iMoney")} \]
 -> Close the gate, we are full. No one is to be admitted inside - we will be barely able to feed the population we already have. 
  Wailing of the refugees beyond the gate doesn't let you sleep for a few days, but soon, they realise that nothing will change and start departing. You may have turned the hungry mouths away, but most of the City sees you as a cruel ruler who betrayed his own people. Only time will tell if you were right to do this. <br> \[Noble Support -5\] <br> \[Priest Support -15\] <br> \[Troop Morale -15\] <br> \[Public Morale -30\]
  <<Change fPeopleRep -0.3>>
@@ -184,38 +184,37 @@ title: story5
  <<RndChange iPopulation 3 7>> //PROBLEM: post-choice display
  <<Change iMoney -2500>> 
 -> \[Focus - Fortification\] Let us use this mass of people into a labour force to gather materials to better prepare for the siege. <<if GetInt("iFocus") == 0>>
- Your taskmasters soon organise labour camps outside of the gate of St. Romanos where the refugees are used to cut down timber from the neighbouring Veligrádio forest. Anyone who wants to enter through the gate, must also bring some timber or stone from the local quarry. Not everyone is physically fit enough to participate in this labour and many thousands of refugees instead choose to depart somewhere else instead. The people feel that this is harsh decision, but nobles, priests and soldiers understand that this is a necessary measure for the safety of the City. <br> \[Public Morale -10\]
  <<RndChange iPopulation 15 30>> //PROBLEM: post-choice display
  <<RndChange iMaterials 600 1200>> //PROBLEM: post-choice display
  <<Change fPeopleRep -0.1>>
-
+ Your taskmasters soon organise labour camps outside of the gate of St. Romanos where the refugees are used to cut down timber from the neighbouring Veligrádio forest. Anyone who wants to enter through the gate, must also bring some timber or stone from the local quarry. Not everyone is physically fit enough to participate in this labour and many thousands of refugees instead choose to depart somewhere else instead. The people feel that this is harsh decision, but nobles, priests and soldiers understand that this is a necessary measure for the safety of the City. <br> \[Public Morale -10\] <br> \[Materials are now {GetInt("iMaterials")} \] <br> \[City Population is now {GetInt("iPopulation")} \]   
 ===
 title: story6
 ---
 <b>Preparing Provisions</b>: <br> One of the most important things to survive the siege will be to have adequate provisions to feed the population of the City. We need to take urgent measures to hoard enough food for everyone.  However, food costs money and merchants are likely to start raising price the more we buy, as it would become more scarce. How much food should we procure and how?
 -> We have enough food and this siege won't take longer than a month - there is no need to waste money or worry people.
-  Our confidence inspires the people, but our advisors think that we are mad.
-  <<Change fPeopleRep 0.1>>
+   Our confidence inspires the people, but our advisors think that we are mad.
+   <<Change fPeopleRep 0.1>>
 -> Buy all the food in the city. <<if GetInt("iMoney") >= 6000>>
-  Head of the palace stores went around all of the merchants in the city and bought everything available on the market.
-  <<Change iProvisions 3000>> 
-  <<Change iMoney -6000>> 
+   Head of the palace stores went around all of the merchants in the city and bought everything available on the market.
+   <<Change iProvisions 3000>> 
+   <<Change iMoney -6000>> 
 -> Buy all the food in the province. <<if GetInt("iMoney") >= 15000>>
- Merchants are quick to notice that there's a chance to make a killing and they raise the prices, but we still manage to secure a significant supply of food.
- <<Change iProvisions 6000>> 
- <<Change iMoney -15000>> 
+   Merchants are quick to notice that there's a chance to make a killing and they raise the prices, but we still manage to secure a significant supply of food.
+   <<Change iProvisions 6000>> 
+   <<Change iMoney -15000>> 
 -> Buy the food from everyone, even the Turkish smugglers from across the Straits. It will cost an arm and a leg, but it is necessary. <<if GetInt("iMoney") >= 35000>>
- <<Change iProvisions 10000>> 
- <<Change iMoney -35000>> 
- Desperate times call for desperate measures. We spent so much money that our treasurer is crying, but at least our warehouses are absolutely brimming with food.
+   <<Change iProvisions 10000>> 
+   <<Change iMoney -35000>> 
+   Desperate times call for desperate measures. We spent so much money that our treasurer is crying, but at least our warehouses are absolutely brimming with food.
 -> \[Focus - Economy\] We could implement absolute food control in all of our domains. Our troops will confiscate all the food and then ration it. This will be highly unpopular and implementing this will still cost money, but we will secure a massive supply of food. <<if GetInt("iFocus") == 2 && GetInt("iMoney") >= 10000>>
-  <<Change iProvisions 20000>> 
-  <<Change iMoney -10000>> 
-  <<Change fPeopleRep -0.1>>
-  <<Change fNobleRep -0.1>> 
-  <<Change fTroopRep -0.1>> 
-  <<Change fPriestRep -0.1>> 
-  With an iron fist Imperator has declared that food in your mouth now belongs to the Empire and you will eat only when you are ordered and only how much you are ordered. Everyone is unhappy, but everyone will have something to eat.
+   <<Change iProvisions 20000>> 
+   <<Change iMoney -10000>> 
+   <<Change fPeopleRep -0.1>>
+   <<Change fNobleRep -0.1>> 
+   <<Change fTroopRep -0.1>> 
+   <<Change fPriestRep -0.1>> 
+   With an iron fist Imperator has declared that food in your mouth now belongs to the Empire and you will eat only when you are ordered and only how much you are ordered. Everyone is unhappy, but everyone will have something to eat.
 
 ===
 title: story7
