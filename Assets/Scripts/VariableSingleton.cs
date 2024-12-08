@@ -8,34 +8,36 @@ using System.Collections;
 public class VariableSingleton : MonoBehaviour
 {
     static private VariableSingleton _instance;
-
     static public VariableSingleton Instance => _instance;
 
-    static int turn = 0;
-        static public int Turn
-        {
-            get => turn;
-            private set => turn = value;
-        }
 
-        static public int IncrementTurn()
-        {
-            turn++;
-            return turn;
-        }
+    static int turn = 0;
+    static public int Turn
+    {
+        get => turn;
+        private set => turn = value;
+    }
+    static public int IncrementTurn()
+    {
+        turn++;
+        if (Instance.overrideTurn > -1) { turn = Instance.overrideTurn; Instance.overrideTurn = -1; }
+        return turn;
+    }
+    public int overrideTurn = -1;
+
 
     static DateTime siegeStart = new(1453, 4, 6);
-        static public DateTime GetDate()
+    static public DateTime GetDate()
+    {
+        if (turn < 15)
         {
-            if (turn < 15)
-            {
-                return siegeStart - new TimeSpan((14 - turn) * 7, 0, 0, 0);
-            }
-            else
-            {
-                return siegeStart + new TimeSpan(turn - 14, 0, 0, 0);
-            }
+            return siegeStart - new TimeSpan((14 - turn) * 7, 0, 0, 0);
         }
+        else
+        {
+            return siegeStart + new TimeSpan(turn - 14, 0, 0, 0);
+        }
+    }
 
     [SerializeField] public RecruitmentData[] RecruitmentPricelist;
 
@@ -163,6 +165,16 @@ public class VariableSingleton : MonoBehaviour
     {
         ChangeFloat(varName, UnityEngine.Random.Range(min, max));
     }
+
+
+    /*[SerializeField] List<float> 
+
+
+    [YarnCommand("UpgradeArmy")]
+    static public void UpgradeArmyQuality(string armyType, int grades = 1) 
+    { 
+        
+    }*/
 
     /*************************
      *VARIABLE INITIALISATION*/
