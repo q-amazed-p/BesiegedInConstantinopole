@@ -125,7 +125,7 @@ title: story4
    <<Change fTroopRep 0.1>> 
    <<Change iMoney -50000>>
 -> \[Focus - Faith\] We call upon the religious fanatics, forming their mobs into military units. They will be poorly trained, but cheap to raise. \[Cost - 3000 gold\] <<if GetInt("iFocus") == 3 && GetInt("iMoney") >= 3000 >>
-    While the nobles don't like our decision, these new fanatical troops are very motivated and numerous, numbering around 3000. But the best thing about them is that they are cheap - all we need to do is to pay for their weapons. However, they are not trained, don't like taking orders from your officers and the overall quality of your infantry suffers. <br> \[Money -3000\] <br> \[Infantry +3000\] <br> \[Noble Support -5\] <br> \[Troop Morale +30\] <br> \[Troop Morale +30\] <br> \[Infantry Quality is decreased\] 
+    While the nobles don't like our decision, these new fanatical troops are very motivated and numerous, numbering around 3000. But the best thing about them is that they are cheap - all we need to do is to pay for their weapons. However, they are not trained, don't like taking orders from your officers and the overall quality of your infantry suffers. <br> \[Money -3000\] <br> \[Infantry +3000\] <br> \[Noble Support -5\] <br> \[Troop Morale +30\] <br> \[Infantry Quality is decreased\] 
     <<Change iInfantry 3000>>
     <<Change fNobleRep -0.05>> 
     <<Change fTroopRep 0.3>>  
@@ -190,24 +190,24 @@ title: story5
  Your taskmasters soon organise labour camps outside of the gate of St. Romanos where the refugees are used to cut down timber from the neighbouring Veligrádio forest. Anyone who wants to enter through the gate, must also bring some timber or stone from the local quarry. Not everyone is physically fit enough to participate in this labour and many thousands of refugees instead choose to depart somewhere else instead. The people feel that this is harsh decision, but nobles, priests and soldiers understand that this is a necessary measure for the safety of the City. <br> \[Public Morale -10\] <br> \[Materials are now {GetInt("iMaterials")} \] <br> \[City Population is now {GetInt("iPopulation")} \]   
 ===
 title: story6
----
+--- // PROBLEM: ADD action consequences in brackets
 <b>Preparing Provisions</b>: <br> One of the most important things to survive the siege will be to have adequate provisions to feed the population of the City. We need to take urgent measures to hoard enough food for everyone.  However, food costs money and merchants are likely to start raising price the more we buy, as it would become more scarce. How much food should we procure and how?
 -> We have enough food and this siege won't take longer than a month - there is no need to waste money or worry people.
    Our confidence inspires the people, but our advisors think that we are mad.
    <<Change fPeopleRep 0.1>>
--> Buy all the food in the city. <<if GetInt("iMoney") >= 6000>>
+-> Buy all the food in the city. \[Cost - 6000 gold\] <<if GetInt("iMoney") >= 6000>>
    Head of the palace stores went around all of the merchants in the city and bought everything available on the market.
    <<Change iProvisions 3000>> 
    <<Change iMoney -6000>> 
--> Buy all the food in the province. <<if GetInt("iMoney") >= 15000>>
+-> Buy all the food in the province.\[Cost - 15 000 gold\] <<if GetInt("iMoney") >= 15000>>
    Merchants are quick to notice that there's a chance to make a killing and they raise the prices, but we still manage to secure a significant supply of food.
    <<Change iProvisions 6000>> 
    <<Change iMoney -15000>> 
--> Buy the food from everyone, even the Turkish smugglers from across the Straits. It will cost an arm and a leg, but it is necessary. <<if GetInt("iMoney") >= 35000>>
+-> Buy the food from everyone, even the Turkish smugglers from across the Straits. It will cost an arm and a leg, but it is necessary. \[Cost - 35 000 gold\] <<if GetInt("iMoney") >= 35000>>
    <<Change iProvisions 10000>> 
    <<Change iMoney -35000>> 
    Desperate times call for desperate measures. We spent so much money that our treasurer is crying, but at least our warehouses are absolutely brimming with food.
--> \[Focus - Economy\] We could implement absolute food control in all of our domains. Our troops will confiscate all the food and then ration it. This will be highly unpopular and implementing this will still cost money, but we will secure a massive supply of food. <<if GetInt("iFocus") == 2 && GetInt("iMoney") >= 10000>>
+-> \[Focus - Economy\] We could implement absolute food control in all of our domains. Our troops will confiscate all the food and then ration it. This will be highly unpopular and implementing this will still cost money, but we will secure a massive supply of food. \[Cost - 10 000 gold & Reputation loss\] <<if GetInt("iFocus") == 2 && GetInt("iMoney") >= 10000>>
    <<Change iProvisions 20000>> 
    <<Change iMoney -10000>> 
    <<Change fPeopleRep -0.1>>
@@ -290,20 +290,20 @@ title: story7
 
 ===
 title: story8
----
+--- // PROBLEM: EVENT OPTIONS SPLIT IN 2
 </b> Assault on the Strait-Cutter Fortress </b>: <br> Rumeli fortress, conceived and built in 1452 on the orders of Sultan Mehmed II, was built in preparation for the planned siege, with the goal of cutting off maritime military and logistical relief that could potentially come to our aid by way of the Bosphorus Strait. Hence the fortress's alternative name, Boğazkesen or "Strait-cutter". As the Ottoman armies are getting ready to besiege our City, we need to decide if we should use part of our resources to neutralise this fortress and open up the vital artery to the Black Sea.
 -> Order covert infiltration of the fortress by the Varangian Guard \[Risk troops\]
  <<set $chance = dice(100)>>
  <<if $chance <= 45>> 
-  You task a group of your best warriors - Varangians - to slip into Rumeli Fortress under the cover of being merchants. Their mission is to start a fire and create confusion, creating an opening to open the gate and let in the rest of your forces. The mission goes flawlessly - the infiltrators skillfully navigate Ottoman defenses and soon your troops raise your banner over the Boğazkesen. Your troops capture the enemy cannons which will be useful in the defence of our City and explode the gunpowder stores, turning the fortress into a ruin and opening the way to the Black Sea. <br> \[Straits are Open\] <br> \[Cannons +5\] <br> \[Troop Morale +10\]
-  <<Change bStraitsOpen TRUE>> 
-  <<Change fTroopRep 0.1>>
-  <<Change iCannons 5>>
-  <<else>>
-  You task a group of your best warriors - Varangians - to slip into Rumeli Fortress under the cover of being merchants. Their mission is to start a fire and create confusion, creating an opening to open the gate and let in the rest of your forces.  Unfortunately Ottoman vigilance prevails as the infiltrators are detected. A swift and decisive response leads to their capture and execution. The rest of your troops return, seeing that there is no way to complete their mission. <br> \[Varangians -10\] <br> \[Troop Morale -5\]
-  <<Change iVarangians -10>>
-  <<Change fTroopRep -0.05>>
-  <<endif>>
+ You task a group of your best warriors - Varangians - to slip into Rumeli Fortress under the cover of being merchants. Their mission is to start a fire and create confusion, creating an opening to open the gate and let in the rest of your forces. The mission goes flawlessly - the infiltrators skillfully navigate Ottoman defenses and soon your troops raise your banner over the Boğazkesen. Your troops capture the enemy cannons which will be useful in the defence of our City and explode the gunpowder stores, turning the fortress into a ruin and opening the way to the Black Sea. <br> \[Straits are Open\] <br> \[Cannons +5\] <br> \[Troop Morale +10\]
+ <<Change bStraitsOpen TRUE>> 
+ <<Change fTroopRep 0.1>>
+ <<Change iCannons 5>>
+ <<else>>
+ You task a group of your best warriors - Varangians - to slip into Rumeli Fortress under the cover of being merchants. Their mission is to start a fire and create confusion, creating an opening to open the gate and let in the rest of your forces.  Unfortunately Ottoman vigilance prevails as the infiltrators are detected. A swift and decisive response leads to their capture and execution. The rest of your troops return, seeing that there is no way to complete their mission. <br> \[Varangians -10\] <br> \[Troop Morale -5\]
+ <<Change iVarangians -10>>
+ <<Change fTroopRep -0.05>>
+ <<endif>>
 -> \[Focus - Diplomacy\] Bribe someone inside the castle to sabotage the Artillery \[Cost - 3000 gold\] <<if GetInt("iFocus") == 4 && GetInt("iMoney") >= 3000 >>
  <<set $chance = dice(100)>>
  <<if $chance <= 85>> 
@@ -323,11 +323,11 @@ You realise that taking this fortress is critical for the survival of your City.
  You deploy your engineers to dig tunnels beneath Rumeli Fortress, intending to collapse its walls by igniting explosive charges. Your engineers complete the tunnel and successfully detonate the charges, causing the fortress walls to collapse. The fortress is now barely more than a smoking ruin, leaving the Strait open.
  <<Change iAmmunition -15>>
  <<Change bStraitsOpen TRUE>> 
-  <<else>>
+ <<else>>
  <<Change iEngineers -5>> 
  <<Change iAmmunition -15>>
  You deploy your engineers to dig tunnels beneath Rumeli Fortress, intending to collapse its walls by igniting explosive charges. Unfortunately keen-eyed Ottoman scouts discover the tunnels and collapse them before your sappers reach their destination, trapping and killing your engineers. It is a black day, we will not have access to the Black Sea.
-  <<endif>>
+ <<endif>>
 -> Conserve our strength and do nothing, we do not need access to the Black Sea.
  Boğazkesen is too well fortified and we need all the men we can spare in Constantinople. However, this means that we will not have access to the Black Sea.
 
@@ -396,7 +396,7 @@ title: story10
  <<Change fNobleRep 0.1>> 
  <<Change fTroopRep 0.1>> 
  <<Change fPriestRep 0.1>>
--> \[Focus - Economy\] You order the Varangian Guard to close the doors and make them all donate to the war fund before they leave. Make exception for the priests if they help you convince the people.
+-> \[Focus - Economy\] Order the Varangian Guard to close the doors and make everyone pay a war tax before they leave. Make exception for the priests if they help you convince the rest. <<if GetInt("iFocus") == 2 >>
  People feel somewhat betrayed, but there's little they can do and the priests are happy to preach to them about the joys of donating for the common cause. Some nobles have to leave their jewelry, while the poor end up leaving their last pennies. But you know that you need this money more than they do.
  <<Change fPeopleRep -0.1>>
  <<Change fNobleRep -0.1>> 
@@ -414,9 +414,47 @@ title: story10
 
 ===
 title: story11
----
-<b>Siege Begins</b>: <br> So the time has come. You can see Mehmed's army marching in the distance, sky in their direction is marked by plumes of black smoke from the villages they set on fire while coming here. The siege of Constantinople has begun.
-+++Explanation - You have now entered siege phase. Please note that while in the early game turns marked passing weeks, currently each turn marks a passing day. Furthermore, as food will now stop coming into the city, your provisions will start decreasing at a rate based on your population size. Enemy will be attacking your walls daily and when they will be reduced enough, they will launch an assault, trying to take your head. Good luck.+++
+--- 
+</b> Legendary Greek Fire</b> <br> As the looming threat of the Ottoman siege casts its shadow over Constantinople, the question arises – should the Empire embark on the quest to rediscover the ancient knowledge of Greek Fire and prepare to use it during the siege? This legendary incendiary weapon, a closely guarded state secret, could potentially tip the scales in the impending conflict. It was known for its exceptional effectiveness in setting targets ablaze, even on water. Greek Fire was typically deployed using specialized siphon-like devices mounted on ships, allowing the Byzantines to unleash devastating fire upon their enemies. The weapon played a significant role in the defense of Constantinople and maybe it could do so again. However, it has been centuries since the last time it was used in battle. Although we have some clues, rediscovering the secret will be complicated and expensive process. Shall we try to embark on it?
+-> Instruct scholars to delve into the vast historical archives of Blachernae, scouring ancient texts and records for any mentions of Greek Fire. \[Cost - 4000 gold\] <<if GetInt("iMoney") >= 4000 >>
+ <<set $chance = dice(100)>>
+ <<if $chance <= 75>>  
+ Scholars meticulously comb through the historical archives, unearthing fragments of information on Greek Fire. While the process is slow, their dedicated efforts yield valuable insights, providing a foundation for the rediscovery of the Greek Fire! We now have a powerful weapon in our hands against the Turks!
+ <<Change bTechGreekFire TRUE>>
+ <<Change iMoney -4000>>
+ <<else>>
+ Scholars meticulously comb through the historical archives, trying to unearth fragments of information on Greek Fire. They discover many interesting secrets, but unfortunately the mystery of the Greek Fire appears to have been lost in the mists of time and cannot be found.
+ <<Change iMoney -4000>>
+ <<Change iSecrets 1>>
+ <<endif>>
+-> Send an expedition to Mount Athos monasteries, where ancient manuscripts and forgotten wisdom is hidden. The monks most likely know the secret of the Greek Fire. <<if GetInt("iFocus") == 3 >>
+ A daring expedition sets forth to the sacred Mount Athos, seeking the wisdom preserved by devout monks. The journey proves fruitful, as the monks, bound by faith and a sense of duty, share ancient manuscripts that hold the elusive formula for Greek Fire. We now have a powerful weapon in our hands against the Turks!
+ <<Change bTechGreekFire TRUE>>
+-> Summon all the alchemists to test new methods to create Greek fire – invention beats rediscovery! \[Cost - 3000 gold\] <<if GetInt("iMoney") >= 3000 >>
+ <<Change iMoney -3000>>
+ <<set $chance = dice(100)>>
+ <<if $chance <= 30>>  
+ Through an unexpected stroke of genius, or perhaps sheer luck, the alchemists rediscover the ancient formula for Greek Fire. After months of trial and error, they successfully create a working version of the legendary weapon, one that burns fiercely and even floats on water. <br> \[Technology Unlocked - Greek Fire\] <br> \[Money -3000\]
+ <<Change bTechGreekFire TRUE>>
+ <<elseif $chance <= 60>>
+ While the alchemists cannot recreate Greek Fire, their experiments with explosive substances lead to an unexpected breakthrough - the creation of small, throwable devices that explode upon impact. These rudimentary hand grenades are not as destructive as Greek Fire but can be used as an effective weapon in close combat situations. We now have unlocked a new technology - Grenades! <br> \[Technology Unlocked - Grenades\] <br> \[Money -3000\]
+ <<Change bTechGrenades TRUE>>
+ <<elseif $chance <= 90>>
+ Despite the best efforts of the alchemists, the process of recreating Greek Fire ends in failure. Their attempts at various combinations of chemicals and alchemical processes result in only smoke and minor explosions. Nothing close to the feared weapon is produced and your troops and nobles are disappointed. <br> \[Noble Support -3\] <br> \[Troop Morale -3\] <br> \[Money -3000\]
+ <<else>>
+ The alchemists' reckless experiments take a disastrous turn. A chemical reaction goes horribly wrong, causing an explosion that destroys part of the palace. The explosion spreads fires across the lower levels, and several buildings are damaged - we will need to cover the costs of their reconstruction. <br> \[Money -1000\] <br> \[Money -3000\] <br> \[Materials -25\]
+ <<Change iMoney -1000>>
+ <<Change iMaterials -25>>
+ <<endif>>
+-> We should not rely on legends for our defence. Battles of this modern age will be decided by steel and cannon, not some esoteric alchemy. \[Focus - Fortification\]  <<if GetInt("iFocus") == 0 >>
+ Adopting a pragmatic stance, you dismiss the pursuit of Greek Fire as an antiquated notion. Instead, you prioritize the advancement of conventional weaponry, placing faith in modern tools like steel and cannons for the imminent siege. Soon, your engineers suggest the placement of cannons on top of our walls to be used for counter battery fire - we will now be able to use our artillery to directly target enemy camp! <br> \[Technology Unlocked - Counter Cannons\] <br> \[Money -3000\]
+ <<Change bTechCounterCannons TRUE>>
+-> We have other matters to deal with, leave these fairytales for someone else.
+ We decided that Greek Fire is not necessary for our plans on how to defend the City during the siege. Time will show if our decision was wise.
+===
+title: story12
+--- // PROBLEM: DOES NOT FIRE 
+<b>Siege Begins</b>: <br> So the time has come. You can see Mehmed's army marching in the distance, sky in their direction is marked by plumes of black smoke from the villages they set on fire while coming here. The siege of Constantinople has begun. <br> <br> \[Explanation - You have now entered siege phase. Please note that while in the early game turns marked passing weeks, currently each turn marks a passing day. Furthermore, as food will now stop coming into the city, your provisions will start decreasing at a rate based on your population size. Enemy will be attacking your walls daily and when they will be reduced enough, they will launch an assault, trying to take your head. Good luck.\] 
 -> Greet our guests - send the cavalry to harrass their forward formations, but avoid serious engagements.
   <<set $chance = dice(100)>>
   <<if $chance <= (GetInt("iCavalry")/10+10)>> 
@@ -451,5 +489,3 @@ title: story11
  <<Change iSpies 5>> 
  <<Change iMoney -5000>> 
 ===
-
-
