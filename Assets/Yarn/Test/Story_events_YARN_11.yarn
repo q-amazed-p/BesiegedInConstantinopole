@@ -1,7 +1,7 @@
 title: story0
 ---
 <<declare $chance = 100>>
-<b>Messenger arrives</b>: <br> A dusty messenger stumbles into your court room, clearly after riding many miles. Loukas Notaras, your megas doux and chief minister, takes the scroll out of messenger's shaking hand and unfolds it. You can see how blood leaves the face of your trusted advisor. He reads it and you realise that peace has come to an end. Sultan Mehmed the Second, Lord of the Turks, Master of the Ottoman Empire, is gathering armies in the city of Adrianople. His criers are spreading the call of Jihad across the Anatolia and the Balkans, his engineers are improving roads and bridges leading to Constantinople and there are rumours of massive cannons being forged. A massive army is being gathered and there can be only a single target for it - the last piece of the Eastern Roman Empire, the Holy City of Constantinople, your home. Although you have suspected that this attack will come, you hoped for more time. But now, you realise that you have mere months to prepare. Notaras asks - 'Imperator, what shall be your orders? How do we prepare for this?'. 
+<b>Messenger arrives</b>: <br> A dusty messenger stumbles into your court room, clearly after riding many miles. Loukas Notaras, your megas doux and chief minister, takes the scroll out of messenger's shaking hand and unfolds it. You can see how blood leaves the face of your trusted advisor. He reads it and you realise that peace has come to an end. Sultan Mehmed the Second, Lord of the Turks, Master of the Ottoman Empire, is gathering armies in the city of Adrianople. His criers are spreading the call of Jihad across the Anatolia and the Balkans, his engineers are improving roads and bridges leading to Constantinople and there are rumours of massive cannons being forged. A massive army is being gathered and there can be only a single target for it - the last piece of the Eastern Roman Empire, the Holy City of Constantinople, your home. Although you have suspected that this attack will come, you hoped for more time. But now, you realise that you have mere months to prepare. Notaras asks - 'Imperator, what shall be your orders? How do we prepare for this?' 
  -> Theodosian Walls defended the City for over a thousand years, however we also need to embrace gunpowder to keep pace with the times. Our focus will be Fortifications and Artillery!
    We will do all we can, but Fortifications and Artillery will be our main focus during the preparation for the siege. <br> \[Siege Focus is set to Fortifications.\]
    <<SetInt iFocus 0>>
@@ -27,18 +27,18 @@ title: story1
 -> We shall support Orthodox Church unto death.
  Damned be those heretics, war or peace, we shall remain Orthodox. Your decision causes a brief celebration among your elites, but will reduce the likelihood that Catholic nations will aid us.  <br> \[Noble Support +10\] <br> \[Priest Support +15\] <br> \[Religion - the Great Schism persists\]
  <<SetInt iReligion 0>>
- <<Change fNobleRep 10>>
- <<Change fPriestRep 15>>
+ <<Change fNobleRep 0.1>>
+ <<Change fPriestRep 0.15>>
 -> We must seek to Mend the Schism, adopt Catholicism fully!
  The time has come to swallow our pride and admit our fault. The Emperor will convert to Catholicism and require everyone in the palace to do the same. We will fully embrace Union of Florence - Roma suprema est.  Your decision will cause anger among our priesthood and the nobles, but the Catholic nations will rejoice and we hope that the Pope shall call for a new crusade to save Constantinople. <br> \[Noble Support -20\] <br> \[Priest Support -30\] <br> \[Religion - the Great Schism is mended\]
  <<SetInt iReligion 1>>
- <<Change fNobleRep -20>>
- <<Change fPriestRep -30>>
+ <<Change fNobleRep -0.2>>
+ <<Change fPriestRep -0.3>>
 -> The Emperor shall embrace Union of Florence, but will not enforce it.
  We need the Catholic aid, but also we need to maintain our priests happy. Let us adopt Catholic faith by symbolically accepting the Union of Florence, but without enforcing it. Your decision will still somewhat annoy the priesthood and the nobility will grumble, but the Catholics will aid us, although less than they would with a full conversion. <br> \[Noble Support -5\] <br> \[Priest Support -10\] <br> \[Religion - the Great Schism is partially mended\]
  <<SetInt iReligion 2>>
- <<Change fNobleRep -5>>
- <<Change fPriestRep -10>>
+ <<Change fNobleRep -0.05>>
+ <<Change fPriestRep -0.1>>
 
 ===
 
@@ -291,12 +291,58 @@ title: story7
 ===
 title: story8
 ---
-<b>Orders for the Fleet</b>: <br> It is clear that the Empire is too weak to meet Mehmed in the open field, however our small, but professional fleet is one of the few tools we have which we could still use offensively against our enemy. What shall be the purpose of our fleet during this siege?
--> The fleet should be used to raid Ottoman food shipping and disrupt their logistics, so that their food supplies would run out as soon as possible.
+</b> Assault on the Strait-Cutter Fortress </b>: <br> Rumeli fortress, conceived and built in 1452 on the orders of Sultan Mehmed II, was built in preparation for the planned siege, with the goal of cutting off maritime military and logistical relief that could potentially come to our aid by way of the Bosphorus Strait. Hence the fortress's alternative name, Boğazkesen or "Strait-cutter". As the Ottoman armies are getting ready to besiege our City, we need to decide if we should use part of our resources to neutralise this fortress and open up the vital artery to the Black Sea.
+-> Order covert infiltration of the fortress by the Varangian Guard \[Risk troops\]
+ <<set $chance = dice(100)>>
+ <<if $chance <= 45>> 
+  You task a group of your best warriors - Varangians - to slip into Rumeli Fortress under the cover of being merchants. Their mission is to start a fire and create confusion, creating an opening to open the gate and let in the rest of your forces. The mission goes flawlessly - the infiltrators skillfully navigate Ottoman defenses and soon your troops raise your banner over the Boğazkesen. Your troops capture the enemy cannons which will be useful in the defence of our City and explode the gunpowder stores, turning the fortress into a ruin and opening the way to the Black Sea. <br> \[Straits are Open\] <br> \[Cannons +5\] <br> \[Troop Morale +10\]
+  <<Change bStraitsOpen TRUE>> 
+  <<Change fTroopRep 0.1>>
+  <<Change iCannons 5>>
+  <<else>>
+  You task a group of your best warriors - Varangians - to slip into Rumeli Fortress under the cover of being merchants. Their mission is to start a fire and create confusion, creating an opening to open the gate and let in the rest of your forces.  Unfortunately Ottoman vigilance prevails as the infiltrators are detected. A swift and decisive response leads to their capture and execution. The rest of your troops return, seeing that there is no way to complete their mission. <br> \[Varangians -10\] <br> \[Troop Morale -5\]
+  <<Change iVarangians -10>>
+  <<Change fTroopRep -0.05>>
+  <<endif>>
+-> \[Focus - Diplomacy\] Bribe someone inside the castle to sabotage the Artillery \[Cost - 3000 gold\] <<if GetInt("iFocus") == 4 && GetInt("iMoney") >= 3000 >>
+ <<set $chance = dice(100)>>
+ <<if $chance <= 85>> 
+ There is no need to take over the whole fortress – the most important thing is to render it toothless by disabling the artillery. You order a sabotage mission and your spies bribe a Levantine sentry to set the gunpowder storage on fire. He is successful - the ammunition warehouse explodes with a thunderous roar, destroying the main artillery tower, destroying all the cannons and the ammunition required to fire it. The mission is a complete success and while Ottomans will eventually rebuild the castle, for now the Strait lies open once more. <br> \[Straits are Open\]
+ <<Change bStraitsOpen TRUE>> 
+ <<else>>
+ There is no need to take over the whole fortress – the most important thing is to render it toothless by disabling the artillery. You order a sabotage mission and your spies bribe a Levantine sentry to set the gunpowder storage on fire.  Unfortunately, Ottoman guards keenly guard the armoury and detect the sabotage attempt. Despite best efforts, the mission fails and our saboteur is executed. The artillery remains operational, maintaining the blockade of the Strait. Fortunately, the only thing we lost is a bit of money.  <br> \[Money -3000\]
+ <<endif>>
+-> Launch a sudden assault and take the castle at any cost. This will guarantee our victory, although at a great cost. \[High casualties\]
+You realise that taking this fortress is critical for the survival of your City. The sudden assault catches Rumeli’s defenders off guard, and the well-equipped contingent led by the seasoned commander overwhelms the defenses. The fortress falls under your control, securing the Bosphorus Strait, but the price for this is great, as direct assault is always costly. 
+ <<Change iInfantry -300>>
+ <<Change iArchers -50>>
+ <<Change bStraitsOpen TRUE>>  
+-> Undermine the foundations -  send your engineers to put explosives underneath the fortress \[Risk - Engineers & Ammunition\] <<if GetInt("iAmmunition") >= 15 && GetInt("iEngineers") >= 5 >>
+ <<set $chance = dice(100)>>
+ <<if $chance <= 90>> 
+ You deploy your engineers to dig tunnels beneath Rumeli Fortress, intending to collapse its walls by igniting explosive charges. Your engineers complete the tunnel and successfully detonate the charges, causing the fortress walls to collapse. The fortress is now barely more than a smoking ruin, leaving the Strait open.
+ <<Change iAmmunition -15>>
+ <<Change bStraitsOpen TRUE>> 
+  <<else>>
+ <<Change iEngineers -5>> 
+ <<Change iAmmunition -15>>
+ You deploy your engineers to dig tunnels beneath Rumeli Fortress, intending to collapse its walls by igniting explosive charges. Unfortunately keen-eyed Ottoman scouts discover the tunnels and collapse them before your sappers reach their destination, trapping and killing your engineers. It is a black day, we will not have access to the Black Sea.
+  <<endif>>
+-> Conserve our strength and do nothing, we do not need access to the Black Sea.
+ Boğazkesen is too well fortified and we need all the men we can spare in Constantinople. However, this means that we will not have access to the Black Sea.
+
+===
+title: story9
+---
+<b>Orders for the Fleet</b>: <br> It is clear that the Empire is too weak to meet Mehmed in the open field, however our small, but professional fleet is one of the few tools we have which we could still use offensively against our enemy. Our fleet is currently {GetInt("iShips")}, while the Ottoman western fleet gathered for the siege by your estimation has around 31 galleys and a large number of rowboats. Our admirals think that victory in a direct battle is possible, but far from guaranteed. Some suggest that we should instead use the fleet in a more defensive manner. What shall be the purpose of our fleet during the siege? We will be able to change this mission at a later point, however we should consider carefully.
+-> The fleet should be used to raid Ottoman food shipping and disrupt their logistics
+ Our fleet will now engage in raiding activities, interfering with Turkish supply routes, causing Ottoman food supplies to run out quicker than they would otherwise.
  <<SetInt iFleet 0>>
 -> The fleet should be ordered to raid Ottoman coastal villages and target valuable merchant ships, we could use their plunder to fund the siege.
+ Your fleet will now engage in a guerilla campaign against the soft underbelly of the Ottoman empire, attacking unprotected villages and trade ships, seeking to cause chaos and plunder gold to bring it back to you.
  <<SetInt iFleet 1>>
--> The fleet should travel to Genoan colonies in Crimea, we know that their markets are full of cheap grain - they should run the blockade and keep bringing supplies to the city whenever possible.
+-> As Rumeli fortress is no longer a threat, our fleet should establish a lifeline to the Genoan colonies in Crimea and bring us grain.
+ On your orders the fleet will travel to Genoan colonies in Crimea, we know that their markets are full of cheap grain - they will run the blockade and keep bringing supplies to the city.
  <<SetInt iFleet 2>>
 -> Order the fleet to remain in the Golden Horn, protecting the city and shooting their cannons at the attackers.
  <<SetInt iFleet 3>>
@@ -307,7 +353,7 @@ title: story8
  <<if $chance <= (10+GetInt("iShips"))>> 
  On your orders, the fleet departed and soon located the core of the Ottoman navy off the isle of Lesbos. In a dramatic turn of fortune, your fleet engaged the Ottoman navy in a battle that defied all expectations. Skillfully navigating the treacherous waters, your admirals outmaneuvered the opposing forces, unleashing a barrage of cannon fire and decisive naval tactics. As the smoke cleared, it became evident that your fleet had emerged triumphant, dealing a significant blow to the Ottoman naval power. The resounding victory not only bolstered the morale of your city's defenders but also disrupted the blockade, providing a glimmer of hope in the looming shadow of the approaching siege. The waves of Marmara now bow to your power alone.
  <<Change bTurkFleet FALSE>>
- <<jump story8a>>
+ <<jump story9a>>
  <<else>>
  On your orders, the fleet departed and soon located the core of the Ottoman navy off the isle of Lesbos. The clash was fierce, with cannons thundering, galleys being boarded and cries of anguish ringing as the warships locked in a desperate struggle for control of the Marmara Sea. Despite the unwavering resolve of your naval forces, the battle ended in devastation as the Turks emerged victorious, leaving your ships shattered and scattered across the waves. Now, as the sun sets on the beleaguered waters surrounding Constantinople, the reality of the lost naval engagement casts a shadow over the city, intensifying the challenges that lie ahead in the face of the impending siege. Your fleet is gone.
  <<SetInt iFleet 5>>
@@ -315,7 +361,7 @@ title: story8
  <<endif>>
  
 ===
-title: story8a
+title: story9a
 ---
 <b>Victorious Fleet</b>: <br> Now that our fleet has claimed an amazing victory over the Turks at Lesbos, it has much more freedom to operate and requires new orders. Now that the Ottoman fleet sleeps with the fish, we can expect that our ships will be twice more efficient at their tasks. What will be its main purpose during the siege? 
 -> The fleet should be used to raid Ottoman food shipping and disrupt their logistics, so that their food supplies would run out as soon as possible.
@@ -329,8 +375,7 @@ title: story8a
 -> Order the fleet to visit various ports around the Meditteranean Sea and bring volunteers, supplies and donations to help the besieged City.
  <<SetInt iFleet 4>>
 ===
-
-title: story9
+title: story10
 ---
 <b>Easter Speech</b>: <br> As you gaze out over the majestic City below you, you contemplate the dire situation facing your beloved empire. With the mighty Ottoman forces encircling the city, you realise that siege will begin in mere hours, a couple of days at most. Heavy responsibility lies on your shoulders. While everyone knows about the impending siege, you are on your way to Hagia Sophia to rally the spirits of your people for the impending battle. Everyone will be there, from the lowest whores to the most esteemed nobles. What will you focus on in your speech?
 -> Citizens of the Roman Empire! We are the defenders of a legacy that spans millenia. Let every heart beat as one, for it is our resilience and unwavering spirit...
@@ -368,7 +413,7 @@ title: story9
  <<Change fPriestRep -0.05>>
 
 ===
-title: story10
+title: story11
 ---
 <b>Siege Begins</b>: <br> So the time has come. You can see Mehmed's army marching in the distance, sky in their direction is marked by plumes of black smoke from the villages they set on fire while coming here. The siege of Constantinople has begun.
 +++Explanation - You have now entered siege phase. Please note that while in the early game turns marked passing weeks, currently each turn marks a passing day. Furthermore, as food will now stop coming into the city, your provisions will start decreasing at a rate based on your population size. Enemy will be attacking your walls daily and when they will be reduced enough, they will launch an assault, trying to take your head. Good luck.+++
