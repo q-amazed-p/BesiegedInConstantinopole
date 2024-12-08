@@ -47,22 +47,27 @@ public class AI: MonoBehaviour
         else switch (wallHealth) 
         {
             case > 0.75f:
+                Debug.Log("Enemy chose bombardment tactic");
                 ottomanTactic = Instantiate(TacticBombardWall, transform).GetComponent<OttomanDecision>();
                 break;
 
             case > 0.5f:
+                Debug.Log("Enemy chose test wall tactic");
                 ottomanTactic = Instantiate(TacticTestWall, transform).GetComponent<OttomanDecision>();
                 break;
 
             case > 0.25f:
+                Debug.Log("Enemy chose attack wall tactic");
                 ottomanTactic = Instantiate(TacticAttackWall, transform).GetComponent<OttomanDecision>();
                 break;
 
             case > 0:
+                Debug.Log("Enemy chose send assault tactic");
                 ottomanTactic = Instantiate(TacticSendAssault, transform).GetComponent<OttomanDecision>();
                 break;
 
             default:
+                Debug.Log("Enemy chose advance tactic");
                 ottomanTactic = Instantiate(TacticAdvance, transform).GetComponent<OttomanDecision>();
                 break;
 
@@ -77,37 +82,42 @@ public class AI: MonoBehaviour
     /****************
      * SIEGE OPTIONS*/
 
-    public void DecisionFillMoat()
+    public void AIFillMoat()
     {
+        Debug.Log("*Enemy is filling the moat!");
         VariableSingleton.ChangeFloat("fMoat", 0.1f, 0.2f);
     }
 
-    public void DecisionBuildTower()
+    public void AIBuildTower()
     {
+        Debug.Log("*Enemy is building a tower!");
         VariableSingleton.ChangeBool("bTower", true);
     }
 
-    public void DecisionBuildRam()
+    public void AIBuildRam()
     {
+        Debug.Log("*Enemy is building a ram!");
         VariableSingleton.ChangeBool("bRam", true);
     }
 
-    public void DecisionBuildRamp()
+    public void AIBuildRamp()
     {
+        Debug.Log("*Enemy is building a ramp!");
         VariableSingleton.ChangeFloat("fRamp", 0.1f, 0.2f);
     }
 
-    public void MoarCannons()
+    public void AIMoarCannons()
     {
-        
+        Debug.Log("*Enemy is bringing more cannons! (this so far does nothing)");
     }
 
 
     /******************
      * ASSAULT OPTIONS*/
 
-    public void Bombard()
+    public void AIBombard()
     {
+        Debug.Log("*Enemy launched a bompardment(this so far does nothing)");
         VariableSingleton.GetIntVariable("iTurkCannons");    //can do maths on it first
     }
 
@@ -142,9 +152,9 @@ public class AI: MonoBehaviour
         assaultUI.AssaultAftermathUI();
     }
 
-    public void BalkanSubjectAssault()
+    public void AIBalkanSubjectAssault()
     {
-        Debug.Log("Enemy launched Balkan Subject Assault");
+        Debug.Log("*Enemy launched Balkan Subject Assault");
         int balkanSubjectNumbers = VariableSingleton.GetIntVariable("iBalkans");
         assaultTest = assaultSystem.TestAssault(christianBalkanSubjectAV) - WallOverrunThreshold;
         if (assaultTest > 0) 
@@ -161,9 +171,9 @@ public class AI: MonoBehaviour
         }
     }
 
-    public void BashiBazoukAssault()
+    public void AIBashiBazoukAssault()
     {
-        Debug.Log("Enemy launched Bashi Bazouk Assault");
+        Debug.Log("*Enemy launched Bashi Bazouk Assault");
         int bashiBazoukNumbers = VariableSingleton.GetIntVariable("iBazouks");
         assaultTest = assaultSystem.TestAssault(bashiBazoukAV) - WallOverrunThreshold;
         if (assaultTest > 0) 
@@ -180,9 +190,9 @@ public class AI: MonoBehaviour
         }
     }
 
-    public void JanissaryAssault()
+    public void AIJanissaryAssault()
     {
-        Debug.Log("Enemy launched Janissary Assault");
+        Debug.Log("*Enemy launched Janissary Assault");
         int janissaryNumbers = VariableSingleton.GetIntVariable("iJanissaries");
         assaultTest = assaultSystem.TestAssault(janissaryAV) - WallOverrunThreshold;
         if (assaultTest > 0)

@@ -9,7 +9,7 @@ public class UIWindowFam : MonoBehaviour
     protected void SwitchPhase(GameObject nextPhase)
     {
         nextPhase.SetActive(true);
-        this.gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 
    
