@@ -453,7 +453,156 @@ title: story11
  We decided that Greek Fire is not necessary for our plans on how to defend the City during the siege. Time will show if our decision was wise.
 ===
 title: story12
---- // PROBLEM: DOES NOT FIRE 
+--- // PROBLEM: DOES NOT FIRE from story 12 onwards
+</b> Artillery Genius</b>: <br> Word reaches Constantinople that the renowned Hungarian artillery engineer, Orban, famed for his mastery in crafting devastating weaponry is arriving to offer his services to you. When the man enters your court room, you are surprised – he appears to be much smaller than you originally imagined him to be and his eyes wander wildly around the room. He is clearly possessed by his art – he promises to build you the greatest cannon in the world, so big it could “blast the walls of Babylon itself'. Shall we hire this mad genius to serve us?
+-> This madman is too gifted to leave him wandering around, but his price is too steep. Throw him into the dungeon!
+ <<set $chance = dice(100)>>
+ <<if $chance <= 60>>
+ As your guards approach Orban, he screams and throws some explosive powder at the floor, which burns emitting foul smoke which blinds you and your soldiers. Mad artillery genius uses the opportunity to flee from the palace and disappear among the crowds of the Grand Market. A few weeks later your spies report that he has appeared in Sultan’s court and has been hired to destroy your city.
+ <<SetInt iGrandCannon 1>>
+ <<elseif $chance <= 95>>
+ As your guards approach Orban, he screams and attempts to resist, but Varangians break his arm and subdue him. Mad artillery genius will spend the rest of his days in Blachernae dungeons…
+ <<else>>
+ As your guards approach Orban, he screams and activates some sort of rigged grenade, triggering a massive explosion, which tears him and your soldiers into pieces. The whole throne room turns into an inferno and the blast wave throws you at the wall with the strength of a murderous giant. As you lay dying on the floor in the pool of your own blood, you think of what fate awaits your City…
+ // PROBLEM - insert jump to endgame event
+ <<endif>>
+->	Hire him, whatever the cost – we need this genius on our side. Tell him to forget the Grand Cannon, but tell him to improve our artillery. \[Cost - 20 000 gold\] <<if GetInt("iMoney") >= 20000 >>
+ Orban is pleased – he immediately gets to work on our artillery. The servants whisper among themselves that he consorts with the devils at night, for they can hear constant explosions coming from his workshop and he constantly smells of sulfur. Priesthood thinks that he is dealing with dark arts and the nobles think you went mad to invest so much money into chasing some madman’s dream when we are about to be besieged. However our artillery is improving dramatically – Orban is training new artillerymen and forging new cannons using new methods, making them more accurate and deadlier.
+ <<Change fPriestRep -0.1>>
+ <<Change fNobleRep -0.1>>
+ <<Change bCharArtillerist5 TRUE>>
+ <<Change bTechCounterCannons TRUE>>
+ <<Change bTechGrapeshot TRUE>>
+->\[Focus - Fortification\] Negotiate and offer him a chance to improve the artillery of the famous Theodosian walls - a task worth of his skill. \[Cost - 10 000 gold\]  <<if GetInt("iFocus") == 0 && GetInt("iMoney") >= 10000 >>
+ Orban considers our offer and after some grumbling, agrees. He immediately gets to work on our artillery. The servants whisper among themselves that he consorts with the devils at night, for they can hear constant explosions coming from his workshop and he constantly smells of sulfur. Priesthood thinks that he is dealing with dark arts and the nobles think you went mad to invest so much money into chasing some madman’s dream when we are about to be besieged. However our artillery is improving dramatically – Orban is training new artillerymen and forging new cannons using new methods, making them more accurate and deadlier. 
+ <<Change fPriestRep -0.1>>
+ <<Change fNobleRep -0.1>>
+ <<Change bCharArtillerist5 TRUE>>
+ <<Change bTechCounterCannons TRUE>>
+ <<Change bTechGrapeshot TRUE>>
+->	Decline his offer, he is asking for too much.
+ <<set $chance = dice(100)>>
+ <<if $chance <= 85>>
+ Orban curses and departs your throne room in anger. A few weeks later your spies report that he has appeared in Sultan’s court and has been hired to destroy your city.
+ <<SetInt iGrandCannon 1>>
+ <<else>>
+ Orban curses and departs your throne room in anger. A few weeks later your spies report that he has tried to sell his services to the Sultan, but Mehmet has chosen instead to cut his head off.
+ <<endif>>
+===
+title: story13
+---
+</b> The Great Chain of the Golden Horn </b> <br> One of the most unique defence mechanisms of our great City is the famous Great Chain of the Golden Horn. It was initially constructed as a response to naval threats from hostile forces during times of siege and first proved itself during the Arab assaults on our city in the 8th century of our Lord. Composed of massive interlocking iron links, the chain spans the width of the Golden Horn, reaching around 750 meters in length, effectively blocking enemy ships from entering the harbour and providing an additional layer of defence to the city. However, some of our advisors claim that the Chain has outlived its usefulness and could be repurposed, either sold as scrap metal to raise funds for the siege preparations or melted to cast cannons and ammunition, to strengthen our artillery.
+-> They are fools! Without the Chain, Golden Horn will be open to enemy fleet assaults and we could lose access to Galata! We must keep the Chain.
+ Your decision to retain the Great Chain proves crucial. As enemy fleets attempt to navigate the Golden Horn, they will be met with the formidable obstacle to their plans. The Chain holds strong, safeguarding the harbour and preventing potential assaults and our strategic access to Galata is preserved.
+-> They are right, the Chain serves no purpose in the modern times. Scrap it and sell the metal.
+ Succumbing to the advice of your advisors, you opt to dismantle the Great Chain. The substantial amount of metal proves valuable as you sell it as scrap, bolstering your treasury with a significant influx of gold. However, the absence of the Chain raises concerns about the vulnerability of the Golden Horn to naval threats.
+ <<Change iMoney 10000>>
+ <<Change bGoldenHornChain FALSE>>
+-> We shall defend our harbour with our cannons, get rid of the Chain and use the metal to cast ammunition and cannons. However, it will cost 5000 gold. <<if GetInt("iMoney") >= 5000>>
+ Opting for a balanced approach, you decide to repurpose the Chain's metal for artillery. The financial investment incurs a cost, but the benefits are tangible. The newly cast cannons and ammunition enhance your defensive capabilities, providing a modernized form of protection for the harbour, however it costs money.
+ <<Change iAmmunition 100>>
+ <<Change iCannons 10>>
+ <<Change iMoney -5000>>
+-> The Chain is absolutely massive… We could ask Urban to cast the greatest cannon in the world from its metal. <<if GetBool("bCharArtillerist5") && GetInt("iMoney") >= 5000>> 
+ Recognizing the enormity of the Great Chain, you task Urban, the renowned artisan, with a monumental undertaking. The result is the creation of the Grand Cannon, a symbol of innovation and military might. While the cost is substantial, the presence of this unparalleled weapon significantly enhances your city's defensive capabilities.
+ <<SetInt iGrandCannon 2>>
+ <<Change bGoldenHornChain 0>>
+===
+title: story14
+---
+</b> Fate of Stadia and Therapia Castles </b> 
+Stadia and Therapia castles, are two remaining strategic outposts guarding the critical approaches to Constantinople. As the Ottoman forces will soon be on the move, we need to decide what will be their role in our siege plans. The castles are too week to hold out on their own for more than a few days as they are. We could either abandon them, leave them as they are or try to fortify them and hope for the best. Finally, we could give these castles as a gift to the neutral Genoese, hoping that Turks will respect their neutrality and desist from attacking them. The fate of these castles could impact the overall defense of the City. What will be your orders?
+-> Withdraw Garrison Troops 
+Opting for a strategic retreat, you recall the garrison troops from both Stadia and Therapia Castles to reinforce the main defence lines at Constantinople. The castles are abandoned, but their defenders contribute to the city's overall strength.
+<<Change iArchers 100>>
+-> Leave Garrison to Delay Ottomans
+Choosing to sacrifice the garrisons, you instruct them to mount a valiant defense, aiming to delay the Ottoman forces. While the castles may fall, the delay provides valuable time for additional preparations in Constantinople.
+// PROBLEM SEE if DELAY is possible, if not - reduce enemy numbers / food
+-> Send Reinforcements and Fortify the Castles 
+// PROBLEM [- enemy troops]
+Prioritizing the defence, you dispatch reinforcements to Stadia and Therapia castles and order the garrisons to fortify and prepare for a long siege. This strengthens the outposts and increases their resilience against the impending Ottoman assault. While the castles may eventually fall, the delay provides valuable time for additional preparations in Constantinople and will divert part of the Ottoman force to deal with them.
+-> Grant the Castles to the Genoese 
+// PROBLEM [+Galata support, + some troops]
+As Genoa and its colony Galata officially remains neutral and at peace with the Sultan, we decide to withdraw majority of our troops and grant the ownership of the castles to the Galatan podesta. He is pleased with your gesture and Galatan support for your cause increases, however now the Ottomans will simply go past the castles and they will not delay them for even one day.
+// PROBLEM fill
+===
+title: story15
+---
+</b> The Genoese Arrive </b>: <br> As the ominous shadow of the impending Ottoman siege looms over Constantinople, a timely reinforcement sails into the Golden Horn from the maritime republic of Genoa, led by the seasoned commander Giovanni Giustiniani. This unexpected arrival brings a cadre of battle-tested soldiers, skilled sailors, and crucial supplies. The potential impact of this Genoese contingent on the city's defense cannot be overstated. However, you are aware that Giustiniani is a cunning warlord, who is motivated by a chance for glory and riches. How shall we greet him?
+-> We need every blade we can get, let us promise him isle of Lemnos if he manages to help us defend our city!
+Welcoming the Genoese with open arms, you foster a strong bond that encourages them to contribute wholeheartedly. Their troops, expertise, and resources become integral to the imminent defense efforts, although our nobles are displeased - they think that we are selling our Empire piecemeal to the mercenaries...
+<<Change fNobleRep -0.1>>
+<<Change bCharWarrior0 1>> 
+//ADD TROOPS
+-> Turn them away, Giustiniani is too ambitious, we cannot trust him!
+You make a decision that additional support from the Genoese is not worth the risk of them essentially taking over your City. Your decision strengthens your position among the nobility and priests, but Galatan podesta is not pleased...
+<<Change fPriestRep 0.1>>
+<<Change fNobleRep 0.1>>
+<<Change fGalataRep -0.1>>
+-> While Giustiniani will not be easy to control, we do need his troops... Poison him. <<if GetInt("iFocus") == 4 && GetInt("iSpies") >= 1 >>
+Lord Giovanni is greeted with a great feast. Unfortunately, over the following weeks he starts feeling himself ever more sick, until he unfortunately dies. His men soon discover and kill a spy among his staff that was secretly putting poison into his food. Accursed Turks must have felt the danger from this noble man! His troops are now taken over by Francesco, his second-in-command, a skilled commander, but a commoner with much more manageable ambitions.
+//ADD TROOPS
+===
+title: story16
+---
+</b> Galata Question </b>: <br> Galata, also known as Pera, holds a complicated place in the history of our City. Your ancestor, Emperor Michael VIII Palaiologos granted it to the Genoese in 1267 in accordance with the Treaty of Nymphaeum. They were prohibited from fortifying it, but Latins, as is their habit, disregarded this, and through subsequent expansions of the walls, enlarged the area of their settlement. Our history with Genoese is complicated – on the one hand, they are Christians, fine soldiers and merchants. Their trade makes our City prosperous and a big part of our fleet is crewed by Genoese mercenary captains and sailors. <br> On the other hand, their highest master is coin and they have their own ambitions to enrich themselves and build their own trade empire around the Mediterranean and the Black seas. Pragmatic to the core, they have even on occasion supported the Ottomans, such as before the recent crusade of Varna in 1444, when the Genoese ships transported Sultan Murad’s army across the Bosporus in exchange for one gold piece per soldier. This led to one of the greatest disasters of recent times, when the Christian armies were defeated, emboldening the Turks and exposing Constantinople to the current threat. <br> Today Genoese of Galata see the threat to Constantinople and seem to be ready to indirectly support us, as they have grown concerned about the unchecked power of the Ottomans. However, Galata is not under our direct control and officially it remains neutral, meaning that the Sultan most likely won’t be attacking it, at least not until he deals with us. How should we plan to use Galata in our siege plans?
+-> Galata is crucial to our defence. We should try to bribe Angelo Lomellini, the Genoese podesta, mayor of the city. <<if GetInt("iMoney") >= 7500 >>
+ You extend an offer of alliance to Angelo Lomellini. A well-placed bribe persuades an ambitious podesta to covertly support your cause, ensuring Galata becomes an invaluable ally in your defense against the Ottoman threat.
+ <<Change fGalataRep 0.3>> 
+ <<Change iMoney -7500>>
+-> Galata must submit. Send the Varangian Guard at night to take control of their gates and the Tower of Christ. By morning we will control it! <<if GetInt("iVarangians") >= 50 >>
+ Opting for a bold maneuver, the Varangian Guard executes a covert operation to seize control of Galata's key points. As dawn breaks, your forces assert dominance over the district, bringing it under your direct control and enhancing your defensive capabilities. There is some limited resistance to your attempt, but Varangians quickly extinguish it. A few Genoese ships in our navy mutiny and flee. Later we will learn that they will offer their services to our enemies and also reveal some of our secrets to them.
+ <<Change fGalataRep 1>> 
+ <<Change iShips -7>> 
+ <<Change iSecrets -1>> 
+ <<RndChange iVarangians -5 -20>>
+ <<Change bGalataIndependence FALSE>>
+ // ADD DIPLOMATIC REPERCUSSIONS
+-> Neutral, but friendly Galata will be most useful to us during the siege.
+ Prioritizing a delicate balance, you try to foster friendly relations with Galatan podesta while respecting its neutrality. This approach ensures their support without compromising their autonomy, which you hope will serve best the defense of our City. 
+ <<Change fGalataRep 0.1>> 
+-> Allow Galata to remain neutral, but use your Imperial privilege to demand them to provide us with troops, supplies and money for the siege.
+ Acknowledging Galata's neutral stance, you leverage diplomatic pressure to secure vital support. While not directly engaging in the conflict, Galata becomes a crucial contributor to your siege efforts, offering troops, supplies, and financial aid. Their podesta is worried that this way you are endangering Galata and your relations sour - they will be much less likely to aid you in the future.
+ <<Change fGalataRep -0.2>>
+ <<Change iInfantry 300>>
+ <<Change iArchers 300>>
+ <<Change iMoney 4500>>  
+ <<Change iProvisions 500>> 
+-> Send gifts to the people of Galata and remind them of their duty to the Christianity, asking them to join you. <<if GetInt("iFocus") == 3 >>
+You dispatch generous gifts to Galata, coupled with an impassioned plea reminding them of their Christian duty. Framing their involvement as a moral obligation to protect the faith from Ottoman dominance, you also hint at the fact that after Constantinople the next target for the ambitious Sultan will be Galata itself. While Genoese are men of coin first and faith second, your appeal does have some effect - you can expect more support from them now.
+ <<Change fGalataRep 0.2>>
+->	Ask Giustiniani to take control of Galata and offer it to him in perpetuity. <<if GetBool("bCharWarrior0") && GetInt("iFocus") == 4 >>
+ It is clear that Galata is too important to allow it remain neutral in this conflict. In a masterful diplomatic maneuver, you turn to the Genoese warlord Giovanni Giustiniani and propose him that he should assume control of Galata and hint to him that he may hold it even after the war is over. As he is a Genoese citizen, him taking control of Galata will be much more diplomatically acceptable to the Genoese leadership and the local population. This strategic move not only strengthens your position but also ensures the district remains under a loyal and skilled administration.
+ <<Change fGalataRep 1>> 
+ <<Change bGalataIndependence FALSE>>
+===
+title: story17
+---
+</b> Siege Preparation – Commander </b>: <br> One of the most important decisions of your siege will be to select the main commander of your defence force. Personal qualities of the commander will be crucial in how we conduct this siege. Who will it be?
+-> I choose Giovanni Giustiniani, he is a hardened veteran and great frontline commander. <<if GetBool("bCharWarrior0")>>
+ Giustiniani, a seasoned and battle-hardened Genoese veteran, assumes command of the defense force. His tactical acumen and frontline leadership promise to bolster the resilience of the city's defenders.
+ <<SetInt iCommander 0>> 
+->	I choose our hostage - Turkish prince Orhan, he hates Mehmet and as a Turk will know all of their weaknesses. <<if GetBool("bCharNomad3")>>
+ Prince Orhan, once a Turkish prince held as a hostage in court, actually harbours a deep resentment towards Mehmet. Orhan knows that he has the best claim to the Sultan's throne apart from Mehmet and if the siege is lost, he will die as well. As he has the intimate knowledge of Turkish weaknesses and is greatly motivated, let him take charge. His unique perspective as a Turk will be crucial to our defense, although some will disapprove of it.
+ <<SetInt iCommander 3>> 
+->	I choose Orban, an artillery genius who will deliver fiery death to our enemies. <<if GetBool("bCharArtillerist5")>>
+ Orban, the renowned artillery genius, is entrusted with the responsibility of delivering devastating blows to the enemy. His expertise in artillery promises to reshape the battlefield in favor of the defenders.
+ <<SetInt iCommander 5>> 
+-> I choose Loukas Notaras, only a loyal administrator can manage our resources for such a siege. <<if GetBool("bCharAdministrator2")>>
+ Recognizing the importance of resource management, Loukas Notaras, a loyal administrator, is appointed as the main commander. His organizational skills will be crucial for sustaining the city throughout the prolonged siege.
+ <<SetInt iCommander 2>>  
+->	I choose Cardinal Isidore, his faith will rally our defenders and maintain our morale.  <<if GetBool("bCharCardinal7")>>
+ Cardinal Isidore, a symbol of unwavering faith, assumes command to rally the defenders spiritually. His presence is expected to maintain morale and inspire resilience among the city's inhabitants.
+ <<SetInt iCommander 7>> 
+->	I choose Alviso Diedo, an experienced captain who will utilize our fleet for maximum effect. <<if GetBool("bCharAdmiral1")>>
+ Alviso Diedo, an experienced Venetian captain, takes control with a focus on leveraging the fleet for maximum impact. His naval expertise aims to disrupt the enemy's plans and provide crucial support from the sea.
+ <<SetInt iCommander 1>> 
+->	I choose Johannes Grant, a brilliant engineer who will maintain our walls. <<if GetBool("bCharArchitect6")>>
+ Johannes Grant, a brilliant engineer, is entrusted with the maintenance of the city's walls. His technical prowess ensures the structural integrity of the defenses, reinforcing Constantinople against the impending onslaught.
+ <<SetInt iCommander 6>> 
+===
+title: story18
+---
 <b>Siege Begins</b>: <br> So the time has come. You can see Mehmed's army marching in the distance, sky in their direction is marked by plumes of black smoke from the villages they set on fire while coming here. The siege of Constantinople has begun. <br> <br> \[Explanation - You have now entered siege phase. Please note that while in the early game turns marked passing weeks, currently each turn marks a passing day. Furthermore, as food will now stop coming into the city, your provisions will start decreasing at a rate based on your population size. Enemy will be attacking your walls daily and when they will be reduced enough, they will launch an assault, trying to take your head. Good luck.\] 
 -> Greet our guests - send the cavalry to harrass their forward formations, but avoid serious engagements.
   <<set $chance = dice(100)>>
@@ -489,3 +638,34 @@ title: story12
  <<Change iSpies 5>> 
  <<Change iMoney -5000>> 
 ===
+title: story19
+---
+</b> Ottomans use prisoners to fill the Moat </b> <br> The moat protecting the Theodosian Walls is a serious issue for the Ottoman war machine and they have to deal with it before they can hope to breach the walls themselves. <br>Unfortunately, Ottomans have managed to capture enough prisoners, primarily refugees from the countryside, some slaves and soldiers captured in the skirmishes to form a labour detachment a few thousands strong, which they are sending now towards the walls. <br> Ottoman state is run with a whip and brutal discipline – even their elite Janissaries are slave-soldiers, so there is no mercy to be expected, their plan is clear. Turks are herding the prisoners towards the moat and will force them to fill it with earth or their own bodies, both options acceptable. <br> You hear your soldiers murmuring atop the walls – the archers anxiously play with arrows in their quivers, waiting for your orders. It is one thing to shoot at the invaders, but entirely another to shoot at your own countrymen, taken prisoner and forced to labour on the enemy’s behalf. Your siege commander turns to you. <br> “Emperor, we cannot let the moat be filled. God forgive us, but we need to order our archers to fire on the enslaved labourers, otherwise we will all soon be slaves. What are your orders?”
+-> Order archers to fire on our enslaved people.
+ Your command echoes across the walls, and reluctantly, your archers draw their bows. The first volleys rain down upon the enslaved prisoners, a brutal decision made in the face of strategic necessity. The moat is protected, but the atmosphere atop the walls turns dark. The morale of your troops falls, but you try to convince yourself that this sacrifice was necessary.
+ <<Change fTroopRep -0.15>> 
+-> We don’t need the moat. Fire only at the Turkish guards, but spare the labourers.
+You prioritize preserving the moral integrity of your defenders. The order is given to focus solely on the Ottoman forces, sparing the enslaved laborers. While the moat remains a formidable obstacle, your archers concentrate their fire on the advancing Turks. The labourers fill up the moat, but some of them use the opportunity to run over to the walls, your soldiers throw them down ropes and help them get over the walls.
+ <<Change fTroopRep 0.05>>
+ <<RndChange iBazouks -200 -800>>
+ <<Change fMoat -0.5>>
+-> Open the gates and encourage prisoners to defect.
+Opting for a gambit of compassion, you order the gates to be opened slightly. Your men start shouting from the walls, encouraging the enslaved prisoners to defect and join the city's defense. While some choose to embrace freedom, others remain hesitant, caught between the watchful eye of the Ottoman captors. Some of the prisoners never make it to the gates as the Turkish arrows catch up with them, but enough make it that the attempt to fill the moat is disrupted, at least temporarily.
+ <<Change fTroopRep 0.05>>
+ <<RndChange iPopulation 1 3>>
+ <<Change fMoat -0.3>>
+-> Emperor cannot abandon his people. Sally out!
+<<set $chance = dice(100)>>
+ <<if $chance <= 50>>
+ With a resounding battle cry, your cavalry charges forth from the city gates. In a swift and coordinated assault, they catch the Ottomans off guard, successfully pushing them back. The prisoners, sensing an opportunity, escape their captors and join your forces, turning the tide in your favor. The city's morale soars as the enemy retreats, and the moat remains untouched, a testament to your strategic brilliance.
+ <<elseif $chance <= 80>>
+ With a resounding battle cry, your cavalry charges forth from the city gates. Despite the valor of your riders, the tide of battle turns against them. The Ottoman forces prove too formidable, overwhelming your sallying troops. In the chaos, the prisoners are left vulnerable, and the Ottomans seize the opportunity to press on, killing your troops and prisoners alike. You barely make it back inside the gate.
+  <<RndChange iCavalry -30 -90>>
+  <<Change fMoat -0.3>>
+  <<else>>
+  With a resounding battle cry, your cavalry charges forth from the city gates. Despite the valor of your riders, the tide of battle turns against them. The Ottoman forces prove too formidable, overwhelming your sallying troops. In the chaos, the prisoners are left vulnerable, and the Ottomans seize the opportunity to press on, killing your troops and prisoners alike. You try to rally your knights, but an arrow from nowhere strikes you, wounding you gravely.
+  <<RndChange iCavalry -30 -90>>
+  <<RndChange fhealth -0.1 -0.5>>
+  <<Change fMoat -0.3>>
+ <<endif>>
+ ===
