@@ -7964,6 +7964,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58ffdb466a8c7c445bf2f1b4a743ba6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  overrideTurn: 10
   RecruitmentPricelist:
   - variableName: iInfantry
     unitName: Infantry
@@ -13410,11 +13411,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4423102732145356868, guid: d055eb21b683d6141a812ba345a3f6d3, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 884.736
+      value: 884.7361
       objectReference: {fileID: 0}
     - target: {fileID: 4423102732145356868, guid: d055eb21b683d6141a812ba345a3f6d3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -63.86833
+      value: -63.868286
       objectReference: {fileID: 0}
     - target: {fileID: 4426558091075505804, guid: d055eb21b683d6141a812ba345a3f6d3, type: 3}
       propertyPath: m_AnchorMax.y

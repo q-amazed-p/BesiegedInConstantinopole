@@ -7964,6 +7964,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58ffdb466a8c7c445bf2f1b4a743ba6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  overrideTurn: -1
   RecruitmentPricelist:
   - variableName: iInfantry
     unitName: Infantry
@@ -7987,7 +7988,7 @@ MonoBehaviour:
     outerWallName: 
     middlewallName: 
     innerWallName: 
-  possibleStory: 0000000001000000020000000400000005000000060000000700000008000000090000000a0000000b000000
+  possibleStory: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000120000001300000014000000
   possibleRandom: 
 --- !u!114 &878093350
 MonoBehaviour:
@@ -13354,11 +13355,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4423102732145356868, guid: d055eb21b683d6141a812ba345a3f6d3, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 884.736
+      value: 884.7361
       objectReference: {fileID: 0}
     - target: {fileID: 4423102732145356868, guid: d055eb21b683d6141a812ba345a3f6d3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -63.86833
+      value: -63.868286
       objectReference: {fileID: 0}
     - target: {fileID: 4426558091075505804, guid: d055eb21b683d6141a812ba345a3f6d3, type: 3}
       propertyPath: m_AnchorMax.y
