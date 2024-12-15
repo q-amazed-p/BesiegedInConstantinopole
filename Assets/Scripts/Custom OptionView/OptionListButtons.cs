@@ -79,9 +79,10 @@ namespace Yarn.Unity
 
                 if (option.IsAvailable == false && showUnavailableOptions == false)
                 {
-                    // Don't show this option.
-                    continue;
+                    optionButton.interactable = false;
+                    //continue;
                 }
+                else optionButton.interactable = true;
 
                 optionButton.gameObject.SetActive(true);
 
