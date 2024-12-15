@@ -40,7 +40,7 @@ public class AssaultSystem : MonoBehaviour
                                                         + Random.value * 100 - 50) * wallProtection);
 
             archerCasualities = defenderCasualities * archerLossWeight / (archerLossWeight + infantryLossWeight);
-            infantryCasualities = defenderCasualities * archerLossWeight / ((archerLossWeight + infantryLossWeight));
+            infantryCasualities = defenderCasualities * infantryLossWeight / (archerLossWeight + infantryLossWeight);
         }
 
         int invaderCasualities = attackersPervading - Mathf.RoundToInt(VariableSingleton.GetFloatVariable("fInfantryQuality") * VariableSingleton.GetIntVariable("iInfantry")
@@ -78,7 +78,7 @@ public class AssaultSystem : MonoBehaviour
     {
         return assaultTypeAddend + VariableSingleton.GetIntVariable("iSultan") + SiegeEngeneeringAddend()
                             - Mathf.RoundToInt(100 * VariableSingleton.Instance.EnduringWall.GetHealth())
-                            - VariableSingleton.GetIntVariable("iMorale") - WallBonus();
+                            - VariableSingleton.GetIntVariable("iMorale") - WallBonus();                            //May need to add optional value from fleet
     }
 
     int SiegeEngeneeringAddend() 
