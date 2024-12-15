@@ -12,15 +12,15 @@ public class EnemyLossDisplay : MonoBehaviour
         switch (AssaultType) 
         {
             case 0:
-                enemyLossInfo.text = "Christian Balkan Subjects ";
+                enemyLossInfo.text = "Christian Balkan Subjects:<br>";
                 break;
 
             case 1:
-                enemyLossInfo.text = "Bashi-Bazouk Troops ";
+                enemyLossInfo.text = "Bashi-Bazouk Troops:<br>";
                 break;
 
             case 2:
-                enemyLossInfo.text = "Janissary Warriors ";
+                enemyLossInfo.text = "Janissary Warriors:<br>";
                 break;
         }
 

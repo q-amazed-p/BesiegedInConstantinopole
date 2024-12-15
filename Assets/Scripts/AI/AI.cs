@@ -39,7 +39,7 @@ public class AI: MonoBehaviour
         float moatRemaining = VariableSingleton.GetFloatVariable("fMoat");
         float wallHealth = VariableSingleton.GetFloatVariable("fOuterWall");     //needs function identifying current wall
         float sultanRage = VariableSingleton.GetFloatVariable("fSultanRage");    //needs update
-        if (moatRemaining >= wallHealth) 
+        if (moatRemaining > 0) 
         {
             Debug.Log("Enemy chose preparatory tactic");
             ottomanTactic = Instantiate(TacticPrepare, transform).GetComponent<OttomanDecision>();
@@ -85,7 +85,7 @@ public class AI: MonoBehaviour
     public void AIFillMoat()
     {
         Debug.Log("*Enemy is filling the moat!");
-        VariableSingleton.ChangeFloat("fMoat", 0.1f, 0.2f);
+        VariableSingleton.ChangeFloat("fMoat", -0.09f, -0.2f);
     }
 
     public void AIBuildTower()
@@ -108,7 +108,8 @@ public class AI: MonoBehaviour
 
     public void AIMoarCannons()
     {
-        Debug.Log("*Enemy is bringing more cannons! (this so far does nothing)");
+        Debug.Log("*Enemy is bringing more cannons!");
+        VariableSingleton.ChangeInt("iTurkCannons", 1);
     }
 
 
@@ -135,21 +136,27 @@ public class AI: MonoBehaviour
     public void BreachingAssaultAftermath(bool deployVarangians) 
     {
         int enemyLosses = assaultSystem.AssaultAftermath(assaultType==AssaultType.Janissary, attackerNumbers, false, deployVarangians? assaultTest : 0);
-        switch (assaultType) 
+        
+        RecordEnemyLosses(enemyLosses);
+
+        assaultUI.AssaultAftermathUI();
+    }
+
+    void RecordEnemyLosses(int enemyLosses) 
+    {
+        switch (assaultType)
         {
             case AssaultType.Balkan:
-                VariableSingleton.ChangeInt("iBalkans", enemyLosses); break;
+                VariableSingleton.ChangeInt("iBalkans", -enemyLosses); break;
 
             case AssaultType.Bazouk:
-                VariableSingleton.ChangeInt("iBazouks", enemyLosses); break;
+                VariableSingleton.ChangeInt("iBazouks", -enemyLosses); break;
 
             case AssaultType.Janissary:
-                VariableSingleton.ChangeInt("iJanissaries", enemyLosses); break;
+                VariableSingleton.ChangeInt("iJanissaries", -enemyLosses); break;
         }
 
         enemyLossDisplay.SetLossesInfo((int)assaultType, enemyLosses);
-
-        assaultUI.AssaultAftermathUI();
     }
 
     public void AIBalkanSubjectAssault()
@@ -166,7 +173,8 @@ public class AI: MonoBehaviour
         else
         {
             int enemyLosses = assaultSystem.AssaultAftermath(false, averageBalkanSubjectForce < balkanSubjectNumbers ? averageBalkanSubjectForce : balkanSubjectNumbers);
-            VariableSingleton.ChangeInt("iBalkans", enemyLosses);
+            VariableSingleton.ChangeInt("iBalkans", -enemyLosses);
+            RecordEnemyLosses(enemyLosses);
             assaultUI.SetAssaultResultButton(true);
         }
     }
@@ -185,7 +193,8 @@ public class AI: MonoBehaviour
         else
         {
             int enemyLosses = assaultSystem.AssaultAftermath(false, averageBashiBazoukForce < bashiBazoukNumbers ? averageBashiBazoukForce : bashiBazoukNumbers);
-            VariableSingleton.ChangeInt("iBazouks", enemyLosses);
+            VariableSingleton.ChangeInt("iBazouks", -enemyLosses);
+            RecordEnemyLosses(enemyLosses);
             assaultUI.SetAssaultResultButton(true);
         }
     }
@@ -205,6 +214,7 @@ public class AI: MonoBehaviour
         {
             int enemyLosses = assaultSystem.AssaultAftermath(true, averageJanissaryForce < janissaryNumbers ? averageJanissaryForce : janissaryNumbers);
             VariableSingleton.ChangeInt("iJanissaries", -enemyLosses);
+            RecordEnemyLosses(enemyLosses);
             assaultUI.SetAssaultResultButton(true);
         }
     }
