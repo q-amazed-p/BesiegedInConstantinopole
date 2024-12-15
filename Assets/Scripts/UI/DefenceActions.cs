@@ -10,6 +10,9 @@ public class DefenseActions : MonoBehaviour
     bool abandonable;
     int repairCost;
 
+    [SerializeField] float repairMin;
+    [SerializeField] float repairMax;
+
     [SerializeField] GameObject Options;
     [SerializeField] TMP_Text selectionName;
     [SerializeField] TMP_Text repairCostDisplay;
@@ -56,7 +59,7 @@ public class DefenseActions : MonoBehaviour
     public void RepairSelected() 
     {
         VariableSingleton.ChangeInt("iMoney", -repairCost);
-        VariableSingleton.ChangePercentFloat(wallSelected, Random.value*0.3f + 0.3f);
+        VariableSingleton.ChangePercentFloat(wallSelected, Random.value * (repairMax - repairMin) + repairMin);
     }
 
     public void AbandonSelected() 
