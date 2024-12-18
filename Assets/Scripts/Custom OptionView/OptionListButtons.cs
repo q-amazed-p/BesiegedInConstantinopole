@@ -60,11 +60,11 @@ namespace Yarn.Unity
         public override void RunOptions(DialogueOption[] dialogueOptions, Action<int> onOptionSelected)
         {
             // If we don't already have enough option views, create more
-            if (dialogueOptions.Length != optionButtons.Count)
+            if (dialogueOptions.Length > optionButtons.Count)
             {
-                for(int i = 0; i < dialogueOptions.Length; i++)
+                for(int i = optionButtons.Count; i < dialogueOptions.Length; i++)
                 {
-                    var optionView = CreateNewOptionView(dialogueOptions.Length, i);
+                    var optionView = CreateNewOptionView();
                     optionView.gameObject.SetActive(false);
                 }
             }
@@ -83,6 +83,14 @@ namespace Yarn.Unity
                     //continue;
                 }
                 else optionButton.interactable = true;
+
+                RectTransform layout = optionButton.GetComponent<RectTransform>();
+                RectTransform layoutPattern = layoutSourcer.ReadLayout(dialogueOptions.Length, i);
+
+                layout.anchorMax = layoutPattern.anchorMax;
+                layout.anchorMin = layoutPattern.anchorMin;
+                layout.offsetMax = layoutPattern.offsetMax;
+                layout.offsetMin = layoutPattern.offsetMin;
 
                 optionButton.gameObject.SetActive(true);
 
@@ -154,19 +162,11 @@ namespace Yarn.Unity
             /// Creates and configures a new <see cref="OptionView"/>, and adds
             /// it to <see cref="optionViews"/>.
             /// </summary>
-            OptionButton CreateNewOptionView(int totalButtons, int buttonIndex)
+            OptionButton CreateNewOptionView()
             {
                 var optionButton = Instantiate(optionButtonPrefab);
                 optionButton.transform.SetParent(optionPanel, false);
                 optionButton.transform.SetAsLastSibling();
-
-                RectTransform layout = optionButton.GetComponent<RectTransform>();
-                RectTransform layoutPattern = layoutSourcer.ReadLayout(totalButtons, buttonIndex);
-
-                layout.anchorMax = layoutPattern.anchorMax;
-                layout.anchorMin = layoutPattern.anchorMin;
-                layout.offsetMax = layoutPattern.offsetMax;
-                layout.offsetMin = layoutPattern.offsetMin;
                 
                 optionButton.OnOptionSelected = OptionViewWasSelected;
                 optionButtons.Add(optionButton);
