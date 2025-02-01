@@ -25,17 +25,20 @@ public class VariableSingleton : MonoBehaviour
     }
     public int overrideTurn = -1;
 
+    [SerializeField] int turnsToSiege;
+
+    public static bool HasSiegeStarted() => turn >= _instance.turnsToSiege;
 
     static DateTime siegeStart = new(1453, 4, 6);
     static public DateTime GetDate()
     {
-        if (turn < 15)
+        if (turn < _instance.turnsToSiege)
         {
-            return siegeStart - new TimeSpan((14 - turn) * 7, 0, 0, 0);
+            return siegeStart - new TimeSpan((_instance.turnsToSiege - turn -1) * 7, 0, 0, 0);
         }
         else
         {
-            return siegeStart + new TimeSpan(turn - 14, 0, 0, 0);
+            return siegeStart + new TimeSpan(turn - _instance.turnsToSiege +1, 0, 0, 0);
         }
     }
 

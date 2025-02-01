@@ -8375,6 +8375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   overrideTurn: -1
+  turnsToSiege: 15
   RecruitmentPricelist:
   - variableName: iInfantry
     unitName: Infantry
@@ -21380,6 +21381,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assaultUI: {fileID: 544773587}
+  managerUI: {fileID: 0}
   dialogueController: {fileID: 81464827}
 --- !u!1 &1593012139
 GameObject:

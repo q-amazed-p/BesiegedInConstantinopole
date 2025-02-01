@@ -6,11 +6,14 @@ using Yarn.Unity;
 public class EventUI : UIWindowFam
 {
     [SerializeField] GameObject assaultUI;
+    [SerializeField] GameObject managerUI;
     [SerializeField] DialogueController dialogueController;
 
     public void ContinueToAssault()
     {
-        SwitchPhase(assaultUI);
+        if (VariableSingleton.HasSiegeStarted()) SwitchPhase(assaultUI);
+        else SwitchPhase(managerUI);
+
     }
 
     public void SetStartNode(string NodeName) 
