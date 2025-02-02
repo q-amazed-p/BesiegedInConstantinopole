@@ -98,24 +98,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 3025948242962614695}
           m_TargetAssemblyTypeName: AI, Assembly-CSharp
-          m_MethodName: DecisionFillMoat
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - _chance: 0.1
-    restrictions: []
-    ottomanAction:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 3025948242962614695}
-          m_TargetAssemblyTypeName: AI, Assembly-CSharp
-          m_MethodName: DecisionBuildRamp
+          m_MethodName: AIFillMoat
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -133,7 +116,25 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 3025948242962614695}
           m_TargetAssemblyTypeName: AI, Assembly-CSharp
-          m_MethodName: DecisionBuildRam
+          m_MethodName: AIBuildRam
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - _chance: 0.1
+    restrictions:
+    - 
+    ottomanAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3025948242962614695}
+          m_TargetAssemblyTypeName: AI, Assembly-CSharp
+          m_MethodName: AIBuildRamp
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -151,7 +152,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 3025948242962614695}
           m_TargetAssemblyTypeName: AI, Assembly-CSharp
-          m_MethodName: DecisionBuildTower
+          m_MethodName: AIBuildTower
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -168,7 +169,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 3025948242962614695}
           m_TargetAssemblyTypeName: AI, Assembly-CSharp
-          m_MethodName: MoarCannons
+          m_MethodName: AIMoarCannons
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -337,6 +338,7 @@ MonoBehaviour:
   averageBalkanSubjectForce: 5000
   averageBashiBazoukForce: 10000
   averageJanissaryForce: 8000
+  enemyLossDisplay: {fileID: 0}
 --- !u!114 &6249235966759036046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -361,6 +363,7 @@ MonoBehaviour:
   commonEnemyLethalityFactor: 0.1
   archerLossWeight: 1
   infantryLossWeight: 3
+  playerLossDisplay: {fileID: 0}
 --- !u!1 &4197160389413571048
 GameObject:
   m_ObjectHideFlags: 0
