@@ -8400,7 +8400,7 @@ MonoBehaviour:
     middlewallName: 
     innerWallName: 
   possibleStory: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f00000010000000110000001200000013000000
-  possibleRandom: 000000000000000000000000
+  possibleRandom: 
 --- !u!114 &878093350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21381,7 +21381,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assaultUI: {fileID: 544773587}
-  managerUI: {fileID: 0}
+  managerUI: {fileID: 2035267478}
   dialogueController: {fileID: 81464827}
 --- !u!1 &1593012139
 GameObject:
@@ -26437,22 +26437,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tacticalOptions:
   - _chance: 0
-    restrictions: []
-    ottomanAction:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 3364847320716933299}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: 
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+    ottomanAction: {fileID: 0}
   DebugNumberOfRolls: 0
 --- !u!4 &5560607850277797876
 Transform:
@@ -26483,141 +26468,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tacticalOptions:
   - _chance: 0.4
-    restrictions: []
-    ottomanAction:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 3025948244607959199}
-          m_TargetAssemblyTypeName: AI, Assembly-CSharp
-          m_MethodName: AIMoarCannons
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+    ottomanAction: {fileID: 919401919182646702, guid: 21a320a85f3706f4a9c0e9e1e3bf3a58, type: 3}
   - _chance: 0.4
-    restrictions: []
-    ottomanAction:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 3025948244607959199}
-          m_TargetAssemblyTypeName: AI, Assembly-CSharp
-          m_MethodName: AIBombard
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+    ottomanAction: {fileID: 7119480170748355179, guid: ae3a20fed799193428c61a8f8904dc8d, type: 3}
   - _chance: 0.03
-    restrictions: []
-    ottomanAction:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 3025948244607959199}
-          m_TargetAssemblyTypeName: AI, Assembly-CSharp
-          m_MethodName: AIBalkanSubjectAssault
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+    ottomanAction: {fileID: -3363944256783807512, guid: d375711c7f9db6045a460d87111e717e, type: 3}
   - _chance: 0.01
-    restrictions: []
-    ottomanAction:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 3025948244607959199}
-          m_TargetAssemblyTypeName: AI, Assembly-CSharp
-          m_MethodName: AIBashiBazoukAssault
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+    ottomanAction: {fileID: 4569070909656270931, guid: 0bdf0f6eb653ec94d9417105d1fcc404, type: 3}
   - _chance: 0.01
-    restrictions: []
-    ottomanAction:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 3025948244607959199}
-          m_TargetAssemblyTypeName: AI, Assembly-CSharp
-          m_MethodName: AIJanissaryAssault
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+    ottomanAction: {fileID: -1351343145565782994, guid: f093d51a59c794b4da8c825bb6b81547, type: 3}
   - _chance: 0.05
-    restrictions: []
-    ottomanAction:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 3025948244607959199}
-          m_TargetAssemblyTypeName: AI, Assembly-CSharp
-          m_MethodName: AIBuildTower
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+    ottomanAction: {fileID: 4954305209647766119, guid: db31aae7b2a9e214abea149d0b9a8e48, type: 3}
   - _chance: 0.05
-    restrictions: []
-    ottomanAction:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 3025948244607959199}
-          m_TargetAssemblyTypeName: AI, Assembly-CSharp
-          m_MethodName: AIBuildRam
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+    ottomanAction: {fileID: 8839021340579009870, guid: 2f19e487d21d130409d678f4d73b26d8, type: 3}
   - _chance: 0.05
-    restrictions: []
-    ottomanAction:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 3025948244607959199}
-          m_TargetAssemblyTypeName: AI, Assembly-CSharp
-          m_MethodName: AIBuildRamp
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+    ottomanAction: {fileID: 2856185735771968328, guid: b37dc6e93042ca3469b35b801d745e75, type: 3}
   DebugNumberOfRolls: 0
 --- !u!4 &6045189474584155414
 Transform:
@@ -26648,57 +26513,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tacticalOptions:
   - _chance: 0.5
-    restrictions: []
-    ottomanAction:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 3025948244607959199}
-          m_TargetAssemblyTypeName: AI, Assembly-CSharp
-          m_MethodName: AIBashiBazoukAssault
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - _chance: 0.2
-    restrictions:
-    - bBatteringRam
-    ottomanAction:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 3025948244607959199}
-          m_TargetAssemblyTypeName: AI, Assembly-CSharp
-          m_MethodName: AIBalkanSubjectAssault
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+    ottomanAction: {fileID: 3583623697435182100, guid: a9ed4bfa015b87845ba1dde0d188345b, type: 3}
   - _chance: 0.1
-    restrictions: []
-    ottomanAction:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 3025948244607959199}
-          m_TargetAssemblyTypeName: AI, Assembly-CSharp
-          m_MethodName: AIJanissaryAssault
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+    ottomanAction: {fileID: 8839021340579009870, guid: 2f19e487d21d130409d678f4d73b26d8, type: 3}
+  - _chance: 0.1
+    ottomanAction: {fileID: 2856185735771968328, guid: b37dc6e93042ca3469b35b801d745e75, type: 3}
+  - _chance: 0.1
+    ottomanAction: {fileID: 4954305209647766119, guid: db31aae7b2a9e214abea149d0b9a8e48, type: 3}
+  - _chance: 0.2
+    ottomanAction: {fileID: 919401919182646702, guid: 21a320a85f3706f4a9c0e9e1e3bf3a58, type: 3}
   DebugNumberOfRolls: 0
 --- !u!4 &6239310512294369647
 Transform:

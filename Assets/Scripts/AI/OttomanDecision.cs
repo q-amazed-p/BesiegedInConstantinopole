@@ -15,22 +15,16 @@ public class OttomanDecision : MonoBehaviour
         public float Chance => _chance;
 
         [SerializeField]
-        string[] restrictions;
-        //Space for conditions to validate before choice
-
-        [SerializeField]
-        public UnityEvent ottomanAction;
+        OttomanAction ottomanAction;
 
         public bool IsRestricted() 
         {
-            if (restrictions.Length > 0)
-            {
-                foreach (string restriction in restrictions) 
-                {
-                    if (VariableSingleton.GetBoolVariable(restriction)) return true;
-                }
-            }
-            return false;
+            return ottomanAction.IsRestricted();
+        }
+
+        public void ExecuteAction() 
+        {
+            ottomanAction.Execute();
         }
     }
 
@@ -75,7 +69,7 @@ public class OttomanDecision : MonoBehaviour
 
     public void ExecuteRandomAction() 
     {
-        tacticalOptions[SelectRandomAction()].ottomanAction.Invoke();
+        tacticalOptions[SelectRandomAction()].ExecuteAction();
     }
 
     //DEBUG
