@@ -12,7 +12,11 @@ public class EventUI : UIWindowFam
     public void ContinueToAssault()
     {
         if (VariableSingleton.HasSiegeStarted()) SwitchPhase(assaultUI);
-        else SwitchPhase(managerUI);
+        else
+        {
+            VariableSingleton.IncrementTurn();
+            SwitchPhase(managerUI);
+        }
 
     }
 
